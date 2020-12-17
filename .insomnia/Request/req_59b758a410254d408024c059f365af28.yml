@@ -1,0 +1,34 @@
+_id: req_59b758a410254d408024c059f365af28
+type: Request
+parentId: fld_6677497941da455a8f5e1c04fb524610
+modified: 1608230132611
+created: 1608230132611
+url: "{{CLUSTER_O}}/api/learningOrchestra/v1/dataset"
+name: download a dataset
+description: ""
+method: POST
+body:
+  mimeType: ""
+  text: "{\r
+
+    \    \"datasetName\": \"dd\",\r
+
+    \    \"datasetURI\":
+    \"https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-\
+    enterprise-survey-2019-financial-year-provisional/Download-data/annual-ente\
+    rprise-survey-2019-financial-year-provisional-csv.csv\"\r
+
+    }"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1608230132611
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

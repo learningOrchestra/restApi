@@ -1,0 +1,34 @@
+_id: req_a07e46de20d04a4785e3a50244413719
+type: Request
+parentId: fld_8df305f9ffd04eb093ec570e5cad7d93
+modified: 1608230132550
+created: 1608230132550
+url: "{{CLUSTER_O}}/api/learningOrchestra/v1/explore/histogram"
+name: create a histogram from a dataset
+description: ""
+method: POST
+body:
+  mimeType: ""
+  text: "{\r
+
+    \    \"inputDatasetName\": \"projection_train-01\",\r
+
+    \    \"outputDatasetName\": \"test01_histogram\",\r
+
+    \    \"names\" : [\"PassengerId\", \"Pclass\",
+    \"Age\",\"SibSp\",\"Parch\",\"Fare\",\"Name\",\"Sex\",\"Embarked\"]\r
+
+    }"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1608230132550
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

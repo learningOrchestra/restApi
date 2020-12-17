@@ -1,0 +1,22 @@
+_id: req_e3f0b7f362f54dcabb6fda63e690f3ed
+type: Request
+parentId: fld_4d82f05a9aa548928f89282241076074
+modified: 1608230132587
+created: 1608230132587
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/normalization?skip=numbe\
+  r&limit=number&normalizationType=someType"
+name: read all normalizations metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1608230132587
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

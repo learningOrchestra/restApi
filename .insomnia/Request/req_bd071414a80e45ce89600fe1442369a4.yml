@@ -1,0 +1,22 @@
+_id: req_bd071414a80e45ce89600fe1442369a4
+type: Request
+parentId: fld_4d82f05a9aa548928f89282241076074
+modified: 1608230132584
+created: 1608230132584
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/normalization/{{normaliz\
+  ationName}}"
+name: delete a normalization
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1608230132584
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

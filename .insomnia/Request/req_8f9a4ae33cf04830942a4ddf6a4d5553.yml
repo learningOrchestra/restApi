@@ -1,0 +1,36 @@
+_id: req_8f9a4ae33cf04830942a4ddf6a4d5553
+type: Request
+parentId: fld_134ee2fe393e44c083e83b508e81f6be
+modified: 1608230132544
+created: 1608230132544
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/builder"
+name: create a builder
+description: ""
+method: POST
+body:
+  mimeType: ""
+  text: "{\r
+
+    \    \"trainDatasetName\": \"projection_train\",\r
+
+    \    \"testDatasetName\": \"projection_test\",\r
+
+    \    \"modelingCode\":
+    \"https://filebin.net/ne1g18jm7a8rpw24/pythoncode.py?t=q097q4t0\",\r
+
+    \    \"classifiersList\": [\"LR\", \"NB\"]\r
+
+    }"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1608230132544
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

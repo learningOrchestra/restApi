@@ -1,0 +1,21 @@
+_id: req_197f33668ec245a08fb8eb1c53b38d1d
+type: Request
+parentId: fld_6677497941da455a8f5e1c04fb524610
+modified: 1608230132609
+created: 1608230132609
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/dataset"
+name: read all datasets metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1608230132609
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

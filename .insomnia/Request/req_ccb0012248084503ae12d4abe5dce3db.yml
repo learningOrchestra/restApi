@@ -1,0 +1,22 @@
+_id: req_ccb0012248084503ae12d4abe5dce3db
+type: Request
+parentId: fld_637a5fdb5f5c48418a3bf7f729cb5a06
+modified: 1608230132575
+created: 1608230132575
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/embedding/{{embeddingNam\
+  e}}?skip=number&limit=number"
+name: read an embedding
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1608230132575
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

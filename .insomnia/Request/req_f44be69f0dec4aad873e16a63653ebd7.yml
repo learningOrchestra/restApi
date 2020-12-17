@@ -1,0 +1,47 @@
+_id: req_f44be69f0dec4aad873e16a63653ebd7
+type: Request
+parentId: fld_637a5fdb5f5c48418a3bf7f729cb5a06
+modified: 1608230132581
+created: 1608230132581
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/embedding"
+name: create an embedding
+description: ""
+method: POST
+body:
+  mimeType: ""
+  text: "{\r
+
+    \    \"inputDatasetName\": \"Input dataset name\",\r
+
+    \    \"OutputDatasetName\": \"Output dataset name\",\r
+
+    \    \"fieldName\": \"field\",\r
+
+    \    \"embeddingType\": \"some type\",\r
+
+    \    \"function (optional)\": \"the.function.path\",\r
+
+    \    \"functionParameters\": {\r
+
+    \        \"param1\": \"value\",\r
+
+    \        \"param2\": \"value\",\r
+
+    \        \"paramN\": \"value\"\r
+
+    \    }\r
+
+    }"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1608230132581
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

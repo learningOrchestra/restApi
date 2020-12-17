@@ -1,0 +1,22 @@
+_id: req_01f3beafb7d94db6b4cc99a57107d8e8
+type: Request
+parentId: fld_637a5fdb5f5c48418a3bf7f729cb5a06
+modified: 1608230132576
+created: 1608230132576
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/embedding?skip=number&li\
+  mit=number&embeddingType=someType"
+name: read all embeddings metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1608230132576
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

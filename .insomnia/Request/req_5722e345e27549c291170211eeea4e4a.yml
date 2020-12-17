@@ -1,0 +1,45 @@
+_id: req_5722e345e27549c291170211eeea4e4a
+type: Request
+parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
+modified: 1608230132530
+created: 1608230132530
+url: "{{CLUSTER_O}}/api/learningOrchestra/v1/model/default"
+name: Create a model
+description: ""
+method: POST
+body:
+  mimeType: ""
+  text: "{\r
+
+    \    \"modelName\": \"modelName\",\r
+
+    \    \"description\": \"Some description\",\r
+
+    \    \"tool\": \"the name tool (sklearn, tensorFlow)\",\r
+
+    \    \"function\": \"the.function.path\",\r
+
+    \    \"functionParameters\": {\r
+
+    \        \"param1\": \"value\",\r
+
+    \        \"param2\": \"value\",\r
+
+    \        \"paramN\": \"value\"\r
+
+    \    }\r
+
+    }"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1608230132530
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

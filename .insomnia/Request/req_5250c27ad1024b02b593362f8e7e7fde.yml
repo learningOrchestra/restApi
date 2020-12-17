@@ -1,0 +1,21 @@
+_id: req_5250c27ad1024b02b593362f8e7e7fde
+type: Request
+parentId: fld_6677497941da455a8f5e1c04fb524610
+modified: 1608230132607
+created: 1608230132607
+url: "{{CLUSTER_O}}/api/learningOrchestra/v1/dataset/{{file_name}}"
+name: delete a dataset
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1608230132607
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

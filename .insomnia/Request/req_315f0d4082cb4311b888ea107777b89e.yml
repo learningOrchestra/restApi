@@ -1,0 +1,42 @@
+_id: req_315f0d4082cb4311b888ea107777b89e
+type: Request
+parentId: fld_4d82f05a9aa548928f89282241076074
+modified: 1608230132591
+created: 1608230132591
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/normalization/{{normaliz\
+  ationName}}"
+name: change a normalization
+description: ""
+method: PATCH
+body:
+  mimeType: ""
+  text: "{\r
+
+    \    \"normalizationType\": \"some type\",\r
+
+    \    \"function (optional)\": \"the.function.path\",\r
+
+    \    \"functionParameters\": {\r
+
+    \        \"param1\": \"value\",\r
+
+    \        \"param2\": \"value\",\r
+
+    \        \"paramN\": \"value\"\r
+
+    \    }\r
+
+    }"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1608230132591
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

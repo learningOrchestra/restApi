@@ -1,0 +1,46 @@
+_id: req_46c75b78e2a64dbeb457b679e54865ed
+type: Request
+parentId: fld_4d82f05a9aa548928f89282241076074
+modified: 1608230132589
+created: 1608230132589
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/normalization/{{normaliz\
+  ationName}}"
+name: Update a normalization
+description: ""
+method: PUT
+body:
+  mimeType: ""
+  text: "{\r
+
+    \    \"inputDatasetName\": \"Input dataset name\",\r
+
+    \    \"fieldName\": \"field\",\r
+
+    \    \"normalizationType\": \"some type\",\r
+
+    \    \"function (optional)\": \"the.function.path\",\r
+
+    \    \"functionParameters\": {\r
+
+    \        \"param1\": \"value\",\r
+
+    \        \"param2\": \"value\",\r
+
+    \        \"paramN\": \"value\"\r
+
+    \    }\r
+
+    }"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1608230132589
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

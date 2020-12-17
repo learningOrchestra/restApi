@@ -1,0 +1,21 @@
+_id: req_6209130921714093b08ac43faa6fc436
+type: Request
+parentId: fld_134ee2fe393e44c083e83b508e81f6be
+modified: 1608230132538
+created: 1608230132538
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/builder/projection_test_nb"
+name: delete a builder
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1608230132538
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

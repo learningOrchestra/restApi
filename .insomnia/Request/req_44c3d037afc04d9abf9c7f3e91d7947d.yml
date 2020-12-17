@@ -1,0 +1,21 @@
+_id: req_44c3d037afc04d9abf9c7f3e91d7947d
+type: Request
+parentId: fld_e14ff5395f234294a8c5a6e5f380e9f6
+modified: 1608230132558
+created: 1608230132558
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/explore/pca"
+name: read all PCA image plot filenames
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1608230132558
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

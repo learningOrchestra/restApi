@@ -1,0 +1,39 @@
+_id: req_092d71ce3f014f9ab6a8c36dada009f1
+type: Request
+parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
+modified: 1608230132529
+created: 1608230132529
+url: "{{CLUSTER_O}}/api/learningOrchestra/v1/model/default/{{modelName}}"
+name: Update a model
+description: ""
+method: PATCH
+body:
+  mimeType: ""
+  text: "{\r
+
+    \    \"description\": \"Some description\",\r
+
+    \    \"functionParameters\": {\r
+
+    \        \"param1\": \"value\",\r
+
+    \        \"param2\": \"value\",\r
+
+    \        \"paramN\": \"value\"\r
+
+    \    }\r
+
+    }"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1608230132529
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

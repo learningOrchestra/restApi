@@ -1,0 +1,21 @@
+_id: req_0f873d9bd98a41398132bc200a28d503
+type: Request
+parentId: fld_e14ff5395f234294a8c5a6e5f380e9f6
+modified: 1608230132553
+created: 1608230132553
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/explore/pca/{{pca_image_name}}"
+name: delete a PCA image plot
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1608230132553
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

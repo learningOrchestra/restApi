@@ -1,0 +1,41 @@
+_id: req_396a8e32ef0e4d36b8311e4a344f592d
+type: Request
+parentId: fld_637a5fdb5f5c48418a3bf7f729cb5a06
+modified: 1608230132580
+created: 1608230132580
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/embedding/{{embeddingName}}"
+name: change an embedding
+description: ""
+method: PATCH
+body:
+  mimeType: ""
+  text: "{\r
+
+    \    \"embeddingType\": \"some type\",\r
+
+    \    \"function (optional)\": \"the.function.path\",\r
+
+    \    \"functionParameters\": {\r
+
+    \        \"param1\": \"value\",\r
+
+    \        \"param2\": \"value\",\r
+
+    \        \"paramN\": \"value\"\r
+
+    \    }\r
+
+    }"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1608230132580
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
