@@ -1,7 +1,7 @@
 _id: req_d65f46f38a2c490db3d178f76f059909
 type: Request
 parentId: fld_674e7e58139a47c5b68e818a1e2ebd6b
-modified: 1608230132595
+modified: 1608277955142
 created: 1608230132595
 url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/dataType"
 name: change a dataset
@@ -9,33 +9,24 @@ description: ""
 method: PATCH
 body:
   mimeType: ""
-  text: "{\r
-
-    \    \"inputDatasetName\": \"{{projection_name}}\",\r
-
-    \    \"types\": {\r
-
-    \        \"Age\": \"number\",\r
-
-    \        \"Fare\": \"number\",\r
-
-    \        \"Parch\": \"number\",\r
-
-    \        \"PassengerId\": \"number\",\r
-
-    \        \"Pclass\": \"number\",\r
-
-    \        \"SibSp\": \"number\",\r
-
-    \        \"Survived\": \"number\"\r
-
-    \    }\r
-
-    }"
+  text: |-
+    {
+        "inputDatasetName": "{{ filename}}",
+        "types": {
+            "Age": "number",
+            "Fare": "number",
+            "Parch": "number",
+            "PassengerId": "string",
+            "Pclass": "number",
+            "SibSp": "number",
+            "Survived": "number"
+        }
+    }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_5b808ffb144d41f69d7201a9d60509a4
 authentication: {}
 metaSortKey: -1608230132595
 isPrivate: false

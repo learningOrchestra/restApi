@@ -1,7 +1,7 @@
 _id: req_1d0c1bbbc4cf4461b07e504d420a8813
 type: Request
 parentId: fld_e14ff5395f234294a8c5a6e5f380e9f6
-modified: 1608230132560
+modified: 1608278209998
 created: 1608230132560
 url: "{{CLUSTER_M}}/api/learningOrchestra/v1/explore/pca"
 name: create a PCA image plot from a dataset
@@ -9,19 +9,17 @@ description: ""
 method: POST
 body:
   mimeType: ""
-  text: "{\r
-
-    \    \"inputDatasetName\": \"{{projection_name}}\",\r
-
-    \    \"outputPlotName\": \"{{pca_image_name}}\",\r
-
-    \    \"label\": null\r
-
-    }"
+  text: |-
+    {
+        "inputDatasetName": "{{ filename }}",
+        "outputPlotName": "{{ pcaFilename }}",
+        "label": null
+    }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_4d21ed4751844f70ab5c2cd8b4ff991d
 authentication: {}
 metaSortKey: -1608230132560
 isPrivate: false

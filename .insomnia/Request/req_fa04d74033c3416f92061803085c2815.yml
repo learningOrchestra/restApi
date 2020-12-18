@@ -1,7 +1,7 @@
 _id: req_fa04d74033c3416f92061803085c2815
 type: Request
 parentId: fld_eb868fa6c1f84528950272f72d7df858
-modified: 1608230132603
+modified: 1608277892599
 created: 1608230132603
 url: "{{CLUSTER_O}}/api/learningOrchestra/v1/transform/projection"
 name: create a projection
@@ -9,41 +9,28 @@ description: ""
 method: POST
 body:
   mimeType: ""
-  text: "{\r
-
-    \    \"inputDatasetName\": \"{{file_name}}\",\r
-
-    \    \"outputDatasetName\": \"{{projection_name}}\",\r
-
-    \    \"names\" : [\r
-
-    \        \"Age\",\r
-
-    \        \"Embarked\",\r
-
-    \        \"Fare\",\r
-
-    \        \"Name\",\r
-
-    \        \"Parch\",\r
-
-    \        \"PassengerId\",\r
-
-    \        \"Pclass\",\r
-
-    \        \"Sex\",\r
-
-    \        \"SibSp\",\r
-
-    \        \"Survived\"\r
-
-    \    ]\r
-
-    }"
+  text: |-
+    {
+        "inputDatasetName": "{{ filename }}",
+        "outputDatasetName": "{{ projectionFilename }}",
+        "names" : [
+            "Age",
+            "Embarked",
+            "Fare",
+            "Name",
+            "Parch",
+            "PassengerId",
+            "Pclass",
+            "Sex",
+            "SibSp",
+            "Survived"
+        ]
+    }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_a67620d470a647088d0d77deef5089b3
 authentication: {}
 metaSortKey: -1608230132603
 isPrivate: false

@@ -1,10 +1,10 @@
 _id: req_08da48dc369d4eb2979ab688fa735a60
 type: Request
 parentId: fld_eb868fa6c1f84528950272f72d7df858
-modified: 1608230132598
+modified: 1608277906355
 created: 1608230132598
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/projection/{{projection_\
-  name}}"
+url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/projection/{{
+  projectionFilename }}"
 name: delete a projection
 description: ""
 method: DELETE
