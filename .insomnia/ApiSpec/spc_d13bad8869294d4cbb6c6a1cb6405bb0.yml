@@ -1,8 +1,14 @@
 _id: spc_d13bad8869294d4cbb6c6a1cb6405bb0
 type: ApiSpec
 parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
-modified: 1608301239456
+modified: 1608304258973
 created: 1608230138068
 fileName: learningOrchestra
-contents: "openapi: 3.0.0"
+contents: >+
+  openapi: 3.0.0
+
+  info:
+    title: Learning Orchestra
+    description: LearningOrchestra aims to facilitate the development of complex data mining workflows by seamlessly interfacing different data science tools and services. From a single interoperable Application Programming Interface (API), users can design their analytical pipelines and deploy them in an environment with the appropriate capabilities.
+
 contentType: yaml
