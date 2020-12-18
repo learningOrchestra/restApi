@@ -1,10 +1,10 @@
 _id: req_bd071414a80e45ce89600fe1442369a4
 type: Request
 parentId: fld_4d82f05a9aa548928f89282241076074
-modified: 1608278044198
+modified: 1608278926019
 created: 1608230132584
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/normalization/{{normaliz\
-  ationName }}"
+url: "{{IP}}/api/learningOrchestra/v1/transform/normalization/{{normalizationNa\
+  me }}"
 name: delete a normalization
 description: ""
 method: DELETE

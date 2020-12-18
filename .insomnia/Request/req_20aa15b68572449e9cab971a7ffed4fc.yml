@@ -1,9 +1,9 @@
 _id: req_20aa15b68572449e9cab971a7ffed4fc
 type: Request
 parentId: fld_8df305f9ffd04eb093ec570e5cad7d93
-modified: 1608230132547
+modified: 1608279143946
 created: 1608230132547
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/explore/histogram/train01_histogram"
+url: "{{IP}}/api/learningOrchestra/v1/explore/histogram/train01_histogram"
 name: delete a histogram dataset
 description: ""
 method: DELETE

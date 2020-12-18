@@ -1,9 +1,9 @@
 _id: req_ab2f378a7e65498f8739271b60ebef16
 type: Request
 parentId: fld_4d82f05a9aa548928f89282241076074
-modified: 1608230132592
+modified: 1608278904431
 created: 1608230132592
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/normalization"
+url: "{{IP}}/api/learningOrchestra/v1/transform/normalization"
 name: create a normalization
 description: ""
 method: POST
@@ -36,6 +36,7 @@ parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_6a6838eb9959443c98af2fa1b8b2d56b
 authentication: {}
 metaSortKey: -1608230132592
 isPrivate: false

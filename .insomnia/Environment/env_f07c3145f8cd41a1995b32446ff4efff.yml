@@ -1,0 +1,30 @@
+_id: env_f07c3145f8cd41a1995b32446ff4efff
+type: Environment
+parentId: env_16c09f419c6b48ee983d15138d805f7326e64daa
+modified: 1608278983865
+created: 1608278789203
+name: Otávio
+data:
+  IP: 192.168.0.1
+  filename: filename
+  projectionFilename: filename
+  normalizationName: filename
+  embeddingName: filename
+  tsneFilename: filename
+  pcaFilename: filename
+  toolName: toolName
+  modelName: modelName
+dataPropertyOrder:
+  "&":
+    - IP
+    - filename
+    - projectionFilename
+    - normalizationName
+    - embeddingName
+    - tsneFilename
+    - pcaFilename
+    - toolName
+    - modelName
+color: null
+isPrivate: false
+metaSortKey: 1608278789203

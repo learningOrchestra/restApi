@@ -1,9 +1,9 @@
 _id: req_fe2a96f0034341a084b7ba697662accd
 type: Request
 parentId: fld_637a5fdb5f5c48418a3bf7f729cb5a06
-modified: 1608230132578
+modified: 1608278939847
 created: 1608230132578
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/embedding/{{embeddingName}}"
+url: "{{IP}}/api/learningOrchestra/v1/transform/embedding/{{embeddingName}}"
 name: Update an embedding
 description: ""
 method: PUT
@@ -34,6 +34,7 @@ parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_af1acd51f7364f6abde8ed0d886f77f3
 authentication: {}
 metaSortKey: -1608230132578
 isPrivate: false

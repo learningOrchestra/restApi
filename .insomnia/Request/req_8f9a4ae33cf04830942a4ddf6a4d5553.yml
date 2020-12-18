@@ -1,9 +1,9 @@
 _id: req_8f9a4ae33cf04830942a4ddf6a4d5553
 type: Request
 parentId: fld_134ee2fe393e44c083e83b508e81f6be
-modified: 1608230132544
+modified: 1608279152553
 created: 1608230132544
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/builder"
+url: "{{IP}}/api/learningOrchestra/v1/builder"
 name: create a builder
 description: ""
 method: POST
@@ -25,6 +25,7 @@ parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_b5a5d661b9ed4f4284f1488b68765823
 authentication: {}
 metaSortKey: -1608230132544
 isPrivate: false

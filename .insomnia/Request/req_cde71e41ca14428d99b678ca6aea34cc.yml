@@ -1,10 +1,9 @@
 _id: req_cde71e41ca14428d99b678ca6aea34cc
 type: Request
 parentId: fld_6677497941da455a8f5e1c04fb524610
-modified: 1608277810337
+modified: 1608278871160
 created: 1608230132608
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/dataset/{{ filename
-  }}?query={}&limit=0&skip=0"
+url: "{{IP}}api/learningOrchestra/v1/dataset/{{ filename }}?query={}&limit=0&skip=0"
 name: read a dataset
 description: ""
 method: GET

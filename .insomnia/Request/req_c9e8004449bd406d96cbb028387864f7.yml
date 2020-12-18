@@ -1,9 +1,9 @@
 _id: req_c9e8004449bd406d96cbb028387864f7
 type: Request
 parentId: fld_eb868fa6c1f84528950272f72d7df858
-modified: 1608230132601
+modified: 1608278886221
 created: 1608230132601
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/projection"
+url: "{{IP}}/api/learningOrchestra/v1/transform/projection"
 name: read all projections metadata
 description: ""
 method: GET

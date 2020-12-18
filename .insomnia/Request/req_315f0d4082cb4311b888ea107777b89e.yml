@@ -1,10 +1,9 @@
 _id: req_315f0d4082cb4311b888ea107777b89e
 type: Request
 parentId: fld_4d82f05a9aa548928f89282241076074
-modified: 1608230132591
+modified: 1608278908039
 created: 1608230132591
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/normalization/{{normaliz\
-  ationName}}"
+url: "{{IP}}/api/learningOrchestra/v1/transform/normalization/{{normalizationName}}"
 name: change a normalization
 description: ""
 method: PATCH
@@ -31,6 +30,7 @@ parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_941ba13948694d069ea58061b6b5fc96
 authentication: {}
 metaSortKey: -1608230132591
 isPrivate: false

@@ -1,9 +1,9 @@
 _id: req_d65f46f38a2c490db3d178f76f059909
 type: Request
 parentId: fld_674e7e58139a47c5b68e818a1e2ebd6b
-modified: 1608277955142
+modified: 1608278900141
 created: 1608230132595
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/transform/dataType"
+url: "{{IP}}/api/learningOrchestra/v1/transform/dataType"
 name: change a dataset
 description: ""
 method: PATCH

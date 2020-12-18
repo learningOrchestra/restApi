@@ -1,9 +1,9 @@
 _id: req_092d71ce3f014f9ab6a8c36dada009f1
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1608230132529
+modified: 1608279185559
 created: 1608230132529
-url: "{{CLUSTER_O}}/api/learningOrchestra/v1/model/default/{{modelName}}"
+url: "{{IP}}/api/learningOrchestra/v1/model/default/{{modelName}}"
 name: Update a model
 description: ""
 method: PATCH
@@ -28,6 +28,7 @@ parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_b3f2b9961f3f4c40ba16f9f2b84a66ee
 authentication: {}
 metaSortKey: -1608230132529
 isPrivate: false

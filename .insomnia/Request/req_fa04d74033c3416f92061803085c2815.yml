@@ -1,9 +1,9 @@
 _id: req_fa04d74033c3416f92061803085c2815
 type: Request
 parentId: fld_eb868fa6c1f84528950272f72d7df858
-modified: 1608277892599
+modified: 1608278882093
 created: 1608230132603
-url: "{{CLUSTER_O}}/api/learningOrchestra/v1/transform/projection"
+url: "{{IP}}/api/learningOrchestra/v1/transform/projection"
 name: create a projection
 description: ""
 method: POST

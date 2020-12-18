@@ -1,9 +1,9 @@
 _id: req_c255a88f7cfd4208bfbf48637ac2b7a0
 type: Request
 parentId: fld_134ee2fe393e44c083e83b508e81f6be
-modified: 1608230132542
+modified: 1608279157876
 created: 1608230132542
-url: "{{CLUSTER_M}}/api/learningOrchestra/v1/builder"
+url: "{{IP}}/api/learningOrchestra/v1/builder"
 name: read all builders
 description: ""
 method: GET

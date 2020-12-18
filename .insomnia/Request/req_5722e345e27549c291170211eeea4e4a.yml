@@ -1,9 +1,9 @@
 _id: req_5722e345e27549c291170211eeea4e4a
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1608230132530
+modified: 1608279179823
 created: 1608230132530
-url: "{{CLUSTER_O}}/api/learningOrchestra/v1/model/default"
+url: "{{IP}}/api/learningOrchestra/v1/model/default"
 name: Create a model
 description: ""
 method: POST
@@ -34,6 +34,7 @@ parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_65efaf4243354fabab386176ebc9b896
 authentication: {}
 metaSortKey: -1608230132530
 isPrivate: false
