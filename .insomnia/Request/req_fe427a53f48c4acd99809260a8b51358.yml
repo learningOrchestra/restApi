@@ -1,9 +1,9 @@
 _id: req_fe427a53f48c4acd99809260a8b51358
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1608279199528
+modified: 1608295372664
 created: 1608230132526
-url: "{{IP}}/api/learningOrchestra/v1/model/default/tool/{{toolName}}"
+url: "{{IP}}/api/learningOrchestra/v1/model/default/tool/{{toolName}}/function"
 name: read all functions in a tool
 description: ""
 method: GET
