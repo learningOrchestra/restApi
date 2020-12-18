@@ -1,7 +1,7 @@
 _id: req_396a8e32ef0e4d36b8311e4a344f592d
 type: Request
 parentId: fld_637a5fdb5f5c48418a3bf7f729cb5a06
-modified: 1608293424533
+modified: 1608293530966
 created: 1608230132580
 url: "{{IP}}/api/learningOrchestra/v1/transform/embedding/{{embeddingName}}"
 name: change an embedding
@@ -9,23 +9,16 @@ description: ""
 method: PATCH
 body:
   mimeType: application/json
-  text: "{\r
-
-    \    \"embeddingType\": \"some type\",\r
-
-    \    \"function (optional)\": \"the.function.path\",\r
-
-    \    \"functionParameters\": {\r
-
-    \        \"param1\": \"value\",\r
-
-    \        \"param2\": \"value\",\r
-
-    \        \"paramN\": \"value\"\r
-
-    \    }\r
-
-    }"
+  text: |-
+    {
+    	"embeddingType": "some type",
+    	"function (optional)": "the.function.path",
+    	"functionParameters": {
+    		"param1": "value",
+    		"param2": "value",
+    		"paramN": "value"
+    	}
+    }
 parameters: []
 headers:
   - name: Content-Type

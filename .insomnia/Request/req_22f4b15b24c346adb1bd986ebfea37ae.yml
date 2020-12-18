@@ -1,7 +1,7 @@
 _id: req_22f4b15b24c346adb1bd986ebfea37ae
 type: Request
 parentId: fld_1b98d3d487884d7c925fb001c0146166
-modified: 1608293459448
+modified: 1608293527869
 created: 1608230132515
 url: "{{IP}}/api/learningOrchestra/v1/model/custom/{{modelName}}"
 name: Update a model
@@ -9,21 +9,15 @@ description: ""
 method: PATCH
 body:
   mimeType: application/json
-  text: "{\r
-
-    \    \"description\": \"Some description\",\r
-
-    \    \"loadParameters\": {\r
-
-    \        \"param1\": \"value\",\r
-
-    \        \"param2\": \"value\",\r
-
-    \        \"paramN\": \"value\"\r
-
-    \    }\r
-
-    }"
+  text: |-
+    {
+    	"description": "Some description",
+    	"loadParameters": {
+    		"param1": "value",
+    		"param2": "value",
+    		"paramN": "value"
+    	}
+    }
 parameters: []
 headers:
   - name: Content-Type
