@@ -1,14 +1,14 @@
 _id: req_315f0d4082cb4311b888ea107777b89e
 type: Request
 parentId: fld_4d82f05a9aa548928f89282241076074
-modified: 1608278908039
+modified: 1608293414669
 created: 1608230132591
 url: "{{IP}}/api/learningOrchestra/v1/transform/normalization/{{normalizationName}}"
 name: change a normalization
 description: ""
 method: PATCH
 body:
-  mimeType: ""
+  mimeType: application/json
   text: "{\r
 
     \    \"normalizationType\": \"some type\",\r

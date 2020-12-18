@@ -1,14 +1,14 @@
 _id: req_5722e345e27549c291170211eeea4e4a
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1608279179823
+modified: 1608293449480
 created: 1608230132530
 url: "{{IP}}/api/learningOrchestra/v1/model/default"
 name: Create a model
 description: ""
 method: POST
 body:
-  mimeType: ""
+  mimeType: application/json
   text: "{\r
 
     \    \"modelName\": \"modelName\",\r

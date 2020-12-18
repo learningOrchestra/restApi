@@ -1,14 +1,14 @@
 _id: req_f44be69f0dec4aad873e16a63653ebd7
 type: Request
 parentId: fld_637a5fdb5f5c48418a3bf7f729cb5a06
-modified: 1608278930383
+modified: 1608293422051
 created: 1608230132581
 url: "{{IP}}/api/learningOrchestra/v1/transform/embedding"
 name: create an embedding
 description: ""
 method: POST
 body:
-  mimeType: ""
+  mimeType: application/json
   text: "{\r
 
     \    \"inputDatasetName\": \"Input dataset name\",\r

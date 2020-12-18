@@ -1,14 +1,14 @@
 _id: req_8f9a4ae33cf04830942a4ddf6a4d5553
 type: Request
 parentId: fld_134ee2fe393e44c083e83b508e81f6be
-modified: 1608279152553
+modified: 1608293445362
 created: 1608230132544
-url: "{{IP}}/api/learningOrchestra/v1/builder"
+url: "{{IP}}/api/learningOrchestra/v1/model/default/{{modelName}}"
 name: create a builder
 description: ""
 method: POST
 body:
-  mimeType: ""
+  mimeType: application/json
   text: "{\r
 
     \    \"trainDatasetName\": \"projection_train\",\r

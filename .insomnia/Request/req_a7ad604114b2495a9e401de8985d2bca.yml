@@ -1,14 +1,14 @@
 _id: req_a7ad604114b2495a9e401de8985d2bca
 type: Request
 parentId: fld_a0f0c9aba122476bbc77187b2f3445bb
-modified: 1608279038320
+modified: 1608293431125
 created: 1608230132567
 url: "{{IP}}/api/learningOrchestra/v1/explore/tsne"
 name: create a t_SNE image plot from a dataset
 description: ""
 method: POST
 body:
-  mimeType: ""
+  mimeType: application/json
   text: |-
     {
         "inputDatasetName": "{{ filename }}",

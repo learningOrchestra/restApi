@@ -1,14 +1,14 @@
 _id: req_46c75b78e2a64dbeb457b679e54865ed
 type: Request
 parentId: fld_4d82f05a9aa548928f89282241076074
-modified: 1608278913059
+modified: 1608293417402
 created: 1608230132589
 url: "{{IP}}/api/learningOrchestra/v1/transform/normalization/{{normalizationName}}"
 name: Update a normalization
 description: ""
 method: PUT
 body:
-  mimeType: ""
+  mimeType: application/json
   text: "{\r
 
     \    \"inputDatasetName\": \"Input dataset name\",\r

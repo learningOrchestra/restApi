@@ -1,14 +1,14 @@
 _id: req_396a8e32ef0e4d36b8311e4a344f592d
 type: Request
 parentId: fld_637a5fdb5f5c48418a3bf7f729cb5a06
-modified: 1608278935232
+modified: 1608293424533
 created: 1608230132580
 url: "{{IP}}/api/learningOrchestra/v1/transform/embedding/{{embeddingName}}"
 name: change an embedding
 description: ""
 method: PATCH
 body:
-  mimeType: ""
+  mimeType: application/json
   text: "{\r
 
     \    \"embeddingType\": \"some type\",\r
