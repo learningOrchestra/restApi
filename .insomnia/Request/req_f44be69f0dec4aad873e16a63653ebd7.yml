@@ -1,7 +1,7 @@
 _id: req_f44be69f0dec4aad873e16a63653ebd7
 type: Request
 parentId: fld_637a5fdb5f5c48418a3bf7f729cb5a06
-modified: 1608293503581
+modified: 1608371796189
 created: 1608230132581
 url: "{{IP}}/api/learningOrchestra/v1/transform/embedding"
 name: create an embedding
@@ -12,7 +12,7 @@ body:
   text: |-
     {
     	"inputDatasetName": "Input dataset name",
-    	"OutputDatasetName": "Output dataset name",
+    	"outputDatasetName": "Output dataset name",
     	"fieldName": "field",
     	"embeddingType": "some type",
     	"function (optional)": "the.function.path",

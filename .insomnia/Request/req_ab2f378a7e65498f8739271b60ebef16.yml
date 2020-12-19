@@ -1,7 +1,7 @@
 _id: req_ab2f378a7e65498f8739271b60ebef16
 type: Request
 parentId: fld_4d82f05a9aa548928f89282241076074
-modified: 1608293497957
+modified: 1608371802256
 created: 1608230132592
 url: "{{IP}}/api/learningOrchestra/v1/transform/normalization"
 name: create a normalization
@@ -12,7 +12,7 @@ body:
   text: |-
     {
     	"inputDatasetName": "Input dataset name",
-    	"OutputDatasetName": "Output dataset name",
+    	"outputDatasetName": "Output dataset name",
     	"fieldName": "field",
     	"normalizationType": "some type",
     	"function (optional)": "the.function.path",
