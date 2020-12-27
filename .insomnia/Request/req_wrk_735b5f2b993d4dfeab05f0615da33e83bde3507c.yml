@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83bde3507c
+type: Request
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1609095235178
+created: 1609095144016
+url: "{{ base_url }}/dataset/{{ datasetName }}"
+name: Delete a inserted dataset
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1609095144016
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

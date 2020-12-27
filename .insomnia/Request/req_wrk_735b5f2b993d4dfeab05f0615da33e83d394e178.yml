@@ -1,0 +1,30 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83d394e178
+type: Request
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1609095235192
+created: 1609095144032
+url: "{{ base_url }}/dataset/{{ datasetName }}"
+name: List the dataset content
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: skip
+    disabled: false
+    value: "0"
+  - name: limit
+    disabled: false
+    value: "0"
+  - name: query
+    disabled: false
+    value: string
+headers: []
+authentication: {}
+metaSortKey: -1609095144032
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,8 +1,12 @@
 _id: wrk_735b5f2b993d4dfeab05f0615da33e83
 type: Workspace
 parentId: null
-modified: 1608230138067
+modified: 1609095235256
 created: 1608230138067
-name: Imported Workspace
-description: ""
+name: Learning Orchestra 1
+description: LearningOrchestra aims to facilitate the development of complex
+  data mining workflows by seamlessly interfacing different data science tools
+  and services. From a single interoperable Application Programming Interface
+  (API), users can design their analytical pipelines and deploy them in an
+  environment with the appropriate capabilities.
 scope: null

@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83e104b964
+type: Request
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1609095235205
+created: 1609069784159
+url: "{{ base_url }}/dataset"
+name: List all datasets metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1609069784159
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

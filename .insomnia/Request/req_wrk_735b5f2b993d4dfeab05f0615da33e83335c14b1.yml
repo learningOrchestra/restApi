@@ -1,0 +1,29 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83335c14b1
+type: Request
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1609095235218
+created: 1609095144051
+url: "{{ base_url }}/dataset"
+name: Download a dataset from an URL
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "datasetName": "string",
+      "datasetURI": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1609095144051
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

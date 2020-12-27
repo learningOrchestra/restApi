@@ -1,7 +1,7 @@
 _id: spc_d13bad8869294d4cbb6c6a1cb6405bb0
 type: ApiSpec
 parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
-modified: 1608304258973
+modified: 1609095266845
 created: 1608230138068
 fileName: learningOrchestra
 contents: >+
@@ -10,5 +10,241 @@ contents: >+
   info:
     title: Learning Orchestra
     description: LearningOrchestra aims to facilitate the development of complex data mining workflows by seamlessly interfacing different data science tools and services. From a single interoperable Application Programming Interface (API), users can design their analytical pipelines and deploy them in an environment with the appropriate capabilities.
+    version: v1.0
+    contact:
+      url: https://github.com/learningOrchestra/learningOrchestra
+    license: 
+      name: "GPL-3.0"
+      url: "https://www.gnu.org/licenses/gpl-3.0.en.html"
 
+  servers:
+    - url: 'http://ip/api/learningOrchestra/v1'
+
+   
+  paths:
+    /dataset:
+      post:
+        tags:
+         - dataset
+        summary: Download a dataset from an URL
+        description: Insert a CSV into the database using a public URI with direct file download.
+        requestBody:
+          required: True
+          content:
+            application/json:
+             schema: 
+                  type: object
+                  properties:
+                    datasetName:
+                      type: string
+                    datasetURI:
+                      type: string
+             example:
+               {
+                 "datasetName": "titanic",
+                 "datasetURI": "www.somesite.com/path/to/dataset"
+               }
+        responses:
+          '201':
+            description: Return the location link from created dataset 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created dataset'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/dataset?titanicTrain?query={}&limit=10&skip=0'
+                  }
+          '406':
+            description: The datasetURI is invalid
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'Error log'
+                example: 
+                  {
+                  'result': 'invalid url'
+                  }
+          '409':
+              description: The datasetName already exists
+              content:
+                application/json:
+                  schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                  example: 
+                    {
+                    'result': 'duplicate file'
+                    }
+            
+      get:
+        tags:
+        - dataset
+        summary: List all datasets metadata
+        description: Returns an array of datasets metadata, where each dataset contains a metadata file.
+
+        responses:
+          '200':
+            description: An array of datasets metadata in result field
+            content:
+              application/json:
+                schema: 
+                    $ref: '#/components/schemas/datasetMetadata'
+                example:
+                   {
+                    'result': [
+                         {
+                            "fields": [
+                                "PassengerId",
+                                "Survived",
+                                "Pclass",
+                                "Name",
+                                "Sex",
+                                "Age",
+                                "SibSp",
+                                "Parch",
+                                "Ticket",
+                                "Fare",
+                                "Cabin",
+                                "Embarked"
+                            ],
+                            "datasetName": "titanicTraining",
+                            "finished": true,
+                            "type": "dataset",
+                            "timeCreated": "2020-07-28T22:16:10-00:00",
+                            "url": "https://filebin.net/rpfdy8clm5984a4c/titanic_training.csv?t=gcnjz1yo"
+                        }
+                      ]
+                    }
+                  
+    /dataset/{datasetName}:
+      get:
+        tags:
+           - dataset
+        summary: List the dataset content
+        description:  Returns rows of the dataset requested, with pagination, the first row in the query is always the metadata file.
+        parameters:
+          - name: datasetName
+            in: path
+            required: true
+            description: the id of dataset.
+            schema:
+              type : string
+          - name: skip
+            in: query
+            required: true
+            description: the amount of rows to skip in pagination.
+            schema:
+              type : number
+          - name: limit
+            in: query
+            required: true
+            description: the amount of rows to limit after skipped rows in pagination, maximum limit to 20 rows.
+            schema:
+              type : number
+          - name: query
+            in: query
+            required: true
+            description: Query to find documents, if only pagination is requested, query should be empty curly brackets query={}.
+            schema:
+              type : string
+
+        responses:
+          '200':
+            description: The paginated rows of a dataset
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: array
+                       description: 'The rows from requested dataset'
+                  example:
+                    {
+                      "result": [
+                        {
+                          "Age": "35",
+                          "Cabin": "",
+                          "Embarked": "S",
+                          "Fare": "8.05",
+                          "Name": "Allen, Mr. William Henry",
+                          "Parch": "0",
+                          "PassengerId": "5",
+                          "Pclass": "3",
+                          "Sex": "male",
+                          "SibSp": "0",
+                          "Survived": "0",
+                          "Ticket": "373450",
+                          "_id": 5
+                        }
+                      ]
+                    }
+        
+      delete:
+        tags:
+           - dataset
+        summary: Delete a inserted dataset
+        description:  Delete an existent dataset in the database.
+        parameters:
+          - name: datasetName
+            in: path
+            required: true
+            description: the id of dataset.
+            schema:
+              type : string
+        responses:
+          '200':
+            description: Return the location link from created dataset 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created dataset'
+                example: 
+                  {'result': 'deleted file'}
+  components:
+    schemas:
+      datasetMetadata:
+        type: array
+        properties:
+         fields:
+           type: array
+           description: 'The dataset fields'
+         datasetName:
+           type: string
+           description: 'The identification name of dataset'
+         finished:
+           type: bool
+           description: 'A flag with request processing status'
+         type:
+           type: string
+           description: 'the entity which dataset belongs'
+         timeCreated:
+           type: string
+           description: "A string whit formated time"
+         url:
+           type: string
+           description: "The URL used to download this dataset"
+    examples:
+        
+
+
+
+      
+    
 contentType: yaml

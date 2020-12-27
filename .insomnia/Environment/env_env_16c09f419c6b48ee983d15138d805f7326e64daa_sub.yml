@@ -1,0 +1,14 @@
+_id: env_env_16c09f419c6b48ee983d15138d805f7326e64daa_sub
+type: Environment
+parentId: env_16c09f419c6b48ee983d15138d805f7326e64daa
+modified: 1609095235232
+created: 1609069728725
+name: OpenAPI env
+data:
+  scheme: http
+  base_path: /api/learningOrchestra/v1
+  host: ip
+dataPropertyOrder: null
+color: null
+isPrivate: false
+metaSortKey: 1609069728725
