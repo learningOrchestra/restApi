@@ -1,7 +1,7 @@
 _id: req_5722e345e27549c291170211eeea4e4a
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1608293520954
+modified: 1608737066466
 created: 1608230132530
 url: "{{IP}}/api/learningOrchestra/v1/model/default"
 name: Create a model
@@ -11,15 +11,11 @@ body:
   mimeType: application/json
   text: |-
     {
-    	"modelName": "modelName",
+    	"modelName": "svm3",
     	"description": "Some description",
-    	"tool": "the name tool (sklearn, tensorFlow)",
-    	"function": "the.function.path",
-    	"functionParameters": {
-    		"param1": "value",
-    		"param2": "value",
-    		"paramN": "value"
-    	}
+    	"modulePath": "sklearn.ensemble",
+    	"class": "RandomForestClassifier",
+    	"classParameters": {}
     }
 parameters: []
 headers:

@@ -1,18 +1,17 @@
-_id: req_cde71e41ca14428d99b678ca6aea34cc
+_id: req_79ea69d25b0d4225a4cfc8cf7a3fe764
 type: Request
-parentId: fld_6677497941da455a8f5e1c04fb524610
-modified: 1608714628164
-created: 1608230132608
-url: "{{IP}}/api/learningOrchestra/v1/dataset/{{ filename
-  }}?query={}&limit=0&skip=0"
-name: read a dataset
+parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
+modified: 1608737205785
+created: 1608737182980
+url: "{{IP}}/api/learningOrchestra/v1/model/default/{{modelName}}"
+name: read a model
 description: ""
 method: GET
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1608230132608
+metaSortKey: -1608230132528
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

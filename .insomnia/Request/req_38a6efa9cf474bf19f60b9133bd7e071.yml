@@ -1,10 +1,10 @@
 _id: req_38a6efa9cf474bf19f60b9133bd7e071
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1608279193025
+modified: 1608724518303
 created: 1608230132527
-url: "{{IP}}/api/learningOrchestra/v1/model/default/tool"
-name: read all tools
+url: "{{IP}}/api/learningOrchestra/v1/model/default/package"
+name: read all available packages
 description: ""
 method: GET
 body: {}
