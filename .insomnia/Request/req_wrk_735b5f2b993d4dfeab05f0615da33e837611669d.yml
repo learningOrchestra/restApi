@@ -1,17 +1,17 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83e104b964
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e837611669d
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376f747de
-modified: 1609751768143
-created: 1609069784159
-url: "{{ base_url }}/dataset"
-name: List all datasets metadata
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83a00ee1c2
+modified: 1609751767533
+created: 1609686930099
+url: "{{ base_url }}/explore/pca"
+name: Read the names of the created plots
 description: ""
 method: GET
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1609069784159
+metaSortKey: -1609686930099
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

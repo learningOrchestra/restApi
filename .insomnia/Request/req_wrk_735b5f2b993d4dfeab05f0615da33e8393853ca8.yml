@@ -1,9 +1,9 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83d394e178
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8393853ca8
 type: Request
 parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376f747de
-modified: 1609751768116
-created: 1609095144032
-url: "{{ base_url }}/dataset/{{ datasetName }}"
+modified: 1609933340188
+created: 1609933256339
+url: "{{ base_url }}/api/learningOrchestra/v1/dataset/{{ datasetName }}"
 name: List the dataset content
 description: ""
 method: GET
@@ -20,7 +20,7 @@ parameters:
     value: string
 headers: []
 authentication: {}
-metaSortKey: -1609095144032
+metaSortKey: -1609933256339
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

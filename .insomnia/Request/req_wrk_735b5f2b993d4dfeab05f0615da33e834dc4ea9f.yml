@@ -1,17 +1,17 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83bde3507c
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e834dc4ea9f
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376f747de
-modified: 1609751768078
-created: 1609095144016
-url: "{{ base_url }}/dataset/{{ datasetName }}"
-name: Delete a inserted dataset
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376b33a04
+modified: 1609751767953
+created: 1609686930234
+url: "{{ base_url }}/tranform/projection/{{ projectionName }}"
+name: Delete a created projection
 description: ""
 method: DELETE
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1609095144016
+metaSortKey: -1609686930234
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

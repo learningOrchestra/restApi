@@ -1,7 +1,7 @@
 _id: env_e4dca6566a2243b4a13be8c05b90dc82
 type: Environment
 parentId: env_16c09f419c6b48ee983d15138d805f7326e64daa
-modified: 1609607562219
+modified: 1609845011832
 created: 1608277672864
 name: Gabriel
 data:
@@ -13,7 +13,7 @@ data:
   tsneFilename: filename
   pcaFilename: filename
   packageName: toolName
-  modelName: svm15
+  modelName: gradientBoost2
 dataPropertyOrder:
   "&":
     - IP

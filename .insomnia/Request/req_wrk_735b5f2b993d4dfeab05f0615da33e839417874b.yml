@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e839417874b
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f52318a0
+modified: 1609933339805
+created: 1609933255901
+url: "{{ base_url }}/api/learningOrchestra/v1/builder"
+name: List all builder predictions metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1609933255901
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

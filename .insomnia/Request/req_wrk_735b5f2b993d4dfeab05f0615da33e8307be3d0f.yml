@@ -1,25 +1,26 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83335c14b1
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8307be3d0f
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376f747de
-modified: 1609751768156
-created: 1609095144051
-url: "{{ base_url }}/dataset"
-name: Download a dataset from an URL
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83a00ee1c2
+modified: 1609933339855
+created: 1609933256002
+url: "{{ base_url }}/api/learningOrchestra/v1/explore/pca"
+name: Create an image plot.
 description: ""
 method: POST
 body:
   mimeType: application/json
   text: |-
     {
-      "datasetName": "string",
-      "datasetURI": "string"
+      "inputDatasetName": "string",
+      "outputPlotName": "string",
+      "label": "string"
     }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
 authentication: {}
-metaSortKey: -1609095144051
+metaSortKey: -1609933256002
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

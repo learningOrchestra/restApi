@@ -1,0 +1,38 @@
+_id: req_e4c54f12cb8647d5bc89080884923c9e
+type: Request
+parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
+modified: 1609847057059
+created: 1609847028946
+url: "{{IP}}/api/learningOrchestra/v1/model/default/execution"
+name: execute a model
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |
+    
+    	{
+    		"modelName": "gradientBoost2",
+    		"methods": {
+    			"some.method": {
+    				"a": 1
+    			},
+    			"some.method2": {
+    			"b": 2
+    		}
+    		}
+    	}
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_2f41ed1a60514a21a7426268d288c028
+authentication: {}
+metaSortKey: -1609847028946
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,12 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376b33a04
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1609933340386
+created: 1609686930400
+name: projection
+description: The projection resource makes a projection from dataset inserted in
+  dataset resource, generating a new dataset, and also manages this generated
+  dataset.
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1609686930400

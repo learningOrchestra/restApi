@@ -1,10 +1,10 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83d394e178
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83ab880e52
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376f747de
-modified: 1609751768116
-created: 1609095144032
-url: "{{ base_url }}/dataset/{{ datasetName }}"
-name: List the dataset content
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83b48e3038
+modified: 1609751767830
+created: 1609686930180
+url: "{{ base_url }}/explore/histogram/{{ histogramName }}"
+name: Returns rows of the histogram requested, with pagination.
 description: ""
 method: GET
 body: {}
@@ -20,7 +20,7 @@ parameters:
     value: string
 headers: []
 authentication: {}
-metaSortKey: -1609095144032
+metaSortKey: -1609686930180
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

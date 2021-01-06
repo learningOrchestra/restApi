@@ -1,7 +1,7 @@
 _id: spc_d13bad8869294d4cbb6c6a1cb6405bb0
 type: ApiSpec
 parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
-modified: 1609689913047
+modified: 1609933340535
 created: 1608230138068
 fileName: learningOrchestra
 contents: >+
@@ -18,13 +18,13 @@ contents: >+
       url: "https://www.gnu.org/licenses/gpl-3.0.en.html"
 
   servers:
-    - url: 'http://ip/api/learningOrchestra/v1'
+    - url: 'http://ip'
 
 
 
    
   paths:
-    /dataset:
+    /api/learningOrchestra/v1/dataset:
       post:
         tags:
          - dataset
@@ -130,7 +130,7 @@ contents: >+
                       ]
                     }
                   
-    /dataset/{datasetName}:
+    /api/learningOrchestra/v1/dataset/{datasetName}:
       get:
         tags:
            - dataset
@@ -222,7 +222,7 @@ contents: >+
                 example: 
                   {'result': 'deleted file'}
                   
-    /tranform/projection:
+    /api/learningOrchestra/v1/tranform/projection:
         post:
           tags:
            - projection
@@ -344,7 +344,7 @@ contents: >+
                             }
                           ]
                         }  
-    /tranform/projection/{projectionName}:
+    /api/learningOrchestra/v1/tranform/projection/{projectionName}:
       get:
         tags:
            - projection
@@ -429,7 +429,7 @@ contents: >+
                 example: 
                   {'result': 'deleted file'}
 
-    /tranform/dataType:
+    /api/learningOrchestra/v1/tranform/dataType:
         patch:
           tags:
            - dataType
@@ -502,7 +502,7 @@ contents: >+
                           'result': 'unfinished processing in input dataset'
                         }
 
-    /explore/histogram:
+    /api/learningOrchestra/v1/explore/histogram:
           post:
             tags:
              - histogram
@@ -624,7 +624,7 @@ contents: >+
                               }
                             ]
                           }  
-    /explore/histogram/{histogramName}:
+    /api/learningOrchestra/v1/explore/histogram/{histogramName}:
       get:
         tags:
            - histogram
@@ -709,7 +709,7 @@ contents: >+
                 example: 
                   {'result': 'deleted file'}
 
-    /explore/tsne:
+    /api/learningOrchestra/v1/explore/tsne:
           post:
             tags:
              - t-SNE
@@ -823,7 +823,7 @@ contents: >+
                                "imagePlotTwo"
                                ]
                           }  
-    /explore/tsne/{plotName}:
+    /api/learningOrchestra/v1/explore/tsne/{plotName}:
       get:
         tags:
            - t-SNE
@@ -905,7 +905,7 @@ contents: >+
                   
                  
              
-    /explore/pca:
+    /api/learningOrchestra/v1/explore/pca:
           post:
             tags:
              - PCA
@@ -1019,7 +1019,7 @@ contents: >+
                                "imagePlotTwo"
                                ]
                           }  
-    /explore/pca/{plotName}:
+    /api/learningOrchestra/v1/explore/pca/{plotName}:
       get:
         tags:
            - PCA
@@ -1099,7 +1099,7 @@ contents: >+
                     'result': "plot name doesn't found"
                   }
 
-    /builder:
+    /api/learningOrchestra/v1/builder:
         post:
           tags:
            - builder
@@ -1333,7 +1333,7 @@ contents: >+
                             }
                           ]
                         }  
-    /builder/{predictionName}:
+    /api/learningOrchestra/v1/builder/{predictionName}:
       get:
         tags:
            - builder

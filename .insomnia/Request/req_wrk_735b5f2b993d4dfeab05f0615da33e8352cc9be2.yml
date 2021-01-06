@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8352cc9be2
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83a00ee1c2
+modified: 1609933339835
+created: 1609933255965
+url: "{{ base_url }}/api/learningOrchestra/v1/explore/pca/{{ plotName }}"
+name: Read an image plot
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1609933255965
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

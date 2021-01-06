@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e837c67f131
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376b33a04
+modified: 1609933340121
+created: 1609933256242
+url: "{{ base_url }}/api/learningOrchestra/v1/tranform/projection"
+name: List all projections metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1609933256242
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

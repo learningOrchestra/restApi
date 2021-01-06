@@ -1,0 +1,22 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83355b6bb0
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376b33a04
+modified: 1609933340084
+created: 1609933256186
+url: "{{ base_url }}/api/learningOrchestra/v1/tranform/projection/{{
+  projectionName }}"
+name: Delete a created projection
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1609933256186
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

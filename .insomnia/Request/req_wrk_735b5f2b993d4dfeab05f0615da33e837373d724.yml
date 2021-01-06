@@ -1,17 +1,17 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83bde3507c
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e837373d724
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376f747de
-modified: 1609751768078
-created: 1609095144016
-url: "{{ base_url }}/dataset/{{ datasetName }}"
-name: Delete a inserted dataset
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f52318a0
+modified: 1609751767157
+created: 1609689912466
+url: "{{ base_url }}/builder/{{ predictionName }}"
+name: Delete a created prediction
 description: ""
 method: DELETE
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1609095144016
+metaSortKey: -1609689912466
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

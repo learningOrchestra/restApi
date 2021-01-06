@@ -1,25 +1,25 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83335c14b1
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8327b80bcf
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376f747de
-modified: 1609751768156
-created: 1609095144051
-url: "{{ base_url }}/dataset"
-name: Download a dataset from an URL
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83edb7da5c
+modified: 1609751767938
+created: 1609686930222
+url: "{{ base_url }}/tranform/dataType"
+name: Change the type of fields from a resource
 description: ""
-method: POST
+method: PATCH
 body:
   mimeType: application/json
   text: |-
     {
-      "datasetName": "string",
-      "datasetURI": "string"
+      "inputDatasetName": "string",
+      "types": {}
     }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
 authentication: {}
-metaSortKey: -1609095144051
+metaSortKey: -1609686930222
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

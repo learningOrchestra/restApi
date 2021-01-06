@@ -1,17 +1,17 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83e104b964
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e831e77dbb7
 type: Request
 parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376f747de
-modified: 1609751768143
-created: 1609069784159
-url: "{{ base_url }}/dataset"
-name: List all datasets metadata
+modified: 1609933340164
+created: 1609933256305
+url: "{{ base_url }}/api/learningOrchestra/v1/dataset/{{ datasetName }}"
+name: Delete a inserted dataset
 description: ""
-method: GET
+method: DELETE
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1609069784159
+metaSortKey: -1609933256305
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
