@@ -1,7 +1,7 @@
 _id: spc_d13bad8869294d4cbb6c6a1cb6405bb0
 type: ApiSpec
 parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
-modified: 1610661302385
+modified: 1610662642407
 created: 1608230138068
 fileName: learningOrchestra
 contents: >+
@@ -1738,7 +1738,7 @@ contents: >+
                       description: The name id to identify the instance
                     description:
                       type: string
-                      description: Some description of model instance
+                      description: Some description of instance
                     method:
                       type: string
                       description: The method to use from class object
@@ -1893,7 +1893,7 @@ contents: >+
               type : string
         responses:
           '201':
-            description: Return the location link from created train 
+            description: Return the location link from created instance 
             content:
               application/json:
                 schema: 
@@ -1901,7 +1901,7 @@ contents: >+
                   properties:
                      result:
                        type: string
-                       description: 'The location from created train'
+                       description: 'The location from created instance'
                 example: 
                   {
                   'result': '/api/learningOrchestra/v1/train?MultiTaskLasso?query={}&limit=10&skip=0'
@@ -1918,10 +1918,10 @@ contents: >+
                          type: string
                          description: 'Error log'
                 examples:
-                  nonexistent model filename:
+                  nonexistent filename:
                     value:
                       {
-                        'result': 'duplicated model name'
+                        'result': 'duplicated name'
                       }
                   invalid class method parameter:
                     value:
@@ -2024,6 +2024,930 @@ contents: >+
                 example: 
                   {'result': 'deleted file'}
 
+    /api/learningOrchestra/v1/tune:
+      post:
+        tags:
+         - tune
+        summary: toDO
+        description: toDO
+        requestBody:
+          required: True
+          content:
+            application/json:
+             schema: 
+                  type: object
+                  properties:
+                    parentName:
+                      type: string
+                      description: The name id of object to use
+                    name:
+                      type: string
+                      description: The name id to identify the instance
+                    description:
+                      type: string
+                      description: Some description of instance
+                    method:
+                      type: string
+                      description: The method to use from class object
+                    methodParameters:
+                      type: object
+                      description: An object with key:value parameters names and values
+                    
+             example:
+                {
+                  "parentName": "MultiTaskLasso",
+                  "name": "MultiTaskLasso",
+                  "description": "some description",
+                  "method": "fit",
+                  "methodParameters": {
+                              "X": [[0, 1], [1, 2], [2, 4]],
+                              "y": [[0, 0], [1, 1], [2, 3]]
+                  }
+                }
+        responses:
+          '201':
+            description: Return the location link from created resource 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created resource'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/tune?MultiTaskLasso?query={}&limit=10&skip=0'
+                  }
+                  
+          '406':
+            description: There are conflicts with request data
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                examples:
+                  invalid parent name:
+                    value:
+                      {
+                        'result': "parentName doesn't exist"
+                      }
+                  invalid class method name:
+                    value:
+                      {
+                        'result': 'invalid class method parameter'
+                      }
+                  invalid method name:
+                    value:
+                      {
+                        'result': 'invalid method name'
+                      }
+                  invalid module path name:
+                    value:
+                      {
+                        'result': 'invalid module path name'
+                      }
+          '409':
+              description: The name already exists
+              content:
+                application/json:
+                  schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                  example: 
+                    {
+                    'result': 'duplicated name'
+                    }
+            
+      get:
+        tags:
+        - tune
+        summary: List all tunes metadata
+        description: Returns an array of tunes metadata, where each train contains a metadata file.
+
+        responses:
+          '200':
+            description: An array of train metadata in result field
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                    result:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                         finished:
+                           type: boolean
+                           description: 'A flag with request processing status'
+                         method:
+                           type: string
+                           description: 'The used method from class object'
+                         name:
+                           type: string
+                           description: 'The identification name of this instance'
+                         parentName:
+                           type: string
+                           description: "The name from parent instance"
+                         timeCreated:
+                           type: string
+                           description: "A string whit formated time"
+                         type:
+                           type: string
+                           description: 'the entity which dataset belongs'
+                example:
+                   {
+                    'result': [
+                                {
+                                  "finished": false,
+                                  "method": "fit",
+                                  "name": "fitGradientBoost10",
+                                  "parentName": "gradientBoost2",
+                                  "timeCreated": "2021-01-10T10:20:27-00:00",
+                                  "type": "train"
+                                },
+                                {
+                                  "finished": false,
+                                  "method": "path",
+                                  "name": "linearModel2",
+                                  "parentName": "linearModel",
+                                  "timeCreated": "2021-01-13T13:36:03-00:00",
+                                  "type": "train"
+                                }
+                        ]
+                    }
+                  
+    /api/learningOrchestra/v1/tune/{name}:
+      patch:
+        tags:
+           - tune
+        summary: update a tune instance
+        description:  Update the execution with new parameters in method call
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the id of instance.
+            schema:
+              type : string
+        responses:
+          '201':
+            description: Return the location link from created instance 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created instance'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/tune?MultiTaskLasso?query={}&limit=10&skip=0'
+                  }
+                  
+          '406':
+            description: There are conflicts with request data
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                examples:
+                  nonexistent filename:
+                    value:
+                      {
+                        'result': 'duplicated name'
+                      }
+                  invalid class method parameter:
+                    value:
+                      {
+                        'result': "invalid class method parameter"
+                      }
+                    
+      get:
+        tags:
+           - tune
+        summary: List the tune metadata executions
+        description:  Returns rows of the requested train, with pagination, the first row in the query is always the metadata file from train instance,
+          other lines are the PATCH request metadata from updated train instances
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the name id of instance.
+            schema:
+              type : string
+          - name: skip
+            in: query
+            required: true
+            description: the amount of rows to skip in pagination.
+            schema:
+              type : number
+          - name: limit
+            in: query
+            required: true
+            description: the amount of rows to limit after skipped rows in pagination, maximum limit to 20 rows.
+            schema:
+              type : number
+          - name: query
+            in: query
+            required: true
+            description: Query to find documents, if only pagination is requested, query should be empty curly brackets query={}.
+            schema:
+              type : string
+
+        responses:
+          '200':
+            description: The paginated documents of a instance
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: array
+                       items: 
+                         type: object
+                       description: 'The metadata executions from requested instance'
+                  example:
+                    {
+                      "result": [
+                                  {
+                                    "_id": 0,
+                                    "finished": true,
+                                    "method": "fit",
+                                    "name": "MultiTaskLasso3",
+                                    "parentName": "MultiTaskLasso",
+                                    "timeCreated": "2021-01-13T18:36:42-00:00",
+                                    "type": "train"
+                                  },
+                                  {
+                                    "_id": 1,
+                                    "description": "some description",
+                                    "exception": null,
+                                    "methodParameters": {
+                                                        "X": [[0,1],[1,2],[2,4]],
+                                                        "y": [[0,0],[1,1],[2,3]]
+                                                        }
+                                   }
+                                ]
+                    }
+                        
+      delete:
+        tags:
+           - tune
+        summary: Delete a tune instance
+        description:  Delete an existent tune instance.
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the id of instance.
+            schema:
+              type : string
+        responses:
+          '200':
+            description: Return the success message from deletion request
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The message from delete status'
+                example: 
+                  {'result': 'deleted file'}
+
+    /api/learningOrchestra/v1/predict:
+      post:
+        tags:
+         - predict
+        summary: toDO
+        description: toDO
+        requestBody:
+          required: True
+          content:
+            application/json:
+             schema: 
+                  type: object
+                  properties:
+                    parentName:
+                      type: string
+                      description: The name id of object to use
+                    name:
+                      type: string
+                      description: The name id to identify the instance
+                    description:
+                      type: string
+                      description: Some description of instance
+                    method:
+                      type: string
+                      description: The method to use from class object
+                    methodParameters:
+                      type: object
+                      description: An object with key:value parameters names and values
+                    
+             example:
+                {
+                  "parentName": "MultiTaskLasso",
+                  "name": "MultiTaskLasso",
+                  "description": "some description",
+                  "method": "fit",
+                  "methodParameters": {
+                              "X": [[0, 1], [1, 2], [2, 4]],
+                              "y": [[0, 0], [1, 1], [2, 3]]
+                  }
+                }
+        responses:
+          '201':
+            description: Return the location link from created resource 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created resource'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/tune?MultiTaskLasso?query={}&limit=10&skip=0'
+                  }
+                  
+          '406':
+            description: There are conflicts with request data
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                examples:
+                  invalid parent name:
+                    value:
+                      {
+                        'result': "parentName doesn't exist"
+                      }
+                  invalid class method name:
+                    value:
+                      {
+                        'result': 'invalid class method parameter'
+                      }
+                  invalid method name:
+                    value:
+                      {
+                        'result': 'invalid method name'
+                      }
+                  invalid module path name:
+                    value:
+                      {
+                        'result': 'invalid module path name'
+                      }
+          '409':
+              description: The name already exists
+              content:
+                application/json:
+                  schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                  example: 
+                    {
+                    'result': 'duplicated name'
+                    }
+            
+      get:
+        tags:
+        - predict
+        summary: List all predicts metadata
+        description: Returns an array of predicts metadata, where each train contains a metadata file.
+
+        responses:
+          '200':
+            description: An array of predicts metadata in result field
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                    result:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                         finished:
+                           type: boolean
+                           description: 'A flag with request processing status'
+                         method:
+                           type: string
+                           description: 'The used method from class object'
+                         name:
+                           type: string
+                           description: 'The identification name of this instance'
+                         parentName:
+                           type: string
+                           description: "The name from parent instance"
+                         timeCreated:
+                           type: string
+                           description: "A string whit formated time"
+                         type:
+                           type: string
+                           description: 'the entity which dataset belongs'
+                example:
+                   {
+                    'result': [
+                                {
+                                  "finished": false,
+                                  "method": "fit",
+                                  "name": "fitGradientBoost10",
+                                  "parentName": "gradientBoost2",
+                                  "timeCreated": "2021-01-10T10:20:27-00:00",
+                                  "type": "train"
+                                },
+                                {
+                                  "finished": false,
+                                  "method": "path",
+                                  "name": "linearModel2",
+                                  "parentName": "linearModel",
+                                  "timeCreated": "2021-01-13T13:36:03-00:00",
+                                  "type": "train"
+                                }
+                        ]
+                    }
+                  
+    /api/learningOrchestra/v1/predict/{name}:
+      patch:
+        tags:
+           - predict
+        summary: update a predict instance
+        description:  Update the execution with new parameters in method call
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the id of instance.
+            schema:
+              type : string
+        responses:
+          '201':
+            description: Return the location link from created instance 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created instance'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/tune?MultiTaskLasso?query={}&limit=10&skip=0'
+                  }
+                  
+          '406':
+            description: There are conflicts with request data
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                examples:
+                  nonexistent filename:
+                    value:
+                      {
+                        'result': 'duplicated name'
+                      }
+                  invalid class method parameter:
+                    value:
+                      {
+                        'result': "invalid class method parameter"
+                      }
+                    
+      get:
+        tags:
+           - predict
+        summary: List the predict metadata executions
+        description:  Returns rows of the requested train, with pagination, the first row in the query is always the metadata file from train instance,
+          other lines are the PATCH request metadata from updated train instances
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the name id of instance.
+            schema:
+              type : string
+          - name: skip
+            in: query
+            required: true
+            description: the amount of rows to skip in pagination.
+            schema:
+              type : number
+          - name: limit
+            in: query
+            required: true
+            description: the amount of rows to limit after skipped rows in pagination, maximum limit to 20 rows.
+            schema:
+              type : number
+          - name: query
+            in: query
+            required: true
+            description: Query to find documents, if only pagination is requested, query should be empty curly brackets query={}.
+            schema:
+              type : string
+
+        responses:
+          '200':
+            description: The paginated documents of a instance
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: array
+                       items: 
+                         type: object
+                       description: 'The metadata executions from requested instance'
+                  example:
+                    {
+                      "result": [
+                                  {
+                                    "_id": 0,
+                                    "finished": true,
+                                    "method": "fit",
+                                    "name": "MultiTaskLasso3",
+                                    "parentName": "MultiTaskLasso",
+                                    "timeCreated": "2021-01-13T18:36:42-00:00",
+                                    "type": "train"
+                                  },
+                                  {
+                                    "_id": 1,
+                                    "description": "some description",
+                                    "exception": null,
+                                    "methodParameters": {
+                                                        "X": [[0,1],[1,2],[2,4]],
+                                                        "y": [[0,0],[1,1],[2,3]]
+                                                        }
+                                   }
+                                ]
+                    }
+                        
+      delete:
+        tags:
+           - predict
+        summary: Delete a predict instance
+        description:  Delete an existent tune instance.
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the id of instance.
+            schema:
+              type : string
+        responses:
+          '200':
+            description: Return the success message from deletion request
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The message from delete status'
+                example: 
+                  {'result': 'deleted file'}
+
+
+    /api/learningOrchestra/v1/evaluate:
+      post:
+        tags:
+         - evaluate
+        summary: toDO
+        description: toDO
+        requestBody:
+          required: True
+          content:
+            application/json:
+             schema: 
+                  type: object
+                  properties:
+                    parentName:
+                      type: string
+                      description: The name id of object to use
+                    name:
+                      type: string
+                      description: The name id to identify the instance
+                    description:
+                      type: string
+                      description: Some description of instance
+                    method:
+                      type: string
+                      description: The method to use from class object
+                    methodParameters:
+                      type: object
+                      description: An object with key:value parameters names and values
+                    
+             example:
+                {
+                  "parentName": "MultiTaskLasso",
+                  "name": "MultiTaskLasso",
+                  "description": "some description",
+                  "method": "fit",
+                  "methodParameters": {
+                              "X": [[0, 1], [1, 2], [2, 4]],
+                              "y": [[0, 0], [1, 1], [2, 3]]
+                  }
+                }
+        responses:
+          '201':
+            description: Return the location link from created resource 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created resource'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/tune?MultiTaskLasso?query={}&limit=10&skip=0'
+                  }
+                  
+          '406':
+            description: There are conflicts with request data
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                examples:
+                  invalid parent name:
+                    value:
+                      {
+                        'result': "parentName doesn't exist"
+                      }
+                  invalid class method name:
+                    value:
+                      {
+                        'result': 'invalid class method parameter'
+                      }
+                  invalid method name:
+                    value:
+                      {
+                        'result': 'invalid method name'
+                      }
+                  invalid module path name:
+                    value:
+                      {
+                        'result': 'invalid module path name'
+                      }
+          '409':
+              description: The name already exists
+              content:
+                application/json:
+                  schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                  example: 
+                    {
+                    'result': 'duplicated name'
+                    }
+            
+      get:
+        tags:
+        - evaluate
+        summary: List all evaluates metadata
+        description: Returns an array of evaluates metadata, where each train contains a metadata file.
+
+        responses:
+          '200':
+            description: An array of train metadata in result field
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                    result:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                         finished:
+                           type: boolean
+                           description: 'A flag with request processing status'
+                         method:
+                           type: string
+                           description: 'The used method from class object'
+                         name:
+                           type: string
+                           description: 'The identification name of this instance'
+                         parentName:
+                           type: string
+                           description: "The name from parent instance"
+                         timeCreated:
+                           type: string
+                           description: "A string whit formated time"
+                         type:
+                           type: string
+                           description: 'the entity which dataset belongs'
+                example:
+                   {
+                    'result': [
+                                {
+                                  "finished": false,
+                                  "method": "fit",
+                                  "name": "fitGradientBoost10",
+                                  "parentName": "gradientBoost2",
+                                  "timeCreated": "2021-01-10T10:20:27-00:00",
+                                  "type": "train"
+                                },
+                                {
+                                  "finished": false,
+                                  "method": "path",
+                                  "name": "linearModel2",
+                                  "parentName": "linearModel",
+                                  "timeCreated": "2021-01-13T13:36:03-00:00",
+                                  "type": "train"
+                                }
+                        ]
+                    }
+                  
+    /api/learningOrchestra/v1/evaluate/{name}:
+      patch:
+        tags:
+           - evaluate
+        summary: update a evaluate instance
+        description:  Update the execution with new parameters in method call
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the id of instance.
+            schema:
+              type : string
+        responses:
+          '201':
+            description: Return the location link from created instance 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created instance'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/tune?MultiTaskLasso?query={}&limit=10&skip=0'
+                  }
+                  
+          '406':
+            description: There are conflicts with request data
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                examples:
+                  nonexistent filename:
+                    value:
+                      {
+                        'result': 'duplicated name'
+                      }
+                  invalid class method parameter:
+                    value:
+                      {
+                        'result': "invalid class method parameter"
+                      }
+                    
+      get:
+        tags:
+           - evaluate
+        summary: List the evaluate metadata executions
+        description:  Returns rows of the requested train, with pagination, the first row in the query is always the metadata file from train instance,
+          other lines are the PATCH request metadata from updated train instances
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the name id of instance.
+            schema:
+              type : string
+          - name: skip
+            in: query
+            required: true
+            description: the amount of rows to skip in pagination.
+            schema:
+              type : number
+          - name: limit
+            in: query
+            required: true
+            description: the amount of rows to limit after skipped rows in pagination, maximum limit to 20 rows.
+            schema:
+              type : number
+          - name: query
+            in: query
+            required: true
+            description: Query to find documents, if only pagination is requested, query should be empty curly brackets query={}.
+            schema:
+              type : string
+
+        responses:
+          '200':
+            description: The paginated documents of a instance
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: array
+                       items: 
+                         type: object
+                       description: 'The metadata executions from requested instance'
+                  example:
+                    {
+                      "result": [
+                                  {
+                                    "_id": 0,
+                                    "finished": true,
+                                    "method": "fit",
+                                    "name": "MultiTaskLasso3",
+                                    "parentName": "MultiTaskLasso",
+                                    "timeCreated": "2021-01-13T18:36:42-00:00",
+                                    "type": "train"
+                                  },
+                                  {
+                                    "_id": 1,
+                                    "description": "some description",
+                                    "exception": null,
+                                    "methodParameters": {
+                                                        "X": [[0,1],[1,2],[2,4]],
+                                                        "y": [[0,0],[1,1],[2,3]]
+                                                        }
+                                   }
+                                ]
+                    }
+                        
+      delete:
+        tags:
+           - evaluate
+        summary: Delete a evaluate instance
+        description:  Delete an existent evaluate instance.
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the id of instance.
+            schema:
+              type : string
+        responses:
+          '200':
+            description: Return the success message from deletion request
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The message from delete status'
+                example: 
+                  {'result': 'deleted file'}
+
+                  
+
                   
   tags:
     - name: dataset
@@ -2048,6 +2972,12 @@ contents: >+
       description: The model resource creates models instances from most popular python libraries like scikit-learn and TensorFlow.
     - name: train
       description: Train a model instance with methods availabes from model object
+    - name: tune
+      description: Tune an instance \toDO
+    - name: predict
+      description: predict an instance \toDO
+    - name: evaluate
+      description: evaluate an instance \toDO
 
       
   components:
