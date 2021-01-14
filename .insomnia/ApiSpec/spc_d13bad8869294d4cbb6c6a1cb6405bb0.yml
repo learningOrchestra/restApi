@@ -1,7 +1,7 @@
 _id: spc_d13bad8869294d4cbb6c6a1cb6405bb0
 type: ApiSpec
 parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
-modified: 1610650295831
+modified: 1610661302385
 created: 1608230138068
 fileName: learningOrchestra
 contents: >+
@@ -1883,7 +1883,7 @@ contents: >+
         tags:
            - train
         summary: update a train instance
-        description:  Update the output from model class method with new parameters in method call
+        description:  Update the execution with new parameters in method call
         parameters:
           - name: name
             in: path
@@ -1977,46 +1977,26 @@ contents: >+
                   example:
                     {
                       "result": [
-                        {
-                          "_id": 0,
-                          "finished": true,
-                          "method": "fit",
-                          "name": "MultiTaskLasso3",
-                          "parentName": "MultiTaskLasso",
-                          "timeCreated": "2021-01-13T18:36:42-00:00",
-                          "type": "train"
-                        },
-                        {
-                          "_id": 1,
-                          "description": "some description",
-                          "exception": null,
-                          "methodParameters": {
-                                              "X": [
-                                                      [
-                                                        0,1
-                                                      ],
-                                                      [
-                                                        1,2
-                                                      ],
-                                                      [
-                                                        2,4
-                                                      ]
-                                              ],
-                                              "y": [
-                                                      [
-                                                        0,0
-                                                      ],
-                                                      [
-                                                        1,1
-                                                      ],
-                                                      [
-                                                        2,3
-                                                      ]
-                                                   ]
-                                              }
-                            }
-                          ]
-                       }
+                                  {
+                                    "_id": 0,
+                                    "finished": true,
+                                    "method": "fit",
+                                    "name": "MultiTaskLasso3",
+                                    "parentName": "MultiTaskLasso",
+                                    "timeCreated": "2021-01-13T18:36:42-00:00",
+                                    "type": "train"
+                                  },
+                                  {
+                                    "_id": 1,
+                                    "description": "some description",
+                                    "exception": null,
+                                    "methodParameters": {
+                                                        "X": [[0,1],[1,2],[2,4]],
+                                                        "y": [[0,0],[1,1],[2,3]]
+                                                        }
+                                   }
+                                ]
+                    }
                         
       delete:
         tags:
@@ -2043,10 +2023,6 @@ contents: >+
                        description: 'The message from delete status'
                 example: 
                   {'result': 'deleted file'}
-
-                  
-
-                  
 
                   
   tags:
