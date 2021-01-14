@@ -1,25 +1,23 @@
 _id: req_e4c54f12cb8647d5bc89080884923c9e
 type: Request
-parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1609847057059
+parentId: fld_a9d9b613217246e18b0c8a18d988ff18
+modified: 1610563001053
 created: 1609847028946
-url: "{{IP}}/api/learningOrchestra/v1/model/default/execution"
-name: execute a model
+url: "{{IP}}/api/learningOrchestra/v1/train"
+name: train a model
 description: ""
 method: POST
 body:
   mimeType: application/json
   text: |
-    
     	{
-    		"modelName": "gradientBoost2",
-    		"methods": {
-    			"some.method": {
-    				"a": 1
-    			},
-    			"some.method2": {
-    			"b": 2
-    		}
+    		"parentName": "MultiTaskLasso",
+    		"name": "MultiTaskLasso3",
+    		"description": "some description",
+    		"method": "fit",
+    		"methodParameters": {
+    								"X": [[0, 1], [1, 2], [2, 4]],
+    								"y": [[0, 0], [1, 1], [2, 3]]
     		}
     	}
 parameters: []

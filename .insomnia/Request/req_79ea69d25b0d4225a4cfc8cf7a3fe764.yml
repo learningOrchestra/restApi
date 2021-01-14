@@ -1,21 +1,16 @@
 _id: req_79ea69d25b0d4225a4cfc8cf7a3fe764
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1609847037217
+modified: 1609933662843
 created: 1608737182980
 url: "{{IP}}/api/learningOrchestra/v1/model/default/{{modelName}}?limit=10&skip\
   =0&query={}"
 name: read a model
 description: ""
 method: GET
-body:
-  mimeType: application/json
-  text: ""
+body: {}
 parameters: []
-headers:
-  - name: Content-Type
-    value: application/json
-    id: pair_f4e335df867c48a59d610f9fe9acac68
+headers: []
 authentication: {}
 metaSortKey: -1608230132528
 isPrivate: false

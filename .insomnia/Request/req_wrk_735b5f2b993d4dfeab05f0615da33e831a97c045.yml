@@ -1,12 +1,12 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83d394e178
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e831a97c045
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376f747de
-modified: 1609751768116
-created: 1609095144032
-url: "{{ base_url }}/dataset/{{ datasetName }}"
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831d06a0d7
+modified: 1610647047762
+created: 1610645646222
+url: "{{ base_url }}/api/learningOrchestra/v1/model/default/{{ datasetName }}"
 name: List the dataset content
 description: ""
-method: GET
+method: PATCH
 body: {}
 parameters:
   - name: skip
@@ -20,7 +20,7 @@ parameters:
     value: string
 headers: []
 authentication: {}
-metaSortKey: -1609095144032
+metaSortKey: -1610645646222
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

@@ -1,10 +1,10 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83a359a7ef
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83f7915f63
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f52318a0
-modified: 1609751767179
-created: 1609689912476
-url: "{{ base_url }}/builder/{{ predictionName }}"
-name: List builder dataset content
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1610649979185
+created: 1610648842760
+url: "{{ base_url }}/api/learningOrchestra/v1/train/{{ name }}"
+name: List the train metadata executions
 description: ""
 method: GET
 body: {}
@@ -20,7 +20,7 @@ parameters:
     value: string
 headers: []
 authentication: {}
-metaSortKey: -1609689912476
+metaSortKey: -1610648842760
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

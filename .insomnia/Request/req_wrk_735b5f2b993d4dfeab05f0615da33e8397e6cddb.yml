@@ -1,8 +1,8 @@
 _id: req_wrk_735b5f2b993d4dfeab05f0615da33e8397e6cddb
 type: Request
 parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83edb7da5c
-modified: 1609933340059
-created: 1609933256171
+modified: 1610649979822
+created: 1609933515233
 url: "{{ base_url }}/api/learningOrchestra/v1/tranform/dataType"
 name: Change the type of fields from a resource
 description: ""
@@ -19,7 +19,7 @@ headers:
   - name: Content-Type
     value: application/json
 authentication: {}
-metaSortKey: -1609933256171
+metaSortKey: -1609933515233
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

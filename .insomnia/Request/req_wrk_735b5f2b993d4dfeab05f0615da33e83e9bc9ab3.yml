@@ -1,10 +1,10 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e833c8a6f4f
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83e9bc9ab3
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376b33a04
-modified: 1609751767989
-created: 1609686930245
-url: "{{ base_url }}/tranform/projection/{{ projectionName }}"
-name: List the projection content
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831d06a0d7
+modified: 1610647047750
+created: 1610645373920
+url: "{{ base_url }}/api/learningOrchestra/v1/model/default/{{ datasetName }}"
+name: List the dataset content
 description: ""
 method: GET
 body: {}
@@ -20,7 +20,7 @@ parameters:
     value: string
 headers: []
 authentication: {}
-metaSortKey: -1609686930245
+metaSortKey: -1610645373920
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

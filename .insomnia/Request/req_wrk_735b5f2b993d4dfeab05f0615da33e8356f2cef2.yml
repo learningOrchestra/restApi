@@ -1,17 +1,17 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e837611669d
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8356f2cef2
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83a00ee1c2
-modified: 1609751767533
-created: 1609686930099
-url: "{{ base_url }}/explore/pca"
-name: Read the names of the created plots
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1610649979211
+created: 1610648842781
+url: "{{ base_url }}/api/learningOrchestra/v1/train"
+name: List all trains metadata
 description: ""
 method: GET
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1609686930099
+metaSortKey: -1610648842781
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

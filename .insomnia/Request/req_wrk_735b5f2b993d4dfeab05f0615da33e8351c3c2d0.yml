@@ -1,8 +1,8 @@
 _id: req_wrk_735b5f2b993d4dfeab05f0615da33e8351c3c2d0
 type: Request
 parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f52318a0
-modified: 1609933339777
-created: 1609933255859
+modified: 1610649979370
+created: 1609933515036
 url: "{{ base_url }}/api/learningOrchestra/v1/builder/{{ predictionName }}"
 name: Delete a created prediction
 description: ""
@@ -11,7 +11,7 @@ body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1609933255859
+metaSortKey: -1609933515036
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

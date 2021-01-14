@@ -1,25 +1,28 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8327b80bcf
+_id: req_b1aa16617ad7488589886483743fe1ad
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83edb7da5c
-modified: 1609751767938
-created: 1609686930222
-url: "{{ base_url }}/tranform/dataType"
-name: Change the type of fields from a resource
+parentId: fld_a9d9b613217246e18b0c8a18d988ff18
+modified: 1610539470114
+created: 1609933990269
+url: "{{IP}}/api/learningOrchestra/v1/train/{{trainName}}"
+name: Update a train
 description: ""
 method: PATCH
 body:
   mimeType: application/json
   text: |-
     {
-      "inputDatasetName": "string",
-      "types": {}
+    	"description": "get params",
+    	"methodParameters": {
+    				"get": 1
+    	}
     }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
+    id: pair_b3f2b9961f3f4c40ba16f9f2b84a66ee
 authentication: {}
-metaSortKey: -1609686930222
+metaSortKey: -1609847028896
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

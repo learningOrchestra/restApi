@@ -1,10 +1,10 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83ab880e52
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e834c9038ac
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83b48e3038
-modified: 1609751767830
-created: 1609686930180
-url: "{{ base_url }}/explore/histogram/{{ histogramName }}"
-name: Returns rows of the histogram requested, with pagination.
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831d06a0d7
+modified: 1610649979246
+created: 1610647107394
+url: "{{ base_url }}/api/learningOrchestra/v1/model/default/{{ modelName }}"
+name: List the model metadata executions
 description: ""
 method: GET
 body: {}
@@ -20,7 +20,7 @@ parameters:
     value: string
 headers: []
 authentication: {}
-metaSortKey: -1609686930180
+metaSortKey: -1610647107394
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

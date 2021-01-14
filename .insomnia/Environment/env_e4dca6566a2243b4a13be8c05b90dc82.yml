@@ -1,19 +1,20 @@
 _id: env_e4dca6566a2243b4a13be8c05b90dc82
 type: Environment
 parentId: env_16c09f419c6b48ee983d15138d805f7326e64daa
-modified: 1609845011832
+modified: 1610567687012
 created: 1608277672864
 name: Gabriel
 data:
   IP: 35.198.25.194
-  filename: svm
-  projectionFilename: filename
+  filename: testeJoubert100projtrain
+  projectionFilename: testeJoubert100projtrain2
   normalizationName: filename
   embeddingName: filename
   tsneFilename: filename
   pcaFilename: filename
   packageName: toolName
-  modelName: gradientBoost2
+  modelName: dsfsdfdf
+  trainName: MultiTaskLasso3
 dataPropertyOrder:
   "&":
     - IP
@@ -25,6 +26,7 @@ dataPropertyOrder:
     - pcaFilename
     - packageName
     - modelName
+    - trainName
 color: null
 isPrivate: false
 metaSortKey: 1608277672864

@@ -1,17 +1,17 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83195037ca
+_id: req_9587cd1adac141a8905677f4367515fb
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83b48e3038
-modified: 1609751767759
-created: 1609686930168
-url: "{{ base_url }}/explore/histogram/{{ histogramName }}"
-name: Delete a created histogram
+parentId: fld_a9d9b613217246e18b0c8a18d988ff18
+modified: 1610269328623
+created: 1609933821273
+url: "{{IP}}/api/learningOrchestra/v1/train/{{ trainName }}"
+name: delete a train
 description: ""
 method: DELETE
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1609686930168
+metaSortKey: -1609847028746
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

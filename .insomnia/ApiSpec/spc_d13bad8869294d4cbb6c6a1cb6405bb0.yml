@@ -1,7 +1,7 @@
 _id: spc_d13bad8869294d4cbb6c6a1cb6405bb0
 type: ApiSpec
 parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
-modified: 1609933340535
+modified: 1610650295831
 created: 1608230138068
 fileName: learningOrchestra
 contents: >+
@@ -18,7 +18,7 @@ contents: >+
       url: "https://www.gnu.org/licenses/gpl-3.0.en.html"
 
   servers:
-    - url: 'http://ip'
+    - url: 'http://0.0.0.0'
 
 
 
@@ -1417,6 +1417,634 @@ contents: >+
                        description: 'The message from delete status'
                 example: 
                   {'result': 'deleted file'}
+                  
+   
+
+    /api/learningOrchestra/v1/model/default:
+      post:
+        tags:
+         - model
+        summary: Responsible to load supervised or unsupervised models from existing python libs.
+        description: Create models objects with customized parameters.
+        requestBody:
+          required: True
+          content:
+            application/json:
+             schema: 
+                  type: object
+                  properties:
+                    modelName:
+                      type: string
+                      description: The name id of model instance
+                    description:
+                      type: string
+                      description: Some description of model instance
+                    modulePath:
+                      type: string
+                      description: The path used to reach the Model Class, including the used library
+                    class:
+                      type: string
+                      description: The class name of model
+                    classParameters:
+                      type: object
+                      description: An object with key:value parameters names and values
+                    
+             example:
+              {
+                "modelName": "multiTaskLassoInstance",
+                "description": "Some description",
+                "modulePath": "sklearn.linear_model",
+                "class": "MultiTaskLasso",
+                "classParameters": {"alpha": 0.1}
+              }
+        responses:
+          '201':
+            description: Return the location link from created model 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created model'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/model/default?multiTaskLassoInstance?query={}&limit=10&skip=0'
+                  }
+                  
+          '406':
+            description: There are conflicts with request data
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                examples:
+                  invalid module path name:
+                    value:
+                      {
+                        'result': 'invalid module path name'
+                      }
+                  invalid class name:
+                    value:
+                      {
+                        'result': 'invalid class name'
+                      }
+                  invalid class parameter:
+                    value:
+                      {
+                        'result': 'invalid class parameter'
+                      }
+          '409':
+              description: The modelName already exists
+              content:
+                application/json:
+                  schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                  example: 
+                    {
+                    'result': 'duplicated model name'
+                    }
+            
+      get:
+        tags:
+        - model
+        summary: List all models metadata
+        description: Returns an array of models metadata, where each model contains a metadata file.
+
+        responses:
+          '200':
+            description: An array of models metadata in result field
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                    result:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                         class:
+                           type: string
+                           description: 'The model class'
+                         finished:
+                           type: boolean
+                           description: 'A flag with request processing status'
+                         modelName:
+                           type: string
+                           description: 'The identification name of model'
+                         modulePath:
+                           type: string
+                           description: "The model class path from used library"
+                         timeCreated:
+                           type: string
+                           description: "A string whit formated time"
+                         type:
+                           type: string
+                           description: 'the entity which dataset belongs'
+                example:
+                   {
+                    'result': [
+                              {
+                                "class": "RandomForestClassifier",
+                                "finished": true,
+                                "modelName": "randomForest",
+                                "modulePath": "sklearn.ensemble",
+                                "timeCreated": "2021-01-02T13:06:05-00:00",
+                                "type": "defaultModel"
+                              },
+                              {
+                                "class": "AdaBoostClassifier",
+                                "finished": true,
+                                "modelName": "AdaBoost",
+                                "modulePath": "sklearn.ensemble",
+                                "timeCreated": "2021-01-05T11:09:56-00:00",
+                                "type": "defaultModel"
+                              }
+                        ]
+                    }
+                  
+    /api/learningOrchestra/v1/model/default/{modelName}:
+      patch:
+        tags:
+           - model
+        summary: update a model instance
+        description:  Update the object from model class with new parameters in class constructor
+        parameters:
+          - name: modelName
+            in: path
+            required: true
+            description: the id of model.
+            schema:
+              type : string
+        responses:
+          '201':
+            description: Return the location link from created model 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created model'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/model/default?multiTaskLassoInstance?query={}&limit=10&skip=0'
+                  }
+                  
+          '406':
+            description: There are conflicts with request data
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                examples:
+                  nonexistent model filename:
+                    value:
+                      {
+                        'result': 'duplicated model name'
+                      }
+                  invalid function parameters:
+                    value:
+                      {
+                        'result': "model name doesn't exist"
+                      }
+                    
+      get:
+        tags:
+           - model
+        summary: List the model metadata executions
+        description:  Returns rows of the requested model, with pagination, the first row in the query is always the metadata file from model instance,
+          other lines are the PATCH request metadata from updated model instances
+        parameters:
+          - name: modelName
+            in: path
+            required: true
+            description: the name id of model.
+            schema:
+              type : string
+          - name: skip
+            in: query
+            required: true
+            description: the amount of rows to skip in pagination.
+            schema:
+              type : number
+          - name: limit
+            in: query
+            required: true
+            description: the amount of rows to limit after skipped rows in pagination, maximum limit to 20 rows.
+            schema:
+              type : number
+          - name: query
+            in: query
+            required: true
+            description: Query to find documents, if only pagination is requested, query should be empty curly brackets query={}.
+            schema:
+              type : string
+
+        responses:
+          '200':
+            description: The paginated documents of a model
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: array
+                       items: 
+                         type: object
+                       description: 'The metadata executions from requested model'
+                  example:
+                      {
+                        "result": [
+                          {
+                            "_id": 0,
+                            "class": "BaggingRegressor",
+                            "finished": true,
+                            "modelName": "BaggingRegressor",
+                            "modulePath": "sklearn.ensemble",
+                            "timeCreated": "2021-01-13T13:39:56-00:00",
+                            "type": "defaultModel"
+                          },
+                          {
+                            "_id": 1,
+                            "classParameters": {},
+                            "description": "Some description",
+                            "exception": null
+                          }
+                        ]
+                      }
+        
+      delete:
+        tags:
+           - model
+        summary: Delete a model instance
+        description:  Delete an existent model instance.
+        parameters:
+          - name: modelName
+            in: path
+            required: true
+            description: the id of model.
+            schema:
+              type : string
+        responses:
+          '200':
+            description: Return the success message from deletion request
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The message from delete status'
+                example: 
+                  {'result': 'deleted file'}
+
+
+    /api/learningOrchestra/v1/train:
+      post:
+        tags:
+         - train
+        summary: Train created models.
+        description: This resource trains models with yours class methods.
+        requestBody:
+          required: True
+          content:
+            application/json:
+             schema: 
+                  type: object
+                  properties:
+                    parentName:
+                      type: string
+                      description: The name id of object to use
+                    name:
+                      type: string
+                      description: The name id to identify the instance
+                    description:
+                      type: string
+                      description: Some description of model instance
+                    method:
+                      type: string
+                      description: The method to use from class object
+                    methodParameters:
+                      type: object
+                      description: An object with key:value parameters names and values
+                    
+             example:
+                {
+                  "parentName": "MultiTaskLasso",
+                  "name": "MultiTaskLasso",
+                  "description": "some description",
+                  "method": "fit",
+                  "methodParameters": {
+                              "X": [[0, 1], [1, 2], [2, 4]],
+                              "y": [[0, 0], [1, 1], [2, 3]]
+                  }
+                }
+        responses:
+          '201':
+            description: Return the location link from created resource 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created resource'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/train?MultiTaskLasso?query={}&limit=10&skip=0'
+                  }
+                  
+          '406':
+            description: There are conflicts with request data
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                examples:
+                  invalid parent name:
+                    value:
+                      {
+                        'result': "parentName doesn't exist"
+                      }
+                  invalid class method name:
+                    value:
+                      {
+                        'result': 'invalid class method parameter'
+                      }
+                  invalid method name:
+                    value:
+                      {
+                        'result': 'invalid method name'
+                      }
+                  invalid module path name:
+                    value:
+                      {
+                        'result': 'invalid module path name'
+                      }
+          '409':
+              description: The name already exists
+              content:
+                application/json:
+                  schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                  example: 
+                    {
+                    'result': 'duplicated name'
+                    }
+            
+      get:
+        tags:
+        - train
+        summary: List all trains metadata
+        description: Returns an array of trains metadata, where each train contains a metadata file.
+
+        responses:
+          '200':
+            description: An array of train metadata in result field
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                    result:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                         finished:
+                           type: boolean
+                           description: 'A flag with request processing status'
+                         method:
+                           type: string
+                           description: 'The used method from class object'
+                         name:
+                           type: string
+                           description: 'The identification name of this instance'
+                         parentName:
+                           type: string
+                           description: "The name from parent instance"
+                         timeCreated:
+                           type: string
+                           description: "A string whit formated time"
+                         type:
+                           type: string
+                           description: 'the entity which dataset belongs'
+                example:
+                   {
+                    'result': [
+                                {
+                                  "finished": false,
+                                  "method": "fit",
+                                  "name": "fitGradientBoost10",
+                                  "parentName": "gradientBoost2",
+                                  "timeCreated": "2021-01-10T10:20:27-00:00",
+                                  "type": "train"
+                                },
+                                {
+                                  "finished": false,
+                                  "method": "path",
+                                  "name": "linearModel2",
+                                  "parentName": "linearModel",
+                                  "timeCreated": "2021-01-13T13:36:03-00:00",
+                                  "type": "train"
+                                }
+                        ]
+                    }
+                  
+    /api/learningOrchestra/v1/train/{name}:
+      patch:
+        tags:
+           - train
+        summary: update a train instance
+        description:  Update the output from model class method with new parameters in method call
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the id of train.
+            schema:
+              type : string
+        responses:
+          '201':
+            description: Return the location link from created train 
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The location from created train'
+                example: 
+                  {
+                  'result': '/api/learningOrchestra/v1/train?MultiTaskLasso?query={}&limit=10&skip=0'
+                  }
+                  
+          '406':
+            description: There are conflicts with request data
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                examples:
+                  nonexistent model filename:
+                    value:
+                      {
+                        'result': 'duplicated model name'
+                      }
+                  invalid class method parameter:
+                    value:
+                      {
+                        'result': "invalid class method parameter"
+                      }
+                    
+      get:
+        tags:
+           - train
+        summary: List the train metadata executions
+        description:  Returns rows of the requested train, with pagination, the first row in the query is always the metadata file from train instance,
+          other lines are the PATCH request metadata from updated train instances
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the name id of train.
+            schema:
+              type : string
+          - name: skip
+            in: query
+            required: true
+            description: the amount of rows to skip in pagination.
+            schema:
+              type : number
+          - name: limit
+            in: query
+            required: true
+            description: the amount of rows to limit after skipped rows in pagination, maximum limit to 20 rows.
+            schema:
+              type : number
+          - name: query
+            in: query
+            required: true
+            description: Query to find documents, if only pagination is requested, query should be empty curly brackets query={}.
+            schema:
+              type : string
+
+        responses:
+          '200':
+            description: The paginated documents of a train
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: array
+                       items: 
+                         type: object
+                       description: 'The metadata executions from requested train'
+                  example:
+                    {
+                      "result": [
+                        {
+                          "_id": 0,
+                          "finished": true,
+                          "method": "fit",
+                          "name": "MultiTaskLasso3",
+                          "parentName": "MultiTaskLasso",
+                          "timeCreated": "2021-01-13T18:36:42-00:00",
+                          "type": "train"
+                        },
+                        {
+                          "_id": 1,
+                          "description": "some description",
+                          "exception": null,
+                          "methodParameters": {
+                                              "X": [
+                                                      [
+                                                        0,1
+                                                      ],
+                                                      [
+                                                        1,2
+                                                      ],
+                                                      [
+                                                        2,4
+                                                      ]
+                                              ],
+                                              "y": [
+                                                      [
+                                                        0,0
+                                                      ],
+                                                      [
+                                                        1,1
+                                                      ],
+                                                      [
+                                                        2,3
+                                                      ]
+                                                   ]
+                                              }
+                            }
+                          ]
+                       }
+                        
+      delete:
+        tags:
+           - train
+        summary: Delete a train instance
+        description:  Delete an existent train instance.
+        parameters:
+          - name: name
+            in: path
+            required: true
+            description: the id of train.
+            schema:
+              type : string
+        responses:
+          '200':
+            description: Return the success message from deletion request
+            content:
+              application/json:
+                schema: 
+                  type: object
+                  properties:
+                     result:
+                       type: string
+                       description: 'The message from delete status'
+                example: 
+                  {'result': 'deleted file'}
+
+                  
 
                   
 
@@ -1439,9 +2067,11 @@ contents: >+
       externalDocs:
         url: https://scikit-learn.org/stable/modules/decomposition.html#pca
     - name: builder
-      description: The builder resource join several steps of machine learning workflow (transform, tune, train and evaluate) acoupling in a unique resouce, builder creates several model predictions using your own modeling code using a defined set of classifiers.
-
-      
+      description: The builder resource joins several steps of machine learning workflow (transform, tune, train and evaluate) acoupling in a unique resouce, builder creates several model predictions using your own modeling code using a defined set of classifiers.
+    - name: model
+      description: The model resource creates models instances from most popular python libraries like scikit-learn and TensorFlow.
+    - name: train
+      description: Train a model instance with methods availabes from model object
 
       
   components:

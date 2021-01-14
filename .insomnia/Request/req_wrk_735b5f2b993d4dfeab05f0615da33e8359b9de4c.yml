@@ -1,17 +1,17 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83bfba3291
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8359b9de4c
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f52318a0
-modified: 1609686981149
-created: 1609686930035
-url: "{{ base_url }}/builder/{{ projectionName }}"
-name: Delete a created projection
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831d06a0d7
+modified: 1610649979174
+created: 1610648842750
+url: "{{ base_url }}/api/learningOrchestra/v1/train/{{ name }}"
+name: Delete a model instance
 description: ""
 method: DELETE
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1609686930035
+metaSortKey: -1610648842750
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

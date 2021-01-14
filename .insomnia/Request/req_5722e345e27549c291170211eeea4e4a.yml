@@ -1,7 +1,7 @@
 _id: req_5722e345e27549c291170211eeea4e4a
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1609844991010
+modified: 1610558327945
 created: 1608230132530
 url: "{{IP}}/api/learningOrchestra/v1/model/default"
 name: Create a model
@@ -11,15 +11,11 @@ body:
   mimeType: application/json
   text: |-
     {
-    	"modelName": "gradientBoost2",
+    	"modelName": "MultiTaskLasso",
     	"description": "Some description",
-    	"modulePath": "sklearn.ensemble",
-    	"class": "AdaBoostClassifier",
-    	"classParameters": {"n_estimators": 40, 
-    											"learning_rate": 1, 
-    											"algorithm": "SAMME",
-    											"random_state": -1
-    										 }
+    	"modulePath": "sklearn.linear_model",
+    	"class": "MultiTaskLasso",
+    	"classParameters": {"alpha": 0.1}
     }
 parameters: []
 headers:

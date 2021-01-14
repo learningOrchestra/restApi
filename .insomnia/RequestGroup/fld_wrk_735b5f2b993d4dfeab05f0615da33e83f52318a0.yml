@@ -1,13 +1,13 @@
 _id: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f52318a0
 type: RequestGroup
 parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
-modified: 1609933340263
-created: 1609686930328
+modified: 1610649980136
+created: 1609933515505
 name: builder
-description: The builder resource join several steps of machine learning
+description: The builder resource joins several steps of machine learning
   workflow (transform, tune, train and evaluate) acoupling in a unique resouce,
   builder creates several model predictions using your own modeling code using a
   defined set of classifiers.
 environment: {}
 environmentPropertyOrder: null
-metaSortKey: -1609686930328
+metaSortKey: -1609933515505

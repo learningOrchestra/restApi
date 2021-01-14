@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e839f1cb8c8
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831d06a0d7
+modified: 1610649979261
+created: 1610647107404
+url: "{{ base_url }}/api/learningOrchestra/v1/model/default/{{ modelName }}"
+name: update a model instance
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1610647107404
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
