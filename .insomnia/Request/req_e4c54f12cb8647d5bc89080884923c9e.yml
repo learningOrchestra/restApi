@@ -1,9 +1,9 @@
 _id: req_e4c54f12cb8647d5bc89080884923c9e
 type: Request
 parentId: fld_a9d9b613217246e18b0c8a18d988ff18
-modified: 1610563001053
+modified: 1612169624436
 created: 1609847028946
-url: "{{IP}}/api/learningOrchestra/v1/train"
+url: "{{IP}}/api/learningOrchestra/v1/train/scikitLearn"
 name: train a model
 description: ""
 method: POST

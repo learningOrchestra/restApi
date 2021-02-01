@@ -1,0 +1,29 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83c968625d
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83dd8ce13a
+modified: 1612169959284
+created: 1611936973131
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/scikitLearn/{{ name }}"
+name: update a transform running again the class method.
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "method": "string",
+      "methodParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1611936973131
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,29 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83367d90e2
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e839dda9754
+modified: 1612169959394
+created: 1611936141567
+url: "{{ base_url }}/api/learningOrchestra/v1/explore/scikitLearn/{{ name }}"
+name: update a plot running again the class method.
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "method": "string",
+      "methodParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1611936141567
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

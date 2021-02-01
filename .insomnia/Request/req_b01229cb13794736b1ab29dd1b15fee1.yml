@@ -1,0 +1,37 @@
+_id: req_b01229cb13794736b1ab29dd1b15fee1
+type: Request
+parentId: fld_0ae1bc3da34640d488b06c39c42b306a
+modified: 1611745369436
+created: 1611047505657
+url: "{{IP}}/api/learningOrchestra/v1/explore/scikitLearn"
+name: Create a plot
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |
+    {
+    	"name": "PCA_11",
+    	"description": "Some description",
+    	"modulePath": "sklearn.decomposition",
+    	"class": "PCA",
+    	"classParameters": {},
+    	"method": "fit_transform",
+    	"methodParameters": {
+    								"X": "$titanic_train_hotEncoded11"
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_2249e73d22f44ceba4733aa38e3c6645
+authentication: {}
+metaSortKey: -1611047540502
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

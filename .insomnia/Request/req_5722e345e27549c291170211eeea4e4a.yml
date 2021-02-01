@@ -1,9 +1,9 @@
 _id: req_5722e345e27549c291170211eeea4e4a
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1610558327945
+modified: 1612169565875
 created: 1608230132530
-url: "{{IP}}/api/learningOrchestra/v1/model/default"
+url: "{{IP}}/api/learningOrchestra/v1/model/scikitLearn"
 name: Create a model
 description: ""
 method: POST
@@ -16,6 +16,7 @@ body:
     	"modulePath": "sklearn.linear_model",
     	"class": "MultiTaskLasso",
     	"classParameters": {"alpha": 0.1}
+    	
     }
 parameters: []
 headers:

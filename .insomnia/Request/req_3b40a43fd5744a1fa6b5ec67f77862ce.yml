@@ -1,0 +1,21 @@
+_id: req_3b40a43fd5744a1fa6b5ec67f77862ce
+type: Request
+parentId: fld_fd26640f177543a9b1c3679d6150daae
+modified: 1611513714155
+created: 1611479986774
+url: "{{IP}}/api/learningOrchestra/v1/transform/scikitLearn/"
+name: visualize all transforms
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1611047540470.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

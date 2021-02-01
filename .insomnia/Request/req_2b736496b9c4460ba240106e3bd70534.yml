@@ -1,9 +1,9 @@
 _id: req_2b736496b9c4460ba240106e3bd70534
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1608279211066
+modified: 1612169581455
 created: 1608230132521
-url: "{{IP}}/api/learningOrchestra/v1/model/default/{{modelName}}"
+url: "{{IP}}/api/learningOrchestra/v1/model/scikitLearn/{{modelName}}"
 name: delete a model
 description: ""
 method: DELETE

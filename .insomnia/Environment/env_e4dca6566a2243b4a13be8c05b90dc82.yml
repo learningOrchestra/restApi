@@ -1,20 +1,23 @@
 _id: env_e4dca6566a2243b4a13be8c05b90dc82
 type: Environment
 parentId: env_16c09f419c6b48ee983d15138d805f7326e64daa
-modified: 1610567687012
+modified: 1612001185171
 created: 1608277672864
 name: Gabriel
 data:
-  IP: 35.198.25.194
-  filename: testeJoubert100projtrain
-  projectionFilename: testeJoubert100projtrain2
+  IP: 35.247.225.7
+  filename: sentimentTest
+  projectionFilename: titanic_train_proj_2
   normalizationName: filename
   embeddingName: filename
   tsneFilename: filename
   pcaFilename: filename
   packageName: toolName
-  modelName: dsfsdfdf
+  modelName: MultiTaskLasso
   trainName: MultiTaskLasso3
+  exploreName: PCA_11
+  transformName: someName
+  name: titanic_train_hotEncoded11
 dataPropertyOrder:
   "&":
     - IP
@@ -27,6 +30,9 @@ dataPropertyOrder:
     - packageName
     - modelName
     - trainName
+    - exploreName
+    - transformName
+    - name
 color: null
 isPrivate: false
 metaSortKey: 1608277672864

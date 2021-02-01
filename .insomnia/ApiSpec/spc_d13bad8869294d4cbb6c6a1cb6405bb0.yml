@@ -1,7 +1,7 @@
 _id: spc_d13bad8869294d4cbb6c6a1cb6405bb0
 type: ApiSpec
 parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
-modified: 1610662642407
+modified: 1612169960065
 created: 1608230138068
 fileName: learningOrchestra
 contents: >+
@@ -222,7 +222,7 @@ contents: >+
                 example: 
                   {'result': 'deleted file'}
                   
-    /api/learningOrchestra/v1/tranform/projection:
+    /api/learningOrchestra/v1/transform/projection:
         post:
           tags:
            - projection
@@ -344,7 +344,7 @@ contents: >+
                             }
                           ]
                         }  
-    /api/learningOrchestra/v1/tranform/projection/{projectionName}:
+    /api/learningOrchestra/v1/transform/projection/{projectionName}:
       get:
         tags:
            - projection
@@ -429,7 +429,7 @@ contents: >+
                 example: 
                   {'result': 'deleted file'}
 
-    /api/learningOrchestra/v1/tranform/dataType:
+    /api/learningOrchestra/v1/transform/dataType:
         patch:
           tags:
            - dataType
@@ -709,12 +709,12 @@ contents: >+
                 example: 
                   {'result': 'deleted file'}
 
-    /api/learningOrchestra/v1/explore/tsne:
+    /api/learningOrchestra/v1/explore/scikitLearn:
           post:
             tags:
-             - t-SNE
-            summary: Create an image plot.
-            description: Create a t-SNE plot from a resource.
+             - explore
+            summary: create a plot with output method from skicitLearn.
+            description: create a plot with output method from skicitLearn, the output is passed to a plot lib, generating a image from data.
             requestBody:
               required: True
               content:
@@ -722,27 +722,39 @@ contents: >+
                  schema: 
                       type: object
                       properties:
-                        inputDatasetName:
+                        name:
                           type: string
-                        outputPlotName:
+                        description:
                           type: string
-                        label:
+                        modulePath:
                           type: string
-                 examples:
-                   plot with label field:
-                     value:
-                      {
-                          "inputDatasetName": "titanicTrain",
-                          "outputPlotName": "titainicTrainPlot",
-                          "label" : "Survived"
+                        class:
+                          type: string
+                        classParameters:
+                          type: object
+                          description: A json object specifying the name of parameter and the value, case you want pass a instance from a learningOrchestra service as a parameter value, 
+                            like dataset or projection, you need put the character key '$', if you like pass one column from this instance, put the charater key '.' between
+                            the instance name and column name. e.g '$myDataSet.columnName' to pass a specific column, or '$myDataset', to pass the entire dataset as parameter.
+                        method:
+                          type: string
+                        methodParameters:
+                          type: object
+                          description: A json object specifying the name of parameter and the value, case you want pass a instance from a learningOrchestra service as a parameter value, 
+                            like dataset or projection, you need put the character key '$', if you like pass one column from this instance, put the charater key '.' between
+                            the instance name and column name. e.g '$myDataSet.columnName' to pass a specific column, or '$myDataset', to pass the entire dataset as parameter.
+                 example:
+                    {
+                      "name": "PCA",
+                      "description": "Some description",
+                      "modulePath": "sklearn.decomposition",
+                      "class": "PCA",
+                      "classParameters": {},
+                      "method": "fit_transform",
+                      "methodParameters": {
+                                    "X": "$titanicTrainHotEncoded"
                       }
-                   plot without label field:
-                     value:
-                      {
-                          "inputDatasetName": "titanicTest",
-                          "outputPlotName": "titanicTestPlot",
-                          "label" : null
-                      }
+                    }
+
             responses:
               '201':
                 description: Return the location link from created image plot 
@@ -753,13 +765,13 @@ contents: >+
                       properties:
                          result:
                            type: string
-                           description: 'The location from created histogram'
+                           description: 'The location from created plot'
                     example: 
                       {
-                      'result': '/api/learningOrchestra/v1/explore/histogram?titanicTrainHistogram?query={}&limit=10&skip=0'
+                        'result': '/api/learningOrchestra/v1/explore/scikitLearn/PCA'
                       }
               '409':
-                  description: The outputPlotName already exists
+                  description: The name already exists
                   content:
                     application/json:
                       schema: 
@@ -770,7 +782,7 @@ contents: >+
                              description: 'Error log'
                       example: 
                         {
-                        'result': 'duplicated plot name'
+                        'result': 'duplicated name'
                         }
               '406':
                 description: There are conflicts with request data
@@ -783,30 +795,45 @@ contents: >+
                              type: string
                              description: 'Error log'
                     examples:
-                      invalid field:
+                      invalid module path name:
                         value:
                           {
-                            'result': 'invalid field'
+                            'result': 'invalid module path name'
                           }
-                      invalid dataset name:
+                      invalid method name:
                         value:
                           {
-                            'result': 'invalid dataset name'
+                            'result': 'invalid method name'
                           }
-                      unfinished dataset:
+                      invalid class method parameter:
                         value:
                           {
-                            'result': 'unfinished processing in input dataset'
+                            'result': 'invalid class method parameter'
                           }
-
+                      parent name doesn't exist:
+                        value:
+                          {
+                            'result': "parent name doesn't exist"
+                          }
+                      invalid class name:
+                        value:
+                          {
+                            'result': 'invalid class name'
+                          }
+                      invalid class parameter:
+                        value:
+                          {
+                            'result': 'invalid class parameter'
+                          }
+                          
           get:
               tags:
-              - t-SNE
+              - explore
               summary: Read the names of the created plots
-              description: Returns a list with all created images plot names.
+              description: Returns a list with all created plots metadata.
               responses:
                 '200':
-                  description: An array of datasets metadata in result field
+                  description: An array of plots name in result field
                   content:
                     application/json:
                       schema: 
@@ -817,100 +844,260 @@ contents: >+
                               items:
                                 type: string
                       example:
-                         {
-                          'result': [
-                               "imagePlotOne",
-                               "imagePlotTwo"
+                            {
+                              "result": [
+                                {
+                                  "class": "PCA",
+                                  "classParameters": {
+                                    "n_components": 2
+                                  },
+                                  "executions": [],
+                                  "finished": true,
+                                  "modulePath": "sklearn.decomposition",
+                                  "name": "PCA_5",
+                                  "timeCreated": "2021-01-24T18:34:43-00:00",
+                                  "type": "explore"
+                                },
+                                {
+                                  "class": "PCA",
+                                  "classParameters": {
+                                    "n_components": 2
+                                  },
+                                  "finished": false,
+                                  "modulePath": "sklearn.decomposition",
+                                  "name": "PCA_8",
+                                  "timeCreated": "2021-01-27T10:35:05-00:00",
+                                  "type": "explore"
+                                }
                                ]
-                          }  
-    /api/learningOrchestra/v1/explore/tsne/{plotName}:
-      get:
-        tags:
-           - t-SNE
-        summary: Read an image plot
-        description: Returns the image plot of the specified plotName.
+                            }
+                            
+    /api/learningOrchestra/v1/explore/scikitLearn/{name}:
+          patch:
+            tags:
+             - explore
+            summary: update a plot running again the class method.
+            description: update a plot running again the class method.
+            parameters:
+                - name: name
+                  in: path
+                  required: true
+                  description: the id of created plot.
+                  schema:
+                    type : string
+            requestBody:
+              required: True
+              content:
+                application/json:
+                 schema: 
+                      type: object
+                      properties:
+                        method:
+                          type: string
+                        methodParameters:
+                          type: object
+                          description: A json object specifying the name of parameter and the value, case you want pass a instance from a learningOrchestra service as a parameter value, 
+                            like dataset or projection, you need put the character key '$', if you like pass one column from this instance, put the charater key '.' between
+                            the instance name and column name. e.g '$myDataSet.columnName' to pass a specific column, or '$myDataset', to pass the entire dataset as parameter.
+                 example:
+                    {
+                      "method": "fit",
+                      "methodParameters": {
+                                    "X": [[0, 1], [1, 2], [2, 4]],
+                                    "y": [[0, 0], [1, 1], [2, 3]]
+                      }
+                    }
 
-        parameters:
-          - name: plotName
-            in: path
-            required: true
-            description: the id of plot.
-            schema:
-              type : string
+            responses:
+              '201':
+                description: Return the location link from created image plot 
+                content:
+                  application/json:
+                    schema: 
+                      type: object
+                      properties:
+                         result:
+                           type: string
+                           description: 'The location from created plot'
+                    example: 
+                      {
+                        'result': '/api/learningOrchestra/v1/explore/scikitLearn/PCA'
+                      }
+              '406':
+                description: There are conflicts with request data
+                content:
+                  application/json:
+                    schema: 
+                        type: object
+                        properties:
+                           result:
+                             type: string
+                             description: 'Error log'
+                    examples:
+                      invalid method name:
+                        value:
+                          {
+                            'result': 'invalid method name'
+                          }
+                      invalid class method parameter:
+                        value:
+                          {
+                            'result': 'invalid class method parameter'
+                          }
+      
+          get:
+              tags:
+                 - explore
+              summary: Read an image plot
+              description: Returns the image plot of the specified name.
 
-        responses:
-          '200':
-            description: Return the image plot
-            content:
-              image/png:
-                 schema:
-                  type: string
-                  format: binary
-            
-          '404':
-            description: Plot name does not found
-            content:
-              application/json:
-                schema: 
-                    type: object
-                    properties:
-                       result:
-                         type: string
-                         description: 'Error log'
-                example:
-                  {
-                    'result': "plot name doesn't found"
-                  }
-   
+              parameters:
+                - name: name
+                  in: path
+                  required: true
+                  description: the id of plot.
+                  schema:
+                    type : string
 
-      delete:
-        tags:
-           - t-SNE
-        summary: Delete a created image plot
-        description:  Delete an existent image plot in the database.
-        parameters:
-          - name: plotName
-            in: path
-            required: true
-            description: the id of image plot.
-            schema:
-              type : string
-        responses:
-          '200':
-            description: Return the success message from deletion request
-            content:
-              application/json:
-                schema: 
-                  type: object
-                  properties:
-                     result:
-                       type: string
-                       description: 'The message from delete status'
-                example: 
-                  {'result': 'deleted file'}
-          '404':
-            description: Plot name does not found
-            content:
-              application/json:
-                schema: 
-                    type: object
-                    properties:
-                       result:
-                         type: string
-                         description: 'Error log'
-                example:
-                  {
-                    'result': "plot name doesn't found"
-                  }
+              responses:
+                '200':
+                  description: Return the image plot
+                  content:
+                    image/png:
+                       schema:
+                        type: string
+                        format: binary
+
+                '404':
+                  description: Plot name does not found
+                  content:
+                    application/json:
+                      schema: 
+                          type: object
+                          properties:
+                             result:
+                               type: string
+                               description: 'Error log'
+                      example:
+                        {
+                          'result': "parent name doesn't exist"
+                        }
+
+          delete:
+              tags:
+                 - explore
+              summary: Delete a created image plot
+              description:  Delete an existent image plot in the database.
+              parameters:
+                - name: name
+                  in: path
+                  required: true
+                  description: the id of image plot.
+                  schema:
+                    type : string
+              responses:
+                '200':
+                  description: Return the success message from deletion request
+                  content:
+                    application/json:
+                      schema: 
+                        type: object
+                        properties:
+                           result:
+                             type: string
+                             description: 'The message from delete status'
+                      example: 
+                        {'result': 'deleted file'}
+                '404':
+                  description: Plot name does not found
+                  content:
+                    application/json:
+                      schema: 
+                          type: object
+                          properties:
+                             result:
+                               type: string
+                               description: 'Error log'
+                      example:
+                        {
+                          'result': "parent name doesn't exist"
+                        }
                   
                  
-             
-    /api/learningOrchestra/v1/explore/pca:
+    /api/learningOrchestra/v1/explore/scikitLearn/{name}/metadata:
+           get:
+              tags:
+                 - explore
+              summary: Read a plot metadata
+              description: Returns the plot metadata of the specified name.
+
+              parameters:
+                - name: name
+                  in: path
+                  required: true
+                  description: the id of plot.
+                  schema:
+                    type : string
+
+              responses:
+                '200':
+                  description: Return the plot metadata
+                  content:
+                      application/json:
+                                    schema: 
+                                      type: object
+                                      properties:
+                                         result:
+                                           type: array
+                                           items:
+                                             type: object
+                                           description: 'The rows from requested metadata'
+                                      example:
+                                         {
+                                            "result": [
+                                              {
+                                                "_id": 0,
+                                                "class": "PCA",
+                                                "classParameters": {},
+                                                "finished": true,
+                                                "modulePath": "sklearn.decomposition",
+                                                "name": "PCA_11",
+                                                "timeCreated": "2021-01-27T11:02:49-00:00",
+                                                "type": "explore"
+                                              },
+                                              {
+                                                "_id": 1,
+                                                "description": "Some description",
+                                                "exception": null,
+                                                "method": "fit_transform",
+                                                "methodParameters": {
+                                                  "X": "$titanic_train_hotEncoded11"
+                                                }
+                                              }
+                                            ]
+                                          }
+
+                '404':
+                  description: Plot name does not found
+                  content:
+                    application/json:
+                      schema: 
+                          type: object
+                          properties:
+                             result:
+                               type: string
+                               description: 'Error log'
+                      example:
+                        {
+                          'result': "parent name doesn't exist"
+                        }
+                        
+    /api/learningOrchestra/v1/transform/scikitLearn:
           post:
             tags:
-             - PCA
-            summary: Create an image plot.
-            description: Create a PCA plot from a resource.
+             - transform
+            summary: transform a service instance from learningOrchestra using the sklearn lib.
+            description:  transform a service instance from learningOrchestra using the sklearn lib.
             requestBody:
               required: True
               content:
@@ -918,27 +1105,39 @@ contents: >+
                  schema: 
                       type: object
                       properties:
-                        inputDatasetName:
+                        name:
                           type: string
-                        outputPlotName:
+                        description:
                           type: string
-                        label:
+                        modulePath:
                           type: string
-                 examples:
-                   plot with label field:
-                     value:
-                      {
-                          "inputDatasetName": "titanicTrain",
-                          "outputPlotName": "titainicTrainPlot",
-                          "label" : "Survived"
+                        class:
+                          type: string
+                        classParameters:
+                          type: object
+                          description: A json object specifying the name of parameter and the value, case you want pass a instance from a learningOrchestra service as a parameter value, 
+                            like dataset or projection, you need put the character key '$', if you like pass one column from this instance, put the charater key '.' between
+                            the instance name and column name. e.g '$myDataSet.columnName' to pass a specific column, or '$myDataset', to pass the entire dataset as parameter.
+                        method:
+                          type: string
+                        methodParameters:
+                          type: object
+                          description: A json object specifying the name of parameter and the value, case you want pass a instance from a learningOrchestra service as a parameter value, 
+                            like dataset or projection, you need put the character key '$', if you like pass one column from this instance, put the charater key '.' between
+                            the instance name and column name. e.g '$myDataSet.columnName' to pass a specific column, or '$myDataset', to pass the entire dataset as parameter.
+                 example:
+                    {
+                      "name": "titanic_train_hotEncoded",
+                      "description": "Some description",
+                      "modulePath": "sklearn.preprocessing",
+                      "class": "LabelEncoder",
+                      "classParameters": {},
+                      "method": "fit_transform",
+                      "methodParameters": {
+                                    "y": "$dataset.Variable_category"
                       }
-                   plot without label field:
-                     value:
-                      {
-                          "inputDatasetName": "titanicTest",
-                          "outputPlotName": "titanicTestPlot",
-                          "label" : null
-                      }
+                    }
+
             responses:
               '201':
                 description: Return the location link from created image plot 
@@ -949,13 +1148,13 @@ contents: >+
                       properties:
                          result:
                            type: string
-                           description: 'The location from created histogram'
+                           description: 'The location from created plot'
                     example: 
                       {
-                      'result': '/api/learningOrchestra/v1/explore/histogram?titanicTrainHistogram?query={}&limit=10&skip=0'
+                        'result': '/api/learningOrchestra/v1/transform//scikitLearn/titanic_train_hotEncoded?query={}&limit=20&skip=0'
                       }
               '409':
-                  description: The outputPlotName already exists
+                  description: The name already exists
                   content:
                     application/json:
                       schema: 
@@ -966,7 +1165,7 @@ contents: >+
                              description: 'Error log'
                       example: 
                         {
-                        'result': 'duplicated plot name'
+                        'result': 'duplicated name'
                         }
               '406':
                 description: There are conflicts with request data
@@ -979,30 +1178,45 @@ contents: >+
                              type: string
                              description: 'Error log'
                     examples:
-                      invalid field:
+                      invalid module path name:
                         value:
                           {
-                            'result': 'invalid field'
+                            'result': 'invalid module path name'
                           }
-                      invalid dataset name:
+                      invalid method name:
                         value:
                           {
-                            'result': 'invalid dataset name'
+                            'result': 'invalid method name'
                           }
-                      unfinished dataset:
+                      invalid class method parameter:
                         value:
                           {
-                            'result': 'unfinished processing in input dataset'
+                            'result': 'invalid class method parameter'
                           }
-
+                      parent name doesn't exist:
+                        value:
+                          {
+                            'result': "parent name doesn't exist"
+                          }
+                      invalid class name:
+                        value:
+                          {
+                            'result': 'invalid class name'
+                          }
+                      invalid class parameter:
+                        value:
+                          {
+                            'result': 'invalid class parameter'
+                          }
+                          
           get:
               tags:
-              - PCA
-              summary: Read the names of the created plots
-              description: Returns a list with all created images plot names.
+              - transform
+              summary: Read the metadata of the created transforms
+              description: Returns a list with transforms metadata.
               responses:
                 '200':
-                  description: An array of datasets metadata in result field
+                  description: An array of plots name in result field
                   content:
                     application/json:
                       schema: 
@@ -1013,92 +1227,209 @@ contents: >+
                               items:
                                 type: string
                       example:
-                         {
-                          'result': [
-                               "imagePlotOne",
-                               "imagePlotTwo"
-                               ]
-                          }  
-    /api/learningOrchestra/v1/explore/pca/{plotName}:
-      get:
-        tags:
-           - PCA
-        summary: Read an image plot
-        description: Returns the image plot of the specified plotName.
+                          {
+                            "result": [
+                              {
+                                "class": "OneHotEncoder",
+                                "classParameters": {},
+                                "executions": [],
+                                "finished": false,
+                                "modulePath": "sklearn.preprocessing",
+                                "name": "titanic_train_hotEncoded6",
+                                "timeCreated": "2021-01-27T09:30:03-00:00",
+                                "type": "transform"
+                              },
+                              {
+                                "class": "LabelEncoder",
+                                "classParameters": {},
+                                "finished": true,
+                                "modulePath": "sklearn.preprocessing",
+                                "name": "titanic_train_hotEncoded11",
+                                "timeCreated": "2021-01-27T10:30:50-00:00",
+                                "type": "transform"
+                              }
+                             ]
+                           }
+                           
+    /api/learningOrchestra/v1/transform/scikitLearn/{name}:
+          patch:
+            tags:
+             - transform
+            summary: update a transform running again the class method.
+            description: update a transform running again the class method.
+            parameters:
+                - name: name
+                  in: path
+                  required: true
+                  description: the id of created transform.
+                  schema:
+                    type : string
+            requestBody:
+              required: True
+              content:
+                application/json:
+                 schema: 
+                      type: object
+                      properties:
+                        method:
+                          type: string
+                        methodParameters:
+                          type: object
+                          description: A json object specifying the name of parameter and the value, case you want pass a instance from a learningOrchestra service as a parameter value, 
+                            like dataset or projection, you need put the character key '$', if you like pass one column from this instance, put the charater key '.' between
+                            the instance name and column name. e.g '$myDataSet.columnName' to pass a specific column, or '$myDataset', to pass the entire dataset as parameter.
+                 example:
+                    {
+                      "method": "fit",
+                      "methodParameters": {
+                                    "X": [[0, 1], [1, 2], [2, 4]],
+                                    "y": [[0, 0], [1, 1], [2, 3]]
+                      }
+                    }
 
-        parameters:
-          - name: plotName
-            in: path
-            required: true
-            description: the id of plot.
-            schema:
-              type : string
+            responses:
+              '201':
+                description: Return the location link from created transform
+                content:
+                  application/json:
+                    schema: 
+                      type: object
+                      properties:
+                         result:
+                           type: string
+                           description: 'The location from created transform'
+                    example: 
+                      {
+                        'result': '/api/learningOrchestra/v1/transform//scikitLearn/titanic_train_hotEncoded?query={}&limit=20&skip=0'
+                      }
+              '406':
+                description: There are conflicts with request data
+                content:
+                  application/json:
+                    schema: 
+                        type: object
+                        properties:
+                           result:
+                             type: string
+                             description: 'Error log'
+                    examples:
+                      invalid method name:
+                        value:
+                          {
+                            'result': 'invalid method name'
+                          }
+                      invalid class method parameter:
+                        value:
+                          {
+                            'result': 'invalid class method parameter'
+                          }
+      
+          get:
+              tags:
+                 - transform
+              summary: Read a transform metadata
+              description: Returns the metadata of the specified name.
 
-        responses:
-          '200':
-            description: Return the image plot
-            content:
-              image/png:
-                 schema:
-                  type: string
-                  format: binary
-            
-          '404':
-            description: Plot name does not found
-            content:
-              application/json:
-                schema: 
-                    type: object
-                    properties:
-                       result:
-                         type: string
-                         description: 'Error log'
-                example:
-                  {
-                    'result': "plot name doesn't found"
-                  }
-   
+              parameters:
+                - name: name
+                  in: path
+                  required: true
+                  description: the id of transform.
+                  schema:
+                    type : string
 
-      delete:
-        tags:
-           - PCA
-        summary: Delete a created image plot
-        description:  Delete an existent image plot in the database.
-        parameters:
-          - name: plotName
-            in: path
-            required: true
-            description: the id of image plot.
-            schema:
-              type : string
-        responses:
-          '200':
-            description: Return the success message from deletion request
-            content:
-              application/json:
-                schema: 
-                  type: object
-                  properties:
-                     result:
-                       type: string
-                       description: 'The message from delete status'
-                example: 
-                  {'result': 'deleted file'}
-          '404':
-            description: Plot name does not found
-            content:
-              application/json:
-                schema: 
-                    type: object
-                    properties:
-                       result:
-                         type: string
-                         description: 'Error log'
-                example:
-                  {
-                    'result': "plot name doesn't found"
-                  }
+              responses:
+                '200':
+                  description: Return the transform metadata
+                  content:
+                    application/json:
+                      schema: 
+                          type: object
+                          properties:
+                            result:
+                              type: array
+                              items:
+                                type: string
+                      example:
+                          {
+                            "result": [
+                              {
+                                "_id": 0,
+                                "class": "LabelEncoder",
+                                "classParameters": {},
+                                "finished": true,
+                                "modulePath": "sklearn.preprocessing",
+                                "name": "titanic_train_hotEncoded11",
+                                "timeCreated": "2021-01-27T10:30:50-00:00",
+                                "type": "transform"
+                              },
+                              {
+                                "_id": 1,
+                                "description": "Some description",
+                                "exception": null,
+                                "method": "fit_transform",
+                                "methodParameters": {
+                                  "y": "$dataset.Variable_category"
+                                }
+                              }
+                            ]
+                          }
 
+                '404':
+                  description: transform name does not found
+                  content:
+                    application/json:
+                      schema: 
+                          type: object
+                          properties:
+                             result:
+                               type: string
+                               description: 'Error log'
+                      example:
+                        {
+                          'result': "parent name doesn't exist"
+                        }
+
+          delete:
+              tags:
+                 - transform
+              summary: Delete a created transform
+              description:  Delete an existent transform in the database.
+              parameters:
+                - name: name
+                  in: path
+                  required: true
+                  description: the id of transform.
+                  schema:
+                    type : string
+              responses:
+                '200':
+                  description: Return the success message from deletion request
+                  content:
+                    application/json:
+                      schema: 
+                        type: object
+                        properties:
+                           result:
+                             type: string
+                             description: 'The message from delete status'
+                      example: 
+                        {'result': 'deleted file'}
+                '404':
+                  description: Transform does not found
+                  content:
+                    application/json:
+                      schema: 
+                          type: object
+                          properties:
+                             result:
+                               type: string
+                               description: 'Error log'
+                      example:
+                        {
+                          'result': "parent name doesn't exist"
+                        }
+                        
     /api/learningOrchestra/v1/builder:
         post:
           tags:
@@ -1420,7 +1751,7 @@ contents: >+
                   
    
 
-    /api/learningOrchestra/v1/model/default:
+    /api/learningOrchestra/v1/model/scikitLearn:
       post:
         tags:
          - model
@@ -1573,7 +1904,7 @@ contents: >+
                         ]
                     }
                   
-    /api/learningOrchestra/v1/model/default/{modelName}:
+    /api/learningOrchestra/v1/model/scikitLearn/{modelName}:
       patch:
         tags:
            - model
@@ -1717,7 +2048,7 @@ contents: >+
                   {'result': 'deleted file'}
 
 
-    /api/learningOrchestra/v1/train:
+    /api/learningOrchestra/v1/train/scikitLearn:
       post:
         tags:
          - train
@@ -1878,7 +2209,7 @@ contents: >+
                         ]
                     }
                   
-    /api/learningOrchestra/v1/train/{name}:
+    /api/learningOrchestra/v1/train/scikitLearn/{name}:
       patch:
         tags:
            - train
@@ -2024,7 +2355,7 @@ contents: >+
                 example: 
                   {'result': 'deleted file'}
 
-    /api/learningOrchestra/v1/tune:
+    /api/learningOrchestra/v1/tune/scikitLearn:
       post:
         tags:
          - tune
@@ -2185,7 +2516,7 @@ contents: >+
                         ]
                     }
                   
-    /api/learningOrchestra/v1/tune/{name}:
+    /api/learningOrchestra/v1/tune/scikitLearn/{name}:
       patch:
         tags:
            - tune
@@ -2331,7 +2662,7 @@ contents: >+
                 example: 
                   {'result': 'deleted file'}
 
-    /api/learningOrchestra/v1/predict:
+    /api/learningOrchestra/v1/predict/scikitLearn:
       post:
         tags:
          - predict
@@ -2492,7 +2823,7 @@ contents: >+
                         ]
                     }
                   
-    /api/learningOrchestra/v1/predict/{name}:
+    /api/learningOrchestra/v1/predict/scikitLearn/{name}:
       patch:
         tags:
            - predict
@@ -2639,7 +2970,7 @@ contents: >+
                   {'result': 'deleted file'}
 
 
-    /api/learningOrchestra/v1/evaluate:
+    /api/learningOrchestra/v1/evaluate/scikitLearn:
       post:
         tags:
          - evaluate
@@ -2800,7 +3131,7 @@ contents: >+
                         ]
                     }
                   
-    /api/learningOrchestra/v1/evaluate/{name}:
+    /api/learningOrchestra/v1/evaluate/scikitLearn/{name}:
       patch:
         tags:
            - evaluate
@@ -2958,14 +3289,10 @@ contents: >+
       description: The dataType resource changes the fields data type from stored resources between number and string.
     - name: histogram
       description: The histogram resource makes a histogram from a stored file, storing the resulting histogram in a new dataset.
-    - name: t-SNE
-      description: The T-distributed Stochastic Neighbor Embedding (t-SNE) is a machine learning algorithm for visualization.
-      externalDocs:
-        url: https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding
-    - name: PCA
-      description: PCA is used to decompose a multivariate dataset in a set of successive orthogonal components that explain a maximum amount of the variance.
-      externalDocs:
-        url: https://scikit-learn.org/stable/modules/decomposition.html#pca
+    - name: transform
+      description: Make transformations from learningOrchestra instances, like dataset and projection, using the python libs features
+    - name: explore
+      description: Make a image plot from an instance, using the python libs features.
     - name: builder
       description: The builder resource joins several steps of machine learning workflow (transform, tune, train and evaluate) acoupling in a unique resouce, builder creates several model predictions using your own modeling code using a defined set of classifiers.
     - name: model

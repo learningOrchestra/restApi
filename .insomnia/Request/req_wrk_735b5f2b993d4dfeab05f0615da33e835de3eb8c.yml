@@ -1,0 +1,33 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e835de3eb8c
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831d06a0d7
+modified: 1612169959155
+created: 1612169440308
+url: "{{ base_url }}/api/learningOrchestra/v1/model/scikitLearn"
+name: Responsible to load supervised or unsupervised models from existing python
+  libs.
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "modelName": "string",
+      "description": "string",
+      "modulePath": "string",
+      "class": "string",
+      "classParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1612169440308
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

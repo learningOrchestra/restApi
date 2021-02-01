@@ -1,9 +1,9 @@
 _id: req_092d71ce3f014f9ab6a8c36dada009f1
 type: Request
 parentId: fld_adf55955728b454c8e1d3c155c7a8fb5
-modified: 1609607576782
+modified: 1612169572822
 created: 1608230132529
-url: "{{IP}}/api/learningOrchestra/v1/model/default/{{modelName}}"
+url: "{{IP}}/api/learningOrchestra/v1/model/scikitLearn/{{modelName}}"
 name: Update a model
 description: ""
 method: PATCH
@@ -13,7 +13,7 @@ body:
     {
     	"description": "Some description",
     	"classParameters": {
-    	"n_estimators": 50
+    	"alpha": 0.3
     	}
     }
 parameters: []

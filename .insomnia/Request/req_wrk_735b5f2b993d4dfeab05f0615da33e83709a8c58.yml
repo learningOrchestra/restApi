@@ -1,0 +1,32 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83709a8c58
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8376b33a04
+modified: 1612169959604
+created: 1612169440911
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/projection"
+name: Create a projection dataset from an inserted dataset
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "inputDatasetName": "string",
+      "outputDatasetName": "string",
+      "names": [
+        "string"
+      ]
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1612169440911
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

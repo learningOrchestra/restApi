@@ -1,0 +1,29 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e836520109a
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83edb7da5c
+modified: 1612169959531
+created: 1612169440803
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/dataType"
+name: Change the type of fields from a resource
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "inputDatasetName": "string",
+      "types": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1612169440803
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

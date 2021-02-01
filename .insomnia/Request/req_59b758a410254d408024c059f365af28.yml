@@ -1,7 +1,7 @@
 _id: req_59b758a410254d408024c059f365af28
 type: Request
 parentId: fld_6677497941da455a8f5e1c04fb524610
-modified: 1608293489693
+modified: 1612003697962
 created: 1608230132611
 url: "{{IP}}/api/learningOrchestra/v1/dataset"
 name: download a dataset
@@ -9,10 +9,10 @@ description: ""
 method: POST
 body:
   mimeType: application/json
-  text: >-
+  text: |-
     {
-    	"datasetName": "dd",
-    	"datasetURI": "https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2019-financial-year-provisional/Download-data/annual-enterprise-survey-2019-financial-year-provisional-csv.csv"
+    	"datasetName": "sentimentTrain",
+    	"datasetURI": "https://filebin.net/2ji3ji5wjucp05zv/Train.csv?t=s0eil9df"
     }
 parameters:
   - name: ""

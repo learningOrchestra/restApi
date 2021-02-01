@@ -1,7 +1,7 @@
 _id: req_d65f46f38a2c490db3d178f76f059909
 type: Request
 parentId: fld_674e7e58139a47c5b68e818a1e2ebd6b
-modified: 1610282899070
+modified: 1611513266245
 created: 1608230132595
 url: "{{IP}}/api/learningOrchestra/v1/transform/dataType"
 name: change a dataset
@@ -13,7 +13,13 @@ body:
     {
     	"inputDatasetName": "{{ filename}}",
     	"types": {
-    		"year": "number"
+    			"CostsTaxes": "number",
+    			"ID": "number",
+    			"Municipality": "number",
+    			"ServiceCompleted": "number",
+    			"ZIPCode": "number",
+    			"latitude": "number",
+    			"longitude": "number"
     	}
     }
 parameters: []

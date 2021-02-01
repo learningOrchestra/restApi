@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83bb8e21b1
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8394efdd6f
+modified: 1612169959025
+created: 1612169440062
+url: "{{ base_url }}/api/learningOrchestra/v1/train/scikitLearn"
+name: List all trains metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1612169440062
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

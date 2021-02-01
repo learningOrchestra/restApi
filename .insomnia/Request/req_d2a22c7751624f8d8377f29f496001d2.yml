@@ -1,0 +1,21 @@
+_id: req_d2a22c7751624f8d8377f29f496001d2
+type: Request
+parentId: fld_fd26640f177543a9b1c3679d6150daae
+modified: 1611253965107
+created: 1611253861180
+url: "{{IP}}/api/learningOrchestra/v1/transform/scikitLearn/{{name}}"
+name: Delete a transform
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1611047540452
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

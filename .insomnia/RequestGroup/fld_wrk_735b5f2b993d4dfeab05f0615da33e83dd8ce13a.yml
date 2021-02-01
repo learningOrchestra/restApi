@@ -1,0 +1,11 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e83dd8ce13a
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1612169959810
+created: 1612000988315
+name: transform
+description: Make transformations from learningOrchestra instances, like dataset
+  and projection, using the python libs features
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1612000988315

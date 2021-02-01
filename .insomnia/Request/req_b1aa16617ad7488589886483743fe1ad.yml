@@ -1,9 +1,9 @@
 _id: req_b1aa16617ad7488589886483743fe1ad
 type: Request
 parentId: fld_a9d9b613217246e18b0c8a18d988ff18
-modified: 1610539470114
+modified: 1612169629363
 created: 1609933990269
-url: "{{IP}}/api/learningOrchestra/v1/train/{{trainName}}"
+url: "{{IP}}/api/learningOrchestra/v1/train/scikitLearn/{{trainName}}"
 name: Update a train
 description: ""
 method: PATCH

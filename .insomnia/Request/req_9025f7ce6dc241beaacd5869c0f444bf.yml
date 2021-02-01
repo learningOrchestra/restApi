@@ -1,0 +1,21 @@
+_id: req_9025f7ce6dc241beaacd5869c0f444bf
+type: Request
+parentId: fld_0ae1bc3da34640d488b06c39c42b306a
+modified: 1611513606571
+created: 1611256953337
+url: "{{IP}}/api/learningOrchestra/v1/explore/scikitLearn"
+name: read all plots metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1611047540475.4375
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

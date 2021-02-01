@@ -1,0 +1,37 @@
+_id: req_78037d6785cf46c893e1b7d6b607a762
+type: Request
+parentId: fld_fd26640f177543a9b1c3679d6150daae
+modified: 1611743449584
+created: 1611253861117
+url: "{{IP}}/api/learningOrchestra/v1/transform/scikitLearn"
+name: Create a transform
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |
+    {
+    	"name": "titanic_train_hotEncoded11",
+    	"description": "Some description",
+    	"modulePath": "sklearn.preprocessing",
+    	"class": "LabelEncoder",
+    	"classParameters": {},
+    	"method": "fit_transform",
+    	"methodParameters": {
+    								"y": "$dataset.Variable_category"
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_2249e73d22f44ceba4733aa38e3c6645
+authentication: {}
+metaSortKey: -1611047540502
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

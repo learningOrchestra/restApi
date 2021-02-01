@@ -1,9 +1,9 @@
 _id: req_9587cd1adac141a8905677f4367515fb
 type: Request
 parentId: fld_a9d9b613217246e18b0c8a18d988ff18
-modified: 1610269328623
+modified: 1612169643727
 created: 1609933821273
-url: "{{IP}}/api/learningOrchestra/v1/train/{{ trainName }}"
+url: "{{IP}}/api/learningOrchestra/v1/train/scikitLearn/{{ trainName }}"
 name: delete a train
 description: ""
 method: DELETE

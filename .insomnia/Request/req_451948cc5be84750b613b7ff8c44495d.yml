@@ -1,9 +1,9 @@
 _id: req_451948cc5be84750b613b7ff8c44495d
 type: Request
 parentId: fld_a9d9b613217246e18b0c8a18d988ff18
-modified: 1610269315896
+modified: 1612169634188
 created: 1609933805371
-url: "{{IP}}/api/learningOrchestra/v1/train/{{ trainName
+url: "{{IP}}/api/learningOrchestra/v1/train/scikitLearn/{{ trainName
   }}?limit=10&skip=0&query={}"
 name: read a train
 description: ""

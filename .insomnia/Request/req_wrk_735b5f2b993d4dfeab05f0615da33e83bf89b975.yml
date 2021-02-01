@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83bf89b975
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83dd8ce13a
+modified: 1612169959262
+created: 1611941838839
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/scikitLearn/{{ name }}"
+name: Read a transform metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1611941838839
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,32 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83b0426627
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e833709214f
+modified: 1612169958798
+created: 1612169439615
+url: "{{ base_url }}/api/learningOrchestra/v1/evaluate/scikitLearn"
+name: toDO
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "parentName": "string",
+      "name": "string",
+      "description": "string",
+      "method": "string",
+      "methodParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1612169439615
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
