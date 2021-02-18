@@ -1,7 +1,7 @@
 _id: req_wrk_735b5f2b993d4dfeab05f0615da33e835de3eb8c
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831d06a0d7
-modified: 1612169959155
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83447616e5
+modified: 1613677467526
 created: 1612169440308
 url: "{{ base_url }}/api/learningOrchestra/v1/model/scikitLearn"
 name: Responsible to load supervised or unsupervised models from existing python

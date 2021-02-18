@@ -1,28 +1,26 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83058cce54
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83b191fe3d
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83d3693d1e
-modified: 1613677464717
-created: 1612169439741
-url: "{{ base_url }}/api/learningOrchestra/v1/predict/scikitLearn"
-name: toDO
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e830fc69ef3
+modified: 1613677469060
+created: 1613594096230
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/python/{{ name }}"
+name: update a python transform running again the function.
 description: ""
-method: POST
+method: PATCH
 body:
   mimeType: application/json
   text: |-
     {
-      "parentName": "string",
-      "name": "string",
       "description": "string",
-      "method": "string",
-      "methodParameters": {}
+      "functionParameters": {},
+      "function": "string"
     }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
 authentication: {}
-metaSortKey: -1612169439741
+metaSortKey: -1613594096230
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

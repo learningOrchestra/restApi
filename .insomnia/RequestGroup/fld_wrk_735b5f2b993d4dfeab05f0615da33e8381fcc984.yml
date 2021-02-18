@@ -1,0 +1,11 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e8381fcc984
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1613646631343
+created: 1613646631343
+name: /dataType
+description: The dataType resource changes the fields data type from stored
+  resources between number and string.
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1613646631343

@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e837948527d
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e830fc69ef3
+modified: 1613677468919
+created: 1613594096155
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/python/{{ name }}"
+name: Read a python transform metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1613594096155
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

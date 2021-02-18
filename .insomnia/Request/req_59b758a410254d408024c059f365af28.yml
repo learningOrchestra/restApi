@@ -1,7 +1,7 @@
 _id: req_59b758a410254d408024c059f365af28
 type: Request
 parentId: fld_6677497941da455a8f5e1c04fb524610
-modified: 1612003697962
+modified: 1613389227659
 created: 1608230132611
 url: "{{IP}}/api/learningOrchestra/v1/dataset"
 name: download a dataset
@@ -9,10 +9,10 @@ description: ""
 method: POST
 body:
   mimeType: application/json
-  text: |-
+  text: >-
     {
-    	"datasetName": "sentimentTrain",
-    	"datasetURI": "https://filebin.net/2ji3ji5wjucp05zv/Train.csv?t=s0eil9df"
+    	"datasetName": "sentimentTrainLimited",
+    	"datasetURI": "https://drive.google.com/u/0/uc?id=12kUuyHkPZTlmZ3YVwKnPY1iLU2CA21HR&export=download"
     }
 parameters:
   - name: ""

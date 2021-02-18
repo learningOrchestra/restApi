@@ -1,7 +1,7 @@
 _id: spc_d13bad8869294d4cbb6c6a1cb6405bb0
 type: ApiSpec
 parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
-modified: 1612169960065
+modified: 1613677892507
 created: 1608230138068
 fileName: learningOrchestra
 contents: >+
@@ -27,7 +27,7 @@ contents: >+
     /api/learningOrchestra/v1/dataset:
       post:
         tags:
-         - dataset
+         - /dataset
         summary: Download a dataset from an URL
         description: Insert a CSV into the database using a public URI with direct file download.
         requestBody:
@@ -92,7 +92,7 @@ contents: >+
             
       get:
         tags:
-        - dataset
+        - /dataset
         summary: List all datasets metadata
         description: Returns an array of datasets metadata, where each dataset contains a metadata file.
 
@@ -133,7 +133,7 @@ contents: >+
     /api/learningOrchestra/v1/dataset/{datasetName}:
       get:
         tags:
-           - dataset
+           - /dataset
         summary: List the dataset content
         description:  Returns rows of the dataset requested, with pagination, the first row in the query is always the metadata file.
         parameters:
@@ -198,7 +198,7 @@ contents: >+
         
       delete:
         tags:
-           - dataset
+           - /dataset
         summary: Delete a inserted dataset
         description:  Delete an existent dataset in the database.
         parameters:
@@ -225,7 +225,7 @@ contents: >+
     /api/learningOrchestra/v1/transform/projection:
         post:
           tags:
-           - projection
+           - /transform/projection
           summary: Create a projection dataset from an inserted dataset
           description: The projection resource makes a projection from some dataset inserted in dataset resource, generating a new dataset.
           requestBody:
@@ -312,7 +312,7 @@ contents: >+
                     
         get:
             tags:
-            - projection
+            - /transform/projection
             summary: List all projections metadata
             description: Returns an array of projections metadata, where each dataset contains a metadata file.
 
@@ -347,7 +347,7 @@ contents: >+
     /api/learningOrchestra/v1/transform/projection/{projectionName}:
       get:
         tags:
-           - projection
+           - /transform/projection
         summary: List the projection content
         description:  Returns rows of the projection requested, with pagination, the first row in the query is always the metadata file.
         parameters:
@@ -405,7 +405,7 @@ contents: >+
         
       delete:
         tags:
-           - projection
+           - /transform/projection
         summary: Delete a created projection
         description:  Delete an existent projection in the database.
         parameters:
@@ -432,7 +432,7 @@ contents: >+
     /api/learningOrchestra/v1/transform/dataType:
         patch:
           tags:
-           - dataType
+           - /transform/dataType
           summary: Change the type of fields from a resource
           description: The request uses `inputDatasetName` as the dataset name to change the types of your fields. 
             The body request field *types* is a list of `Key:Value` which uses a *number* or *string* descriptor values in each field keys to describe the new value of altered field in resource.
@@ -505,7 +505,7 @@ contents: >+
     /api/learningOrchestra/v1/explore/histogram:
           post:
             tags:
-             - histogram
+             - /explore/histogram
             summary: Create a histogram from a resource
             description: The request is sent in the body, `inputDatasetName` is the name from used dataset and the `outputDatasetName` is the name of the file in which the histogram result is saved. 
               The `names` is an array with all the fields necessary to make the histogram.
@@ -593,7 +593,7 @@ contents: >+
 
           get:
               tags:
-              - histogram
+              - /explore/histogram
               summary: List all histogram datasets metadata
               description: Returns an array of histogram datasets metadata, where each dataset contains a metadata file.
               responses:
@@ -627,7 +627,7 @@ contents: >+
     /api/learningOrchestra/v1/explore/histogram/{histogramName}:
       get:
         tags:
-           - histogram
+           - /explore/histogram
         summary: Returns rows of the histogram requested, with pagination.
         description:  Returns an array of histogram datasets rows, The first row in the query is always the metadata file.
 
@@ -685,7 +685,7 @@ contents: >+
 
       delete:
         tags:
-           - histogram
+           - /explore/histogram
         summary: Delete a created histogram
         description:  Delete an existent histogram in the database.
         parameters:
@@ -712,7 +712,7 @@ contents: >+
     /api/learningOrchestra/v1/explore/scikitLearn:
           post:
             tags:
-             - explore
+             - /explore/scikitLearn
             summary: create a plot with output method from skicitLearn.
             description: create a plot with output method from skicitLearn, the output is passed to a plot lib, generating a image from data.
             requestBody:
@@ -828,7 +828,7 @@ contents: >+
                           
           get:
               tags:
-              - explore
+              - /explore/scikitLearn
               summary: Read the names of the created plots
               description: Returns a list with all created plots metadata.
               responses:
@@ -875,7 +875,7 @@ contents: >+
     /api/learningOrchestra/v1/explore/scikitLearn/{name}:
           patch:
             tags:
-             - explore
+             - /explore/scikitLearn
             summary: update a plot running again the class method.
             description: update a plot running again the class method.
             parameters:
@@ -947,7 +947,7 @@ contents: >+
       
           get:
               tags:
-                 - explore
+                 - /explore/scikitLearn
               summary: Read an image plot
               description: Returns the image plot of the specified name.
 
@@ -985,7 +985,7 @@ contents: >+
 
           delete:
               tags:
-                 - explore
+                 - /explore/scikitLearn
               summary: Delete a created image plot
               description:  Delete an existent image plot in the database.
               parameters:
@@ -1027,7 +1027,7 @@ contents: >+
     /api/learningOrchestra/v1/explore/scikitLearn/{name}/metadata:
            get:
               tags:
-                 - explore
+                 - /explore/scikitLearn
               summary: Read a plot metadata
               description: Returns the plot metadata of the specified name.
 
@@ -1095,7 +1095,7 @@ contents: >+
     /api/learningOrchestra/v1/transform/scikitLearn:
           post:
             tags:
-             - transform
+             - /transform/scikitLearn
             summary: transform a service instance from learningOrchestra using the sklearn lib.
             description:  transform a service instance from learningOrchestra using the sklearn lib.
             requestBody:
@@ -1211,7 +1211,7 @@ contents: >+
                           
           get:
               tags:
-              - transform
+              - /transform/scikitLearn
               summary: Read the metadata of the created transforms
               description: Returns a list with transforms metadata.
               responses:
@@ -1254,7 +1254,7 @@ contents: >+
     /api/learningOrchestra/v1/transform/scikitLearn/{name}:
           patch:
             tags:
-             - transform
+             - /transform/scikitLearn
             summary: update a transform running again the class method.
             description: update a transform running again the class method.
             parameters:
@@ -1326,7 +1326,7 @@ contents: >+
       
           get:
               tags:
-                 - transform
+                 - /transform/scikitLearn
               summary: Read a transform metadata
               description: Returns the metadata of the specified name.
 
@@ -1392,9 +1392,296 @@ contents: >+
 
           delete:
               tags:
-                 - transform
+                 - /transform/scikitLearn
               summary: Delete a created transform
               description:  Delete an existent transform in the database.
+              parameters:
+                - name: name
+                  in: path
+                  required: true
+                  description: the id of transform.
+                  schema:
+                    type : string
+              responses:
+                '200':
+                  description: Return the success message from deletion request
+                  content:
+                    application/json:
+                      schema: 
+                        type: object
+                        properties:
+                           result:
+                             type: string
+                             description: 'The message from delete status'
+                      example: 
+                        {'result': 'deleted file'}
+                '404':
+                  description: Transform does not found
+                  content:
+                    application/json:
+                      schema: 
+                          type: object
+                          properties:
+                             result:
+                               type: string
+                               description: 'Error log'
+                      example:
+                        {
+                          'result': "parent name doesn't exist"
+                        }
+                   
+    /api/learningOrchestra/v1/transform/python:
+          post:
+            tags:
+             - /transform/python
+            summary: transform a service instance from learningOrchestra using a python code.
+            description:  transform a service instance from learningOrchestra using a python code.
+            requestBody:
+              required: True
+              content:
+                application/json:
+                 schema: 
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        functionParameters:
+                          type: object
+                          description: A json object specifying the name of parameter and the value, case you want pass a instance from a learningOrchestra service as a parameter value, 
+                            like dataset or projection, you need put the character key '$', if you like pass one column from this instance, put the charater key '.' between
+                            the instance name and column name. e.g '$myDataSet.columnName' to pass a specific column, or '$myDataset', to pass the entire dataset as parameter.
+                        function:
+                            description: A python 3 code used to manipulate the instances defined in functionParameters, this field can use a code straight in string or fetching from an url. 
+                              You can use this instances using the key name, you need define a Dict instance named 'response' at end of code, this instance will store all Dict values in system, 
+                              you can access a instance defined inside of reponse dict using the notation '$instanceNameDefiniedInPostRequest.instanceNamedDefinedInResponseDict'.
+                            type: string
+                          
+                 example:
+                    {
+                      "name": "sentimentResult",
+                      "description": "Some description",
+                      "functionParameters": {
+                                    "y_test": "$sentimentPreprocess.y_test",
+                                    "y_pred": "$logisticRegressionPredict",
+                                    "X_test": "$sentimentPreprocess.X_test"
+                      },
+                      "function": "https://pastebin.com/raw/5yHjDpcT"
+                    }
+
+            responses:
+              '201':
+                description: Return the location link from created image plot 
+                content:
+                  application/json:
+                    schema: 
+                      type: object
+                      properties:
+                         result:
+                           type: string
+                           description: 'The location from created plot'
+                    example: 
+                      {
+                        'result': '/api/learningOrchestra/v1/transform/python/sentimentResult?query={}&limit=20&skip=0'
+                      }
+              '409':
+                  description: The name already exists
+                  content:
+                    application/json:
+                      schema: 
+                        type: object
+                        properties:
+                           result:
+                             type: string
+                             description: 'Error log'
+                      example: 
+                        {
+                        'result': 'duplicated name'
+                        }
+
+                          
+          get:
+              tags:
+              - /transform/python
+              summary: Read the metadata of the created python transforms
+              description: Returns a list with python transforms metadata.
+              responses:
+                '200':
+                  description: An array of plots name in result field
+                  content:
+                    application/json:
+                      schema: 
+                          type: object
+                          properties:
+                            result:
+                              type: array
+                              items:
+                                type: string
+                      example:
+                          {
+                            "result": [
+                                         {
+                                          "finished": true,
+                                          "name": "sentimentPreprocess",
+                                          "timeCreated": "2021-02-15T12:18:58-00:00",
+                                          "type": "pythonTransform"
+                                        },
+                                        {
+                                          "finished": false,
+                                          "name": "sentimentTrain",
+                                          "timeCreated": "2021-02-14T11:49:55-00:00",
+                                          "type": "pythonTransform"
+                                        }
+                             ]
+                           }
+                           
+    /api/learningOrchestra/v1/transform/python/{name}:
+          patch:
+            tags:
+             - /transform/python
+            summary: update a python transform running again the function.
+            description: update a python transform running again the python.
+            parameters:
+                - name: name
+                  in: path
+                  required: true
+                  description: the id of created python transform.
+                  schema:
+                    type : string
+            requestBody:
+              required: True
+              content:
+                application/json:
+                 schema: 
+                      type: object
+                      properties:
+                        description:
+                          type: string
+                        functionParameters:
+                          type: object
+                          description: A json object specifying the name of parameter and the value, case you want pass a instance from a learningOrchestra service as a parameter value, 
+                            like dataset or projection, you need put the character key '$', if you like pass one column from this instance, put the charater key '.' between
+                            the instance name and column name. e.g '$myDataSet.columnName' to pass a specific column, or '$myDataset', to pass the entire dataset as parameter.
+                        function:
+                            description: A python 3 code used to manipulate the instances defined in functionParameters, this field can use a code straight in string or fetching from an url. 
+                              You can use this instances using the key name, you need define a Dict instance named 'response' at end of code, this instance will store all Dict values in system, 
+                              you can access a instance defined inside of reponse dict using the notation '$instanceNameDefiniedInPostRequest.instanceNamedDefinedInResponseDict'.
+                            type: string
+                          
+                 example:
+                    {
+                      "description": "Some description",
+                      "functionParameters": {
+                                    "y_test": "$sentimentPreprocess.y_test",
+                                    "y_pred": "$logisticRegressionPredict",
+                                    "X_test": "$sentimentPreprocess.X_test"
+                      },
+                      "function": "https://pastebin.com/raw/5yHjDpcT"
+                    }
+
+            responses:
+              '201':
+                description: Return the location link from created transform
+                content:
+                  application/json:
+                    schema: 
+                      type: object
+                      properties:
+                         result:
+                           type: string
+                           description: 'The location from created transform'
+                    example: 
+                      {
+                        'result': '/api/learningOrchestra/v1/transform/python/titanicTrainUpdate?query={}&limit=20&skip=0'
+                      }
+              '404':
+                description: Not found
+                content:
+                  application/json:
+                    schema: 
+                        type: object
+                        properties:
+                           result:
+                             type: string
+                             description: 'Error log'
+                    examples:
+                      inexistent instance name:
+                        value:
+                          {
+                            'result': "parent name doesn't exist"
+                          }
+      
+          get:
+              tags:
+                 - /transform/python
+              summary: Read a python transform metadata
+              description: Returns the metadata of the specified name.
+
+              parameters:
+                - name: name
+                  in: path
+                  required: true
+                  description: the id of transform.
+                  schema:
+                    type : string
+
+              responses:
+                '200':
+                  description: Return the transform metadata
+                  content:
+                    application/json:
+                      schema: 
+                          type: object
+                          properties:
+                            result:
+                              type: array
+                              items:
+                                type: string
+                      example:
+                          {
+                            "result": [
+                             {
+                                  "_id": 0,
+                                  "finished": false,
+                                  "name": "sentimentResult",
+                                  "timeCreated": "2021-02-16T09:23:06-00:00",
+                                  "type": "pythonTransform"
+                              },
+                              {
+                                "_id": 1,
+                                "description": "Some description",
+                                "exception": "TypeError('sparse matrix length is ambiguous; use getnnz() or shape[0]')",
+                                "functionMessage": "  (0, 1227)\t0.11625305371158019\n  (0, 807)\t0.11625305371158019\n  (0, 647)\t0.12673597992636393\n  (0, 782)\t0.12673597992636393\n",
+                                "functionParameters": {
+                                  "X_test": "$sentimentPreprocess13.X_test",
+                                  "y_pred": "$logisticRegressionPredict",
+                                  "y_test": "$sentimentPreprocess13.y_test"
+                                }
+                                }
+                            ]
+                          }
+
+                '404':
+                  description: transform name does not found
+                  content:
+                    application/json:
+                      schema: 
+                          type: object
+                          properties:
+                             result:
+                               type: string
+                               description: 'Error log'
+                      example:
+                        {
+                          'result': "parent name doesn't exist"
+                        }
+
+          delete:
+              tags:
+                 - /transform/python
+              summary: Delete a created python transform
+              description:  Delete an existent python transform in the database.
               parameters:
                 - name: name
                   in: path
@@ -1433,7 +1720,7 @@ contents: >+
     /api/learningOrchestra/v1/builder:
         post:
           tags:
-           - builder
+           - /builder
           summary: Create a builder
           description: Create predictions for some dataset
           requestBody:
@@ -1631,7 +1918,7 @@ contents: >+
                     
         get:
             tags:
-            - builder
+            - /builder
             summary: List all builder predictions metadata
             description: Returns an array of predictions metadata, where each dataset contains a metadata file.
 
@@ -1667,7 +1954,7 @@ contents: >+
     /api/learningOrchestra/v1/builder/{predictionName}:
       get:
         tags:
-           - builder
+           - /builder
         summary: List builder dataset content
         description:  Returns rows of the projection requested, with pagination, the first row in the query is always the metadata file.
         parameters:
@@ -1725,7 +2012,7 @@ contents: >+
         
       delete:
         tags:
-           - builder
+           - /builder
         summary: Delete a created prediction
         description:  Delete an existent builder prediction in the database.
         parameters:
@@ -1754,7 +2041,7 @@ contents: >+
     /api/learningOrchestra/v1/model/scikitLearn:
       post:
         tags:
-         - model
+         - /model/scikitLearn
         summary: Responsible to load supervised or unsupervised models from existing python libs.
         description: Create models objects with customized parameters.
         requestBody:
@@ -1847,7 +2134,7 @@ contents: >+
             
       get:
         tags:
-        - model
+        - /model/scikitLearn
         summary: List all models metadata
         description: Returns an array of models metadata, where each model contains a metadata file.
 
@@ -1907,7 +2194,7 @@ contents: >+
     /api/learningOrchestra/v1/model/scikitLearn/{modelName}:
       patch:
         tags:
-           - model
+           - /model/scikitLearn
         summary: update a model instance
         description:  Update the object from model class with new parameters in class constructor
         parameters:
@@ -1932,7 +2219,20 @@ contents: >+
                   {
                   'result': '/api/learningOrchestra/v1/model/default?multiTaskLassoInstance?query={}&limit=10&skip=0'
                   }
-                  
+          '404':
+            description: Instance does not found
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                example:
+                  {
+                    'result': "parent name doesn't exist"
+                  }  
           '406':
             description: There are conflicts with request data
             content:
@@ -1943,21 +2243,16 @@ contents: >+
                        result:
                          type: string
                          description: 'Error log'
-                examples:
-                  nonexistent model filename:
+                example:
+                  invalid class method parameter:
                     value:
                       {
-                        'result': 'duplicated model name'
-                      }
-                  invalid function parameters:
-                    value:
-                      {
-                        'result': "model name doesn't exist"
+                        'result': "invalid class method parameter"
                       }
                     
       get:
         tags:
-           - model
+           - /model/scikitLearn
         summary: List the model metadata executions
         description:  Returns rows of the requested model, with pagination, the first row in the query is always the metadata file from model instance,
           other lines are the PATCH request metadata from updated model instances
@@ -2023,7 +2318,7 @@ contents: >+
         
       delete:
         tags:
-           - model
+           - /model/scikitLearn
         summary: Delete a model instance
         description:  Delete an existent model instance.
         parameters:
@@ -2034,24 +2329,38 @@ contents: >+
             schema:
               type : string
         responses:
-          '200':
-            description: Return the success message from deletion request
-            content:
-              application/json:
-                schema: 
-                  type: object
-                  properties:
-                     result:
-                       type: string
-                       description: 'The message from delete status'
-                example: 
-                  {'result': 'deleted file'}
+            '404':
+              description: Instance does not found
+              content:
+                application/json:
+                  schema: 
+                      type: object
+                      properties:
+                         result:
+                           type: string
+                           description: 'Error log'
+                  example:
+                    {
+                      'result': "parent name doesn't exist"
+                    }
+            '200':
+              description: Return the success message from deletion request
+              content:
+                application/json:
+                  schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'The message from delete status'
+                  example: 
+                    {'result': 'deleted file'}
 
 
     /api/learningOrchestra/v1/train/scikitLearn:
       post:
         tags:
-         - train
+         - /train/scikitLearn
         summary: Train created models.
         description: This resource trains models with yours class methods.
         requestBody:
@@ -2152,7 +2461,7 @@ contents: >+
             
       get:
         tags:
-        - train
+        - /train/scikitLearn
         summary: List all trains metadata
         description: Returns an array of trains metadata, where each train contains a metadata file.
 
@@ -2212,7 +2521,7 @@ contents: >+
     /api/learningOrchestra/v1/train/scikitLearn/{name}:
       patch:
         tags:
-           - train
+           - /train/scikitLearn
         summary: update a train instance
         description:  Update the execution with new parameters in method call
         parameters:
@@ -2237,7 +2546,20 @@ contents: >+
                   {
                   'result': '/api/learningOrchestra/v1/train?MultiTaskLasso?query={}&limit=10&skip=0'
                   }
-                  
+          '404':
+            description: Instance does not found
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                example:
+                  {
+                    'result': "parent name doesn't exist"
+                  }
           '406':
             description: There are conflicts with request data
             content:
@@ -2248,12 +2570,7 @@ contents: >+
                        result:
                          type: string
                          description: 'Error log'
-                examples:
-                  nonexistent filename:
-                    value:
-                      {
-                        'result': 'duplicated name'
-                      }
+                example:
                   invalid class method parameter:
                     value:
                       {
@@ -2262,7 +2579,7 @@ contents: >+
                     
       get:
         tags:
-           - train
+           - /train/scikitLearn
         summary: List the train metadata executions
         description:  Returns rows of the requested train, with pagination, the first row in the query is always the metadata file from train instance,
           other lines are the PATCH request metadata from updated train instances
@@ -2331,7 +2648,7 @@ contents: >+
                         
       delete:
         tags:
-           - train
+           - /train/scikitLearn
         summary: Delete a train instance
         description:  Delete an existent train instance.
         parameters:
@@ -2342,6 +2659,20 @@ contents: >+
             schema:
               type : string
         responses:
+          '404':
+            description: Instance does not found
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                example:
+                  {
+                    'result': "parent name doesn't exist"
+                  }
           '200':
             description: Return the success message from deletion request
             content:
@@ -2358,7 +2689,7 @@ contents: >+
     /api/learningOrchestra/v1/tune/scikitLearn:
       post:
         tags:
-         - tune
+         - /tune/scikitLearn
         summary: toDO
         description: toDO
         requestBody:
@@ -2459,7 +2790,7 @@ contents: >+
             
       get:
         tags:
-        - tune
+        - /tune/scikitLearn
         summary: List all tunes metadata
         description: Returns an array of tunes metadata, where each train contains a metadata file.
 
@@ -2519,7 +2850,7 @@ contents: >+
     /api/learningOrchestra/v1/tune/scikitLearn/{name}:
       patch:
         tags:
-           - tune
+           - /tune/scikitLearn
         summary: update a tune instance
         description:  Update the execution with new parameters in method call
         parameters:
@@ -2544,7 +2875,20 @@ contents: >+
                   {
                   'result': '/api/learningOrchestra/v1/tune?MultiTaskLasso?query={}&limit=10&skip=0'
                   }
-                  
+          '404':
+            description: Instance does not found
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                example:
+                  {
+                    'result': "parent name doesn't exist"
+                  }
           '406':
             description: There are conflicts with request data
             content:
@@ -2555,12 +2899,7 @@ contents: >+
                        result:
                          type: string
                          description: 'Error log'
-                examples:
-                  nonexistent filename:
-                    value:
-                      {
-                        'result': 'duplicated name'
-                      }
+                example:
                   invalid class method parameter:
                     value:
                       {
@@ -2569,7 +2908,7 @@ contents: >+
                     
       get:
         tags:
-           - tune
+           - /tune/scikitLearn
         summary: List the tune metadata executions
         description:  Returns rows of the requested train, with pagination, the first row in the query is always the metadata file from train instance,
           other lines are the PATCH request metadata from updated train instances
@@ -2638,7 +2977,7 @@ contents: >+
                         
       delete:
         tags:
-           - tune
+           - /tune/scikitLearn
         summary: Delete a tune instance
         description:  Delete an existent tune instance.
         parameters:
@@ -2649,6 +2988,20 @@ contents: >+
             schema:
               type : string
         responses:
+          '404':
+            description: Instance does not found
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                example:
+                  {
+                    'result': "parent name doesn't exist"
+                  }
           '200':
             description: Return the success message from deletion request
             content:
@@ -2665,7 +3018,7 @@ contents: >+
     /api/learningOrchestra/v1/predict/scikitLearn:
       post:
         tags:
-         - predict
+         - /predict/scikitLearn
         summary: toDO
         description: toDO
         requestBody:
@@ -2766,7 +3119,7 @@ contents: >+
             
       get:
         tags:
-        - predict
+        - /predict/scikitLearn
         summary: List all predicts metadata
         description: Returns an array of predicts metadata, where each train contains a metadata file.
 
@@ -2826,7 +3179,7 @@ contents: >+
     /api/learningOrchestra/v1/predict/scikitLearn/{name}:
       patch:
         tags:
-           - predict
+           - /predict/scikitLearn
         summary: update a predict instance
         description:  Update the execution with new parameters in method call
         parameters:
@@ -2851,7 +3204,20 @@ contents: >+
                   {
                   'result': '/api/learningOrchestra/v1/tune?MultiTaskLasso?query={}&limit=10&skip=0'
                   }
-                  
+          '404':
+            description: Instance does not found
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                example:
+                  {
+                    'result': "parent name doesn't exist"
+                  }
           '406':
             description: There are conflicts with request data
             content:
@@ -2862,12 +3228,7 @@ contents: >+
                        result:
                          type: string
                          description: 'Error log'
-                examples:
-                  nonexistent filename:
-                    value:
-                      {
-                        'result': 'duplicated name'
-                      }
+                example:
                   invalid class method parameter:
                     value:
                       {
@@ -2876,7 +3237,7 @@ contents: >+
                     
       get:
         tags:
-           - predict
+           - /predict/scikitLearn
         summary: List the predict metadata executions
         description:  Returns rows of the requested train, with pagination, the first row in the query is always the metadata file from train instance,
           other lines are the PATCH request metadata from updated train instances
@@ -2945,7 +3306,7 @@ contents: >+
                         
       delete:
         tags:
-           - predict
+           - /predict/scikitLearn
         summary: Delete a predict instance
         description:  Delete an existent tune instance.
         parameters:
@@ -2956,6 +3317,20 @@ contents: >+
             schema:
               type : string
         responses:
+          '404':
+            description: Instance does not found
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                example:
+                  {
+                    'result': "parent name doesn't exist"
+                  }
           '200':
             description: Return the success message from deletion request
             content:
@@ -2973,7 +3348,7 @@ contents: >+
     /api/learningOrchestra/v1/evaluate/scikitLearn:
       post:
         tags:
-         - evaluate
+         - /evaluate/scikitLearn
         summary: toDO
         description: toDO
         requestBody:
@@ -3074,7 +3449,7 @@ contents: >+
             
       get:
         tags:
-        - evaluate
+        - /evaluate/scikitLearn
         summary: List all evaluates metadata
         description: Returns an array of evaluates metadata, where each train contains a metadata file.
 
@@ -3134,7 +3509,7 @@ contents: >+
     /api/learningOrchestra/v1/evaluate/scikitLearn/{name}:
       patch:
         tags:
-           - evaluate
+           - /evaluate/scikitLearn
         summary: update a evaluate instance
         description:  Update the execution with new parameters in method call
         parameters:
@@ -3145,6 +3520,20 @@ contents: >+
             schema:
               type : string
         responses:
+          '404':
+            description: Instance does not found
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                example:
+                  {
+                    'result': "parent name doesn't exist"
+                  }
           '201':
             description: Return the location link from created instance 
             content:
@@ -3170,12 +3559,7 @@ contents: >+
                        result:
                          type: string
                          description: 'Error log'
-                examples:
-                  nonexistent filename:
-                    value:
-                      {
-                        'result': 'duplicated name'
-                      }
+                example:
                   invalid class method parameter:
                     value:
                       {
@@ -3184,7 +3568,7 @@ contents: >+
                     
       get:
         tags:
-           - evaluate
+           - /evaluate/scikitLearn
         summary: List the evaluate metadata executions
         description:  Returns rows of the requested train, with pagination, the first row in the query is always the metadata file from train instance,
           other lines are the PATCH request metadata from updated train instances
@@ -3253,7 +3637,7 @@ contents: >+
                         
       delete:
         tags:
-           - evaluate
+           - /evaluate/scikitLearn
         summary: Delete a evaluate instance
         description:  Delete an existent evaluate instance.
         parameters:
@@ -3264,6 +3648,20 @@ contents: >+
             schema:
               type : string
         responses:
+          '404':
+            description: Instance does not found
+            content:
+              application/json:
+                schema: 
+                    type: object
+                    properties:
+                       result:
+                         type: string
+                         description: 'Error log'
+                example:
+                  {
+                    'result': "parent name doesn't exist"
+                  }
           '200':
             description: Return the success message from deletion request
             content:
@@ -3281,32 +3679,32 @@ contents: >+
 
                   
   tags:
-    - name: dataset
+    - name: /dataset
       description: The dataset resource is used to manages datasets, datasets are downloaded in CSV format and parsed into JSON format where the primary key for each document is the datasetName field contained in the JSON file.
-    - name: projection
+    - name: /transform/projection
       description: The projection resource makes a projection from dataset inserted in dataset resource, generating a new dataset, and also manages this generated dataset.
-    - name: dataType
+    - name: /transform/dataType
       description: The dataType resource changes the fields data type from stored resources between number and string.
-    - name: histogram
-      description: The histogram resource makes a histogram from a stored file, storing the resulting histogram in a new dataset.
-    - name: transform
+    - name: /transform/scikitLearn
       description: Make transformations from learningOrchestra instances, like dataset and projection, using the python libs features
-    - name: explore
+    - name: /transform/python
+      description: Make transformations from learningOrchestra instances, like dataset and projection, using the python libs features
+    - name: /explore/scikitLearn
       description: Make a image plot from an instance, using the python libs features.
-    - name: builder
-      description: The builder resource joins several steps of machine learning workflow (transform, tune, train and evaluate) acoupling in a unique resouce, builder creates several model predictions using your own modeling code using a defined set of classifiers.
-    - name: model
+    - name: /explore/histogram
+      description: The histogram resource makes a histogram from a stored file, storing the resulting histogram in a new dataset.
+    - name: /model/scikitLearn
       description: The model resource creates models instances from most popular python libraries like scikit-learn and TensorFlow.
-    - name: train
+    - name: /train/scikitLearn
       description: Train a model instance with methods availabes from model object
-    - name: tune
-      description: Tune an instance \toDO
-    - name: predict
-      description: predict an instance \toDO
-    - name: evaluate
-      description: evaluate an instance \toDO
-
-      
+    - name: /tune/scikitLearn
+      description: Tune an instance
+    - name: /predict/scikitLearn
+      description: predict an instance
+    - name: /evaluate/scikitLearn
+      description: evaluate an instance
+    - name: /builder
+      description: The builder resource joins several steps of machine learning workflow (transform, tune, train and evaluate) acoupling in a unique resouce, builder creates several model predictions using your own modeling code using a defined set of classifiers.
   components:
     schemas:
       datasetMetadata:

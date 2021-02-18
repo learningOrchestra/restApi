@@ -1,10 +1,10 @@
-_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e8394efdd6f
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e83fd1eed01
 type: RequestGroup
 parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
-modified: 1612169959742
-created: 1610701494600
-name: train
+modified: 1613677481837
+created: 1613646630086
+name: /train/scikitLearn
 description: Train a model instance with methods availabes from model object
 environment: {}
 environmentPropertyOrder: null
-metaSortKey: -1610701494600
+metaSortKey: -1613646630086

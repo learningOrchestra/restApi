@@ -1,7 +1,7 @@
 _id: req_wrk_735b5f2b993d4dfeab05f0615da33e83367d90e2
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e839dda9754
-modified: 1612169959394
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831d1877be
+modified: 1613677473127
 created: 1611936141567
 url: "{{ base_url }}/api/learningOrchestra/v1/explore/scikitLearn/{{ name }}"
 name: update a plot running again the class method.

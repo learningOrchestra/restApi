@@ -1,7 +1,7 @@
 _id: req_wrk_735b5f2b993d4dfeab05f0615da33e8373a3380c
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831d06a0d7
-modified: 1612169959064
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83447616e5
+modified: 1613677466900
 created: 1612169440118
 url: "{{ base_url }}/api/learningOrchestra/v1/model/scikitLearn/{{ modelName }}"
 name: Delete a model instance

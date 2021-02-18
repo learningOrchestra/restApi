@@ -1,26 +1,28 @@
 _id: env_e4dca6566a2243b4a13be8c05b90dc82
 type: Environment
 parentId: env_16c09f419c6b48ee983d15138d805f7326e64daa
-modified: 1612001185171
+modified: 1613676468563
 created: 1608277672864
 name: Gabriel
 data:
-  IP: 35.247.225.7
-  filename: sentimentTest
+  IP: 35.199.126.186
+  base_url: 35.199.126.186
+  filename: sentimentTrain
   projectionFilename: titanic_train_proj_2
   normalizationName: filename
   embeddingName: filename
   tsneFilename: filename
   pcaFilename: filename
   packageName: toolName
-  modelName: MultiTaskLasso
-  trainName: MultiTaskLasso3
+  modelName: logisticRegression
+  trainName: logisticRegressionTrain6
   exploreName: PCA_11
   transformName: someName
-  name: titanic_train_hotEncoded11
+  name: sentimentResult85
 dataPropertyOrder:
   "&":
     - IP
+    - base_url
     - filename
     - projectionFilename
     - normalizationName

@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83fbf19501
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e830fc69ef3
+modified: 1613677468770
+created: 1613594096077
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/python/{{ name }}"
+name: Delete a created python transform
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1613594096077
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

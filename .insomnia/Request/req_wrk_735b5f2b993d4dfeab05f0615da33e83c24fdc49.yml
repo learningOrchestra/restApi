@@ -1,28 +1,27 @@
-_id: req_wrk_735b5f2b993d4dfeab05f0615da33e839924efeb
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83c24fdc49
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83fd1eed01
-modified: 1613677466751
-created: 1612169440107
-url: "{{ base_url }}/api/learningOrchestra/v1/train/scikitLearn"
-name: Train created models.
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e830fc69ef3
+modified: 1613677469419
+created: 1613594096374
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/python"
+name: transform a service instance from learningOrchestra using a python code.
 description: ""
 method: POST
 body:
   mimeType: application/json
   text: |-
     {
-      "parentName": "string",
       "name": "string",
       "description": "string",
-      "method": "string",
-      "methodParameters": {}
+      "functionParameters": {},
+      "function": "string"
     }
 parameters: []
 headers:
   - name: Content-Type
     value: application/json
 authentication: {}
-metaSortKey: -1612169440107
+metaSortKey: -1613594096374
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

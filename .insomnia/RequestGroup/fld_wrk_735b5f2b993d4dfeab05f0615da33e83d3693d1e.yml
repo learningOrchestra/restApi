@@ -1,0 +1,10 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e83d3693d1e
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1613677481394
+created: 1613646629762
+name: /predict/scikitLearn
+description: predict an instance \toDO
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1613646629762

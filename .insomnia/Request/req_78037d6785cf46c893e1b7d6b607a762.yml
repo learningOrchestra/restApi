@@ -1,25 +1,24 @@
 _id: req_78037d6785cf46c893e1b7d6b607a762
 type: Request
-parentId: fld_fd26640f177543a9b1c3679d6150daae
-modified: 1611743449584
+parentId: fld_fa2a2b859a834863b0080be11950eaec
+modified: 1613676121028
 created: 1611253861117
-url: "{{IP}}/api/learningOrchestra/v1/transform/scikitLearn"
-name: Create a transform
+url: "{{IP}}/api/learningOrchestra/v1/transform/python"
+name: Create a python function
 description: ""
 method: POST
 body:
   mimeType: application/json
-  text: |
+  text: >
     {
-    	"name": "titanic_train_hotEncoded11",
+    	"name": "sentimentResult85",
     	"description": "Some description",
-    	"modulePath": "sklearn.preprocessing",
-    	"class": "LabelEncoder",
-    	"classParameters": {},
-    	"method": "fit_transform",
-    	"methodParameters": {
-    								"y": "$dataset.Variable_category"
-    	}
+    	"functionParameters": {
+    								"y_test": "$sentimentPreprocess13.y_test",
+    								"y_pred": "$logisticRegressionPredict2",
+    								"X_test": "$sentimentPreprocess13.X_test"
+    	},
+    	"function": "https://gist.githubusercontent.com/riibeirogabriel/d5075b3d3b702cb19c2a354b7d251608/raw/38e17f6bf86c265ed6b77d7ef9d76e801ac69b72/predict.py"
     }
 parameters: []
 headers:

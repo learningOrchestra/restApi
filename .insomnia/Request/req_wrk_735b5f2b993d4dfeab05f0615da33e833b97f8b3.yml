@@ -1,7 +1,7 @@
 _id: req_wrk_735b5f2b993d4dfeab05f0615da33e833b97f8b3
 type: Request
-parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e839dda9754
-modified: 1612169959430
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831d1877be
+modified: 1613677473456
 created: 1611934677887
 url: "{{ base_url }}/api/learningOrchestra/v1/explore/scikitLearn"
 name: create a plot with output method from skicitLearn.
