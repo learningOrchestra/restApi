@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83670bf500
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83ff1ea2a5
+modified: 1618135555143
+created: 1615549889611
+url: "{{ base_url }}/api/learningOrchestra/v1/dataset/generic/{{ datasetName }}"
+name: Deletes a specific dataset stored in Learning Orchestra
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1615549889611
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

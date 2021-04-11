@@ -1,0 +1,11 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f385b116
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555411
+created: 1614590062908
+name: /function/python
+description: Make any tasks from learningOrchestra instances, like dataset and
+  projection, using a python code
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614590062908

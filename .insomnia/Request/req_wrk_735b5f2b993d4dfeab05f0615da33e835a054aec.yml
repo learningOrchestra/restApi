@@ -1,0 +1,33 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e835a054aec
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83b83520ca
+modified: 1618135554365
+created: 1614587324026
+url: "{{ base_url }}/api/learningOrchestra/v1/predict/scikitlearn"
+name: Creates a predict binary object in a volume using a previous object
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "parentName": "string",
+      "modelName": "string",
+      "name": "string",
+      "description": "string",
+      "method": "string",
+      "methodParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1614587324026
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

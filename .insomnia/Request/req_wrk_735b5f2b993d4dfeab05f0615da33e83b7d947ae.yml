@@ -1,10 +1,10 @@
 _id: req_wrk_735b5f2b993d4dfeab05f0615da33e83b7d947ae
 type: Request
 parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e839615e716
-modified: 1613677473627
+modified: 1618135554908
 created: 1609933515169
 url: "{{ base_url }}/api/learningOrchestra/v1/explore/histogram/{{ histogramName }}"
-name: Delete a created histogram
+name: Deletes a specific histogram created previously
 description: ""
 method: DELETE
 body: {}

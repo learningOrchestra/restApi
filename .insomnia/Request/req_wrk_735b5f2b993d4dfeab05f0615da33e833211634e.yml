@@ -1,0 +1,30 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e833211634e
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f385b116
+modified: 1618135554743
+created: 1614587324644
+url: "{{ base_url }}/api/learningOrchestra/v1/function/python/{{ name }}"
+name: Updates a specific function executed previously. The function is re-executed
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "description": "string",
+      "functionParameters": {},
+      "function": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1614587324644
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

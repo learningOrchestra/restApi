@@ -1,11 +1,11 @@
 _id: req_wrk_735b5f2b993d4dfeab05f0615da33e83ea8878c8
 type: Request
 parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e832c2e51fc
-modified: 1613677479459
+modified: 1618135555110
 created: 1612169440855
 url: "{{ base_url }}/api/learningOrchestra/v1/transform/projection/{{
   projectionName }}"
-name: List the projection content
+name: Retrieves a specific projection metadata performed previously
 description: ""
 method: GET
 body: {}

@@ -1,0 +1,29 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83be349426
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83eacdb74a
+modified: 1618135555212
+created: 1615549889889
+url: "{{ base_url }}/api/learningOrchestra/v1/dataset/csv"
+name: Downloads adataset using an URL
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "datasetName": "string",
+      "datasetURI": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1615549889889
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

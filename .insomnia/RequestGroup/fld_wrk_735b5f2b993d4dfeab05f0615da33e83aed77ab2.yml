@@ -1,0 +1,11 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e83aed77ab2
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555426
+created: 1614590062952
+name: /transform/tensorflow
+description: Make transformations from learningOrchestra instances, like dataset
+  and projection, using the TensorFlow API
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614590062952

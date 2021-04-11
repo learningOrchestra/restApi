@@ -1,0 +1,33 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83d07610bb
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f41535d3
+modified: 1618135554349
+created: 1614590059046
+url: "{{ base_url }}/api/learningOrchestra/v1/predict/tensorflow"
+name: Creates apredict binary object in a volume using a previous object
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "parentName": "string",
+      "modelName": "string",
+      "name": "string",
+      "description": "string",
+      "method": "string",
+      "methodParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1614590059046
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

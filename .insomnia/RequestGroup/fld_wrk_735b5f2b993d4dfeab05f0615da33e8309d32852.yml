@@ -1,0 +1,11 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e8309d32852
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555253
+created: 1614587326122
+name: /evaluate/scikitlearn
+description: evaluate a previously created instance with methods availabes from
+  a Scikit-Learn object
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614587326122

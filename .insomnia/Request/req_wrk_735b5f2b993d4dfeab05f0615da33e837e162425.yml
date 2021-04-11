@@ -1,0 +1,22 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e837e162425
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83b065eba7
+modified: 1618135554304
+created: 1614590058821
+url: "{{ base_url }}/api/learningOrchestra/v1/evaluate/tensorflow/{{ name }}"
+name: Updates a specific evaluate object created previously using TensorFlow.
+  The evaluate operation is re-executed
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614590058821
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

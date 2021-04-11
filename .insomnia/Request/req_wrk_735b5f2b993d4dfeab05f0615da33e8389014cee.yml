@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8389014cee
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e838b0c9721
+modified: 1618135554787
+created: 1614587324817
+url: "{{ base_url }}/api/learningOrchestra/v1/explore/tensorflow/{{ name }}"
+name: Deletes a specific explore image plot created previously using TensorFlow
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587324817
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

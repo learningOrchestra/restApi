@@ -1,0 +1,32 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8340e36a00
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8325c72398
+modified: 1618135554656
+created: 1614587324420
+url: "{{ base_url }}/api/learningOrchestra/v1/model/scikitlearn"
+name: Loads a MLmodel in a volume using the Scikit-learn API
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "modelName": "string",
+      "description": "string",
+      "modulePath": "string",
+      "class": "string",
+      "classParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1614587324420
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

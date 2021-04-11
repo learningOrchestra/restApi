@@ -1,0 +1,22 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83b0ce6bb6
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83ecbf7306
+modified: 1618135554374
+created: 1614590059287
+url: "{{ base_url }}/api/learningOrchestra/v1/tune/tensorflow/{{ name }}"
+name: Updates a specific tune object created previously using TensorFlow. The
+  tune operation is re-executed
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614590059287
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

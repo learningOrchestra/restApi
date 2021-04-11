@@ -1,10 +1,10 @@
 _id: req_wrk_735b5f2b993d4dfeab05f0615da33e836520109a
 type: Request
 parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83ddd927b7
-modified: 1613677477183
+modified: 1618135555086
 created: 1612169440803
 url: "{{ base_url }}/api/learningOrchestra/v1/transform/dataType"
-name: Change the type of fields from a resource
+name: Updates the types of some dataset fields created previously
 description: ""
 method: PATCH
 body:

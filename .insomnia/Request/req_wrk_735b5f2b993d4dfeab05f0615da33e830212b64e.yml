@@ -1,0 +1,32 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e830212b64e
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8390389f5a
+modified: 1618135554589
+created: 1614590059948
+url: "{{ base_url }}/api/learningOrchestra/v1/model/tensorflow"
+name: loads a MLmodel in a volume using the TensorFlow API
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "modelName": "string",
+      "description": "string",
+      "modulePath": "string",
+      "class": "string",
+      "classParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1614590059948
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

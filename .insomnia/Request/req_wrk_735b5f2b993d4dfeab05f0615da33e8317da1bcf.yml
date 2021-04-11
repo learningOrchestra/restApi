@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8317da1bcf
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8309d32852
+modified: 1618135554326
+created: 1614587323913
+url: "{{ base_url }}/api/learningOrchestra/v1/evaluate/scikitlearn"
+name: Rtrieves all evaluate metadata performed previously using Scikit-learn
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587323913
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

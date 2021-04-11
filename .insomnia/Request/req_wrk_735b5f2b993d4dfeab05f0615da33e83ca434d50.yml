@@ -1,0 +1,22 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83ca434d50
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831e962401
+modified: 1618135554443
+created: 1614590059560
+url: "{{ base_url }}/api/learningOrchestra/v1/train/tensorflow/{{ name }}"
+name: Updates a specific train object created previously using TensorFlow.  The
+  train operation is re-executed
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614590059560
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

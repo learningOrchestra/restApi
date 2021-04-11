@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8378b81e54
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f385b116
+modified: 1618135554732
+created: 1614587324594
+url: "{{ base_url }}/api/learningOrchestra/v1/function/python/{{ name }}"
+name: Retrieves a specific Python function metadata executed previously
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587324594
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

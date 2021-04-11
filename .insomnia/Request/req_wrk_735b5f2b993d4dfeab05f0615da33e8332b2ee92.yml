@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8332b2ee92
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f41535d3
+modified: 1618135554334
+created: 1614590058931
+url: "{{ base_url }}/api/learningOrchestra/v1/predict/tensorflow/{{ name }}"
+name: Deletes a specific predict object created previously using TensorFlow
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614590058931
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

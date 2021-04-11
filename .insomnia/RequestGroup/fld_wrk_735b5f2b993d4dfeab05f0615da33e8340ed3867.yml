@@ -1,0 +1,13 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e8340ed3867
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555224
+created: 1616061027877
+name: /builder/sparkml
+description: The builder resource joins several steps of machine learning
+  workflow (transform, tune, train and evaluate) acoupling in a unique resouce,
+  builder creates several model predictions using your own modeling code using a
+  defined set of classifiers.
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1616061027877

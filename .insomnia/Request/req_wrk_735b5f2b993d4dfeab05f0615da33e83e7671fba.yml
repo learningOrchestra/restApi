@@ -1,0 +1,30 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83e7671fba
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83315c91bf
+modified: 1618135554873
+created: 1614587325111
+url: "{{ base_url }}/api/learningOrchestra/v1/explore/scikitlearn/{{ name }}"
+name: Updates a specific explore image plot created previously using
+  Scikit-learn. The explore operation is re-executed
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "method": "string",
+      "methodParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1614587325111
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

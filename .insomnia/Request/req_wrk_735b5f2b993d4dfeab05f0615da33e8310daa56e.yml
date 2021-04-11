@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8310daa56e
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8340ed3867
+modified: 1618135554694
+created: 1616061026571
+url: "{{ base_url }}/api/learningOrchestra/v1/builder/sparkml"
+name: List all builder predictions metadata
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1616061026571
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

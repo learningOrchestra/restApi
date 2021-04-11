@@ -1,0 +1,22 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83d60dbd2a
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e839cad79f6
+modified: 1618135555027
+created: 1614587325540
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/scikitlearn/{{ name }}"
+name: Retrieves a specific transformation metadata performed previously using
+  Scikit-learn
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587325540
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

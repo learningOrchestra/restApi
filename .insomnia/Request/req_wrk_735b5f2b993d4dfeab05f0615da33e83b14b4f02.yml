@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83b14b4f02
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831e962401
+modified: 1618135554455
+created: 1614590059581
+url: "{{ base_url }}/api/learningOrchestra/v1/train/tensorflow"
+name: Retrieves alltrain metadata performed previously using TensorFlow
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614590059581
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

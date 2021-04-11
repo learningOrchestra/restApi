@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e838910d624
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83315c91bf
+modified: 1618135554847
+created: 1614587325071
+url: "{{ base_url }}/api/learningOrchestra/v1/explore/scikitlearn/{{ name }}"
+name: Deletes a specific explore image plot created previously using Scikit-learn
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587325071
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

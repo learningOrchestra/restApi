@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83575fcb67
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8356695219
+modified: 1618135554384
+created: 1614587324054
+url: "{{ base_url }}/api/learningOrchestra/v1/tune/scikitlearn/{{ name }}"
+name: Deletes a specific tune object created previously using Scikit-learn
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587324054
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

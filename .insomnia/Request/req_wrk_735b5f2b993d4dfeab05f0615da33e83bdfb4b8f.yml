@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83bdfb4b8f
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83ff1ea2a5
+modified: 1618135555164
+created: 1615549889689
+url: "{{ base_url }}/api/learningOrchestra/v1/dataset/generic"
+name: Retrieves alldatasets metadata stored in Learning Orchestra
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1615549889689
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

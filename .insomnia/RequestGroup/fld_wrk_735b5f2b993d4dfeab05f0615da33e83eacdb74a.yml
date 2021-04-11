@@ -1,0 +1,12 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e83eacdb74a
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555485
+created: 1615549930677
+name: /dataset/csv
+description: The dataset/csv resource is used to manages datasets, datasets are
+  downloaded in CSV format and parsed into JSON format where the primary key for
+  each document is the datasetName field contained in the JSON file.
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1615549930677

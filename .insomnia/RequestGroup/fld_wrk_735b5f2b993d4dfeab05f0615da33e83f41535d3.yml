@@ -1,0 +1,11 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e83f41535d3
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555263
+created: 1614590062557
+name: /predict/tensorflow
+description: predict a previously created instance with methods availabes from a
+  TensorFlow object
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614590062557

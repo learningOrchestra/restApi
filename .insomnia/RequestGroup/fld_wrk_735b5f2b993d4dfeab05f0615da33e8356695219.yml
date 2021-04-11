@@ -1,0 +1,11 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e8356695219
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555307
+created: 1614587326148
+name: /tune/scikitlearn
+description: Tune a previously created instance with methods availabes from a
+  Scikit-Learn object
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614587326149

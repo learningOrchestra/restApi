@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8339a56647
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8390389f5a
+modified: 1618135554543
+created: 1614590059816
+url: "{{ base_url }}/api/learningOrchestra/v1/model/tensorflow/{{ modelName }}"
+name: Deletes a specific model object created previously using TensorFlow
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614590059816
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

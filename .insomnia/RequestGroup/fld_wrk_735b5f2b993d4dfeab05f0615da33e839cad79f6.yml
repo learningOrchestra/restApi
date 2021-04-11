@@ -1,0 +1,11 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e839cad79f6
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555439
+created: 1614587326361
+name: /transform/scikitlearn
+description: Make transformations from learningOrchestra instances, like dataset
+  and projection, using the Scikit-Learn API
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614587326361

@@ -1,0 +1,35 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e838b49e83f
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e839cad79f6
+modified: 1618135555074
+created: 1614587325607
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/scikitlearn"
+name: Creates a transformed binary object in a volume using a previous inserted
+  dataset
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "name": "string",
+      "description": "string",
+      "modulePath": "string",
+      "class": "string",
+      "classParameters": {},
+      "method": "string",
+      "methodParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1614587325607
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

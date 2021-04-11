@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83dd192a1f
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83b065eba7
+modified: 1618135554307
+created: 1614590058830
+url: "{{ base_url }}/api/learningOrchestra/v1/evaluate/tensorflow"
+name: Retrieves all evaluate metadata performed previously using TensorFlow
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614590058830
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

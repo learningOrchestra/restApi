@@ -1,0 +1,34 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83016e6f85
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83315c91bf
+modified: 1618135554896
+created: 1614587325152
+url: "{{ base_url }}/api/learningOrchestra/v1/explore/scikitlearn"
+name: Creates an explore image visualization in a volume using a previous object
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "name": "string",
+      "description": "string",
+      "modulePath": "string",
+      "class": "string",
+      "classParameters": {},
+      "method": "string",
+      "methodParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1614587325152
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,30 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8318615c43
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e831e962401
+modified: 1618135554432
+created: 1614590059528
+url: "{{ base_url }}/api/learningOrchestra/v1/train/tensorflow/{{ name }}"
+name: Retrieves a specific train metadata performed previously using TensorFlow
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: skip
+    disabled: false
+    value: "0"
+  - name: limit
+    disabled: false
+    value: "0"
+  - name: query
+    disabled: false
+    value: string
+headers: []
+authentication: {}
+metaSortKey: -1614590059528
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

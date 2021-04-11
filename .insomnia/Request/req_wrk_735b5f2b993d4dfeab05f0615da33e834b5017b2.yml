@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e834b5017b2
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83eacdb74a
+modified: 1618135555197
+created: 1615549889866
+url: "{{ base_url }}/api/learningOrchestra/v1/dataset/csv"
+name: Retrieves alldatasets metadata stored in Learning Orchestra
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1615549889866
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

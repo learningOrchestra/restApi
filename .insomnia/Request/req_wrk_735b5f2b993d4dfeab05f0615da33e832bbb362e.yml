@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e832bbb362e
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8356695219
+modified: 1618135554403
+created: 1614587324124
+url: "{{ base_url }}/api/learningOrchestra/v1/tune/scikitlearn"
+name: Retrieves alltune metadata performed previously using Scikit-learn
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587324124
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

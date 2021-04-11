@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e830c6b771b
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e838b0c9721
+modified: 1618135554795
+created: 1614587324862
+url: "{{ base_url }}/api/learningOrchestra/v1/explore/tensorflow/{{ name }}"
+name: Retrieves a specific explore image plot performed previously using TensorFlow
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587324862
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

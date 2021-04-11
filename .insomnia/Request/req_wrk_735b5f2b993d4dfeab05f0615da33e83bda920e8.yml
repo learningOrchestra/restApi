@@ -1,10 +1,10 @@
 _id: req_wrk_735b5f2b993d4dfeab05f0615da33e83bda920e8
 type: Request
 parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e839615e716
-modified: 1613677473984
+modified: 1618135554935
 created: 1609933515202
 url: "{{ base_url }}/api/learningOrchestra/v1/explore/histogram"
-name: List all histogram datasets metadata
+name: Retrieves all histograms metadata performed previously
 description: ""
 method: GET
 body: {}

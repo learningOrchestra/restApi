@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8341bff7f1
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8309d32852
+modified: 1618135554316
+created: 1614587323881
+url: "{{ base_url }}/api/learningOrchestra/v1/evaluate/scikitlearn/{{ name }}"
+name: Deletes a specific evaluate object created previously using Scikit-learn
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587323881
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

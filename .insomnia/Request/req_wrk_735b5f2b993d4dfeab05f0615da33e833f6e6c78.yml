@@ -1,0 +1,30 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e833f6e6c78
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83aed77ab2
+modified: 1618135554976
+created: 1614587325373
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/tensorflow/{{ name }}"
+name: Updates a specific transformation created previously using TensorFlow. The
+  transform operation is re-executed
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "method": "string",
+      "methodParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1614587325373
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

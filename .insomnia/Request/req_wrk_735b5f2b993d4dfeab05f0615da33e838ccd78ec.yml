@@ -1,0 +1,33 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e838ccd78ec
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8356695219
+modified: 1618135554412
+created: 1614587324134
+url: "{{ base_url }}/api/learningOrchestra/v1/tune/scikitlearn"
+name: Creates a tune binary object in a volume using a previous object
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "parentName": "string",
+      "modelName": "string",
+      "name": "string",
+      "description": "string",
+      "method": "string",
+      "methodParameters": {}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1614587324134
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

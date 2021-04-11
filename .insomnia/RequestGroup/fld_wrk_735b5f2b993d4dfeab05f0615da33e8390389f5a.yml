@@ -1,0 +1,10 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e8390389f5a
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555344
+created: 1614590062740
+name: /model/tensorflow
+description: The model resource create a model instance using  the TensorFlow API
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614590062740

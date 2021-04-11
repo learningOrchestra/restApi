@@ -1,0 +1,22 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e832442872e
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8352a5e374
+modified: 1618135554508
+created: 1614587324221
+url: "{{ base_url }}/api/learningOrchestra/v1/train/scikitlearn/{{ name }}"
+name: Updates a specific train object created previously using Scikit-learn. The
+  train operation is re-executed
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587324221
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

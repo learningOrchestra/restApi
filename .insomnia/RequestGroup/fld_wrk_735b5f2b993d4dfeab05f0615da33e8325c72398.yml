@@ -1,0 +1,10 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e8325c72398
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555356
+created: 1614587326272
+name: /model/scikitlearn
+description: The model resource creates a model instance using the Scikit-Learn API
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614587326272

@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83c548731a
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83aed77ab2
+modified: 1618135554955
+created: 1614587325288
+url: "{{ base_url }}/api/learningOrchestra/v1/transform/tensorflow/{{ name }}"
+name: Deletes a specific transformation created previously using TensorFlow
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587325288
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

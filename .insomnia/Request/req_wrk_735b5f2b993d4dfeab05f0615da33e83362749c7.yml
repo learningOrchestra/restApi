@@ -1,0 +1,22 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e83362749c7
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8325c72398
+modified: 1618135554629
+created: 1614587324356
+url: "{{ base_url }}/api/learningOrchestra/v1/model/scikitlearn/{{ modelName }}"
+name: Updates a specific model object created previously using Scikit-learn. The
+  model creation operation is re-executed
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614587324356
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

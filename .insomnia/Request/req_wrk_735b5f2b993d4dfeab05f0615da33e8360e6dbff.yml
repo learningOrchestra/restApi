@@ -1,0 +1,33 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e8360e6dbff
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e8340ed3867
+modified: 1618135554707
+created: 1616061026581
+url: "{{ base_url }}/api/learningOrchestra/v1/builder/sparkml"
+name: Create a builder
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "trainDatasetName": "string",
+      "testDatasetName": "string",
+      "modelingCode": "string",
+      "classifiersList": [
+        "string"
+      ]
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1616061026581
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

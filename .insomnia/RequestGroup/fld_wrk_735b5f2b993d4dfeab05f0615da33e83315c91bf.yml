@@ -1,0 +1,10 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e83315c91bf
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555395
+created: 1614587326337
+name: /explore/scikitlearn
+description: Make a image plot from an instance, using the Scikit-Learn API
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614587326337

@@ -1,0 +1,12 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e83ff1ea2a5
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555474
+created: 1615549930639
+name: /dataset/generic
+description: The dataset/generic resource stores a dataset in any format on
+  learningOrchestra system. Use the function/python to treat this dataset to a
+  proper format. e.g. numpy or Dataframe.
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1615549930639

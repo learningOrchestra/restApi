@@ -1,0 +1,10 @@
+_id: fld_wrk_735b5f2b993d4dfeab05f0615da33e838b0c9721
+type: RequestGroup
+parentId: wrk_735b5f2b993d4dfeab05f0615da33e83
+modified: 1618135555381
+created: 1614590062829
+name: /explore/tensorflow
+description: Make a image plot from an instance, using the TensorFlow API
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1614590062829

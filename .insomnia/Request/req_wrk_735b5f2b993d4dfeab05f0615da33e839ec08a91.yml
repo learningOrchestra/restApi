@@ -1,0 +1,21 @@
+_id: req_wrk_735b5f2b993d4dfeab05f0615da33e839ec08a91
+type: Request
+parentId: fld_wrk_735b5f2b993d4dfeab05f0615da33e83ecbf7306
+modified: 1618135554368
+created: 1614590059232
+url: "{{ base_url }}/api/learningOrchestra/v1/tune/tensorflow/{{ name }}"
+name: Deletes a specific tune object created previously using TensorFlow
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1614590059232
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
